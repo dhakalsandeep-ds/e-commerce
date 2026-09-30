@@ -1,0 +1,153 @@
+<main class="bg-gray-50 min-h-screen  px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto space-y-8">
+
+    <!-- Welcome Banner -->
+    <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl shadow-lg p-6 text-white">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+        <div>
+          <h1 class="text-2xl font-bold sm:text-3xl">
+            Welcome back, <%= current_user.first_name.presence || current_user.email %>!
+          </h1>
+          <p class="mt-2 text-indigo-100">Here's what's happening with your store today.</p>
+        </div>
+        <div class="mt-4 md:mt-0">
+          <%= link_to "View Storefront", root_path,
+            class: "inline-flex items-center px-4 py-2 text-sm md:text-base font-medium rounded-md shadow-sm
+                    text-indigo-600 bg-white hover:bg-indigo-50 transition duration-300 ease-in-out
+                    transform hover:-translate-y-0.5 hover:shadow-md" %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Total Orders -->
+      <div class="bg-white shadow rounded-lg p-6 border-l-4 border-indigo-500">
+        <h3 class="text-sm font-medium text-gray-500">Total Orders</h3>
+        <p class="mt-2 text-2xl font-bold text-gray-900"><%= @total_orders %></p>
+        <%= link_to "View", dashboard_orders_path, class: "text-sm text-indigo-600 hover:underline" %>
+      </div>
+
+      <!-- Total Products -->
+      <div class="bg-white shadow rounded-lg p-6 border-l-4 border-green-500">
+        <h3 class="text-sm font-medium text-gray-500">Total Products</h3>
+        <p class="mt-2 text-2xl font-bold text-gray-900"><%= @total_products %></p>
+        <%= link_to "View", dashboard_products_path, class: "text-sm text-green-600 hover:underline" %>
+      </div>
+
+      <!-- Total Customers -->
+      <div class="bg-white shadow rounded-lg p-6 border-l-4 border-yellow-500">
+        <h3 class="text-sm font-medium text-gray-500">Total Customers</h3>
+        <p class="mt-2 text-2xl font-bold text-gray-900"><%= @total_users %></p>
+        <%= link_to "View", dashboard_users_path, class: "text-sm text-yellow-600 hover:underline" %>
+      </div>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Recent Orders -->
+      <div class="bg-white shadow rounded-lg p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-lg font-medium text-gray-900">Recent Orders</h2>
+          <%= link_to "View All", dashboard_orders_path, class: "text-sm font-medium text-indigo-600 hover:text-indigo-500" %>
+        </div>
+        <% if @recent_orders.any? %>
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-4 py-2 text-left text-sm font-semibold text-gray-500">Order</th>
+                  <th class="px-4 py-2 text-left text-sm font-semibold text-gray-500">Customer</th>
+                  <th class="px-4 py-2 text-left text-sm font-semibold text-gray-500">Date</th>
+                  <th class="px-4 py-2 text-right text-sm font-semibold text-gray-500">Total</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <% @recent_orders.each do |order| %>
+                  <tr>
+                    <td class="px-4 py-2">
+                      <%= link_to "##{order.id}", dashboard_order_path(order), class: "text-indigo-600 hover:underline" %>
+                    </td>
+                    <td class="px-4 py-2"><%= order.user&.email || "Guest" %></td>
+                    <td class="px-4 py-2"><%= order.created_at.strftime("%b %d, %Y") %></td>
+                    <td class="px-4 py-2 text-right font-medium"><%= number_to_currency(order.total_price) %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        <% else %>
+          <p class="text-center text-sm text-gray-500 py-6">No orders found</p>
+        <% end %>
+      </div>
+
+      <!-- Low Stock Products -->
+      <div class="bg-white shadow rounded-lg p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-lg font-medium text-gray-900">Low Stock Products</h2>
+          <%= link_to "Manage", dashboard_products_path, class: "text-sm font-medium text-indigo-600 hover:text-indigo-500" %>
+        </div>
+        <% if @low_stock_products.any? %>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <% @low_stock_products.each do |product| %>
+              <div class="flex items-center p-3 border rounded-lg hover:shadow">
+                <div class="w-12 h-12 rounded-md overflow-hidden bg-gray-100">
+                  <% if product.image.attached? %>
+                    <%= image_tag product.image, class: "w-full h-full object-cover" %>
+                  <% else %>
+                    <%= image_tag "https://placehold.co/100x100?text=#{product.name}", class: "w-full h-full object-cover" %>
+                  <% end %>
+                </div>
+                <div class="ml-3 flex-1">
+                  <p class="text-sm font-medium text-gray-900 truncate"><%= product.name %></p>
+                  <p class="text-xs text-gray-500"><%= product.stock_quantity || 0 %> in stock</p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <p class="text-center text-sm text-gray-500 py-6">No low stock alerts 🎉</p>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div>
+      <h2 class="text-lg font-medium text-gray-900 mb-4">Quick Actions</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Add Product -->
+        <div class="bg-white shadow rounded-lg p-6 hover:shadow-md transition">
+          <h3 class="text-base font-medium text-gray-900">Add Product</h3>
+          <p class="text-sm text-gray-500">Create a new product</p>
+          <%= link_to "Go", new_dashboard_product_path,
+                class: "mt-3 inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700" %>
+        </div>
+
+        <!-- Add Category -->
+        <div class="bg-white shadow rounded-lg p-6 hover:shadow-md transition">
+          <h3 class="text-base font-medium text-gray-900">Add Category</h3>
+          <p class="text-sm text-gray-500">Organize products</p>
+          <%= link_to "Go", new_dashboard_category_path,
+                class: "mt-3 inline-block bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700" %>
+        </div>
+
+        <!-- Pending Orders -->
+        <div class="bg-white shadow rounded-lg p-6 hover:shadow-md transition">
+          <h3 class="text-base font-medium text-gray-900">Pending Orders</h3>
+          <p class="text-sm text-gray-500">Review orders</p>
+          <%= link_to "Go", dashboard_orders_path(status: 'pending'),
+                class: "mt-3 inline-block bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700" %>
+        </div>
+
+        <!-- View Reports -->
+        <div class="bg-white shadow rounded-lg p-6 hover:shadow-md transition">
+          <h3 class="text-base font-medium text-gray-900">View Reports</h3>
+          <p class="text-sm text-gray-500">Analyze performance</p>
+          <%= link_to "Go", "#",
+                class: "mt-3 inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700" %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>

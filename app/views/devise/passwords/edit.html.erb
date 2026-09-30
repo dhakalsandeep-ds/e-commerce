@@ -1,0 +1,78 @@
+<%# app/views/devise/passwords/edit.html.erb %>
+
+<main class="bg-gray-50 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full space-y-8">
+    <div class="bg-white shadow-lg rounded-xl p-8">
+
+```
+  <!-- Logo -->
+  <div class="flex justify-center mb-6">
+    <%= link_to root_path, class: "flex items-center" do %>
+      <%= image_tag "lis.svg", class: "h-20 w-auto", alt: "Brand Store Logo" %>
+    <% end %>
+  </div>
+
+  <h2 class="text-center text-3xl font-extrabold text-gray-900 mb-4">
+    Change your password
+  </h2>
+
+  <p class="text-center text-sm text-gray-600 mb-6">
+    Enter a new password below to secure your account.
+  </p>
+
+  <!-- INLINE ERROR MESSAGES WITH RED BACKGROUND -->
+  <% if resource.errors.any? %>
+    <div class="mb-6">
+      <div class="bg-red-500 text-white text-sm font-medium px-4 py-3 rounded-lg">
+        <ul class="list-disc list-inside space-y-1">
+          <% resource.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "space-y-6" }) do |f| %>
+    <%= f.hidden_field :reset_password_token %>
+
+    <!-- New Password -->
+    <div>
+      <%= f.label :password, "New password", class: "block text-sm font-medium text-gray-700" %>
+      <div class="mt-1">
+        <%= f.password_field :password,
+            autofocus: true,
+            autocomplete: "new-password",
+            class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm" %>
+      </div>
+      <% if @minimum_password_length %>
+        <p class="mt-1 text-xs text-gray-500">
+         
+        </p>
+      <% end %>
+    </div>
+
+    <!-- Confirm Password -->
+    <div>
+      <%= f.label :password_confirmation, "Confirm new password", class: "block text-sm font-medium text-gray-700" %>
+      <div class="mt-1">
+        <%= f.password_field :password_confirmation,
+            autocomplete: "new-password",
+            class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm" %>
+      </div>
+    </div>
+
+    <div>
+      <%= f.submit "Change my password", class: "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black" %>
+    </div>
+  <% end %>
+
+  <div class="mt-6 text-center">
+    <%= link_to "Back to sign in", new_session_path(resource_name), class: "font-medium text-black hover:text-gray-700" %>
+  </div>
+</div>
+```
+
+  </div>
+</main>
+

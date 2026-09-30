@@ -1,0 +1,390 @@
+<%= form_with model: [:dashboard, @product],
+              url: dashboard_products_path,
+              local: true,
+              html: {
+                class: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8",
+                enctype: "multipart/form-data",
+                "data-turbo": "false"
+              } do |f| %>
+  <!-- Header -->
+  <div class="mb-8">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <h1 class="text-3xl font-bold text-gray-900">Create Product</h1>
+        <p class="mt-1 text-sm text-gray-500">Add product details and variants</p>
+      </div>
+      <div class="mt-4 sm:mt-0 flex space-x-3">
+        <%= link_to "Cancel", dashboard_products_path, class: "px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50" %>
+        <%= f.submit "Save Product", class: "px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700" %>
+      </div>
+    </div>
+  </div>
+
+  <% if @product.errors.any? %>
+    <div class="bg-red-50 text-red-700 p-4 rounded-lg">
+      <h3 class="font-bold"><%= pluralize(@product.errors.count, "error") %> prohibited saving:</h3>
+      <ul class="list-disc pl-5 mt-2">
+        <% @product.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Main Content -->
+    <div class="lg:col-span-2 space-y-6">
+      <!-- Product Information -->
+      <div class="bg-white shadow-sm rounded-lg border border-gray-200">
+        <div class="px-6 py-5 border-b border-gray-200">
+          <h2 class="text-lg font-medium text-gray-900">Product Information</h2>
+        </div>
+        <div class="p-6 space-y-6">
+          <div>
+            <%= f.label :name, class: "block text-sm font-medium text-gray-700 mb-1" %>
+            <%= f.text_field :name, class: "block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" %>
+          </div>
+
+          <div class="mb-4">
+            <%= label_tag :description_template, "Apply Template", class: "block text-sm font-medium text-gray-700" %>
+            <%= select_tag :description_template,
+              options_for_select([["Select a template", ""]] + product_description_templates.map { |k, v| [k, v] }),
+              {
+                class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm",
+                data: {
+                  controller: "trix-template",
+                  action: "change->trix-template#applyTemplate"
+                }
+              }
+            %>
+          </div>
+
+          <div>
+            <%= f.label :description, class: "block text-sm font-medium text-gray-700 mb-1" %>
+            <%= f.rich_text_area :description, class: "mt-1" %>
+          </div>
+
+          <div>
+            <%= f.label :category_id, "Category", class: "block text-sm font-medium text-gray-700 mb-1" %>
+            <%= f.collection_select :category_id, Category.all, :id, :name, { include_blank: "None" }, { class: "block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" } %>
+          </div>
+        </div>
+      </div>
+
+      <!-- Media -->
+      <div class="bg-white shadow-sm rounded-lg border border-gray-200">
+        <div class="px-6 py-5 border-b border-gray-200">
+          <h2 class="text-lg font-medium text-gray-900">Media</h2>
+        </div>
+        <div class="p-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Main Image -->
+            <div>
+              <%= f.label :image, "Main Image", class: "block text-sm font-medium text-gray-700 mb-2" %>
+              <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                <div class="space-y-1 text-center" id="main-image-preview">
+                  <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <div class="flex text-sm text-gray-600 mt-2">
+                    <label for="product_image" class="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500">
+                      <span>Upload file</span>
+                      <%= f.file_field :image, class: "sr-only", id: "product_image", accept: "image/*" %>
+                    </label>
+                    <p class="pl-1">or drag and drop</p>
+                  </div>
+                  <p class="text-xs text-gray-500">PNG, JPG, JPEG, WEBP up to 10MB</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thumbnails -->
+            <div>
+              <%= f.label :thumbnails, "Additional Images", class: "block text-sm font-medium text-gray-700 mb-2" %>
+              <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                <div class="space-y-1 text-center" id="thumbnails-preview">
+                  <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <div class="flex text-sm text-gray-600 mt-2">
+                    <label for="product_thumbnails" class="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500">
+                      <span>Upload files</span>
+                      <%= f.file_field :thumbnails, multiple: true, class: "sr-only", id: "product_thumbnails", accept: "image/*" %>
+                    </label>
+                    <p class="pl-1">or drag and drop</p>
+                  </div>
+                  <p class="text-xs text-gray-500">PNG, JPG, JPEG, WEBP up to 10MB each</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="bg-white shadow-sm rounded-lg border border-gray-200">
+        <div class="px-6 py-5 border-b border-gray-200">
+          <h2 class="text-lg font-medium text-gray-900">Options</h2>
+        </div>
+        <div class="p-6">
+          <p class="text-sm text-gray-600 mb-6">Select options to create product variants.</p>
+          <div class="space-y-4">
+            <% @option_types.each do |option_type| %>
+              <div class="border border-gray-200 rounded-lg p-4">
+                <div class="flex items-center">
+                  <%= check_box_tag "option_type_ids[]", option_type.id, false,
+                      id: "option_type_#{option_type.id}",
+                      class: "h-4 w-4 text-blue-600 border-gray-300 rounded",
+                      onchange: "toggleOptionValues(#{option_type.id})" %>
+                  <label for="option_type_<%= option_type.id %>" class="ml-3 block text-sm font-medium text-gray-700">
+                    <%= option_type.name %>
+                  </label>
+                </div>
+                <div id="values_<%= option_type.id %>" class="mt-3 hidden">
+                  <div class="flex flex-wrap gap-2">
+                    <% option_type.option_values.each do |option_value| %>
+                      <label class="option-value-label inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800 cursor-pointer hover:bg-gray-200 transition-colors">
+                        <!-- ✅ Added data-name for reliable name lookup -->
+                        <%= check_box_tag "selected_values[#{option_type.id}][]", 
+                                          option_value.id, 
+                                          false,
+                                          class: "option-value-checkbox sr-only",
+                                          data: { name: option_value.name } %>
+                        <span><%= option_value.name %></span>
+                      </label>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <!-- Variants Table -->
+      <div class="bg-white shadow-sm rounded-lg border border-gray-200">
+        <div class="px-6 py-5 border-b border-gray-200">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-medium text-gray-900">Variants</h2>
+            <button type="button" id="generate-variants" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 text-sm">
+              Generate Variants
+            </button>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="overflow-x-auto -mx-6 px-6">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Combination</th>
+                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Image</th>
+                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">SKU</th>
+                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Price</th>
+                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Stock</th>
+                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="variants-table-body" class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td colspan="6" class="px-4 py-8 text-center text-gray-500">Select options and click "Generate Variants"</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="space-y-6">
+      <div class="bg-white shadow-sm rounded-lg border border-gray-200">
+        <div class="px-6 py-5 border-b border-gray-200">
+          <h2 class="text-lg font-medium text-gray-900">Organization</h2>
+        </div>
+        <div class="p-6 space-y-4">
+          <%= f.label :status, "Status", class: "block text-sm font-medium text-gray-700 mb-1" %>
+          <%= f.select :status, [["Draft", "draft"], ["Active", "active"], ["Archived", "archived"]], {}, { class: "block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" } %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<script>
+// =============== MAIN IMAGE PREVIEW ===============
+document.getElementById('product_image').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  const preview = document.getElementById('main-image-preview');
+  const existingImg = preview.querySelector('.main-image-preview');
+  if (existingImg) existingImg.remove();
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      const img = document.createElement('img');
+      img.src = event.target.result;
+      img.className = 'mx-auto h-32 w-auto object-contain main-image-preview';
+      preview.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+// =============== THUMBNAILS PREVIEW ===============
+document.getElementById('product_thumbnails').addEventListener('change', function(e) {
+  const files = e.target.files;
+  const preview = document.getElementById('thumbnails-preview');
+  
+  const existing = preview.querySelector('.thumbnails-preview-container');
+  if (existing) existing.remove();
+
+  if (files.length > 0) {
+    const container = document.createElement('div');
+    container.className = 'thumbnails-preview-container flex flex-wrap gap-1 mt-2';
+
+    for (let i = 0; i < files.length; i++) {
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const img = document.createElement('img');
+        img.src = event.target.result;
+        img.className = 'w-16 h-16 rounded border-2 border-white object-cover';
+        container.appendChild(img);
+      };
+      reader.readAsDataURL(files[i]);
+    }
+
+    const uploadLabel = preview.querySelector('.flex.text-sm');
+    if (uploadLabel) {
+      uploadLabel.parentNode.insertBefore(container, uploadLabel);
+    }
+  }
+});
+
+// =============== OPTION TOGGLING ===============
+let variantCounter = 0;
+function toggleOptionValues(optionTypeId) {
+  const container = document.getElementById(`values_${optionTypeId}`);
+  const checkbox = document.getElementById(`option_type_${optionTypeId}`);
+  container.classList.toggle('hidden', !checkbox.checked);
+  if (!checkbox.checked) {
+    container.querySelectorAll('.option-value-checkbox').forEach(cb => cb.checked = false);
+    updateOptionValueLabels(container);
+  }
+}
+
+function updateOptionValueLabels(container) {
+  container.querySelectorAll('.option-value-label').forEach(label => {
+    const cb = label.querySelector('.option-value-checkbox');
+    if (cb.checked) {
+      label.className = 'option-value-label inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-500 cursor-pointer hover:bg-blue-200 transition-colors';
+    } else {
+      label.className = 'option-value-label inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800 cursor-pointer hover:bg-gray-200 transition-colors';
+    }
+  });
+}
+
+document.addEventListener('click', function(e) {
+  if (e.target.closest('.option-value-label')) {
+    const label = e.target.closest('.option-value-label');
+    const cb = label.querySelector('.option-value-checkbox');
+    cb.checked = !cb.checked;
+    updateOptionValueLabels(label.closest('[id^="values_"]'));
+  }
+});
+
+// =============== GENERATE VARIANTS ===============
+document.getElementById('generate-variants').addEventListener('click', function() {
+  // 🔑 Build a map: option_value.id → option_value.name
+  const optionValueNames = {};
+  document.querySelectorAll('.option-value-checkbox').forEach(cb => {
+    const id = parseInt(cb.value);
+    optionValueNames[id] = cb.dataset.name || `Value ${id}`;
+  });
+
+  const selectedOptions = [];
+  document.querySelectorAll('input[name="option_type_ids[]"]:checked').forEach(cb => {
+    const optId = parseInt(cb.value);
+    const values = Array.from(document.querySelectorAll(`input[name="selected_values[${optId}][]"]:checked`))
+      .map(v => parseInt(v.value));
+    if (values.length > 0) selectedOptions.push({ id: optId, values });
+  });
+
+  if (selectedOptions.length === 0) {
+    alert('Select at least one option type and values.');
+    return;
+  }
+
+  // Cartesian product helper
+  const cartesian = (arr) => arr.reduce((a, b) => a.flatMap(d => b.map(e => [d, e].flat())));
+
+  const groups = selectedOptions.map(o => o.values);
+  const combos = groups.length === 1
+    ? groups[0].map(v => [v])
+    : cartesian(groups);
+
+  const body = document.getElementById('variants-table-body');
+  body.replaceChildren();
+
+  combos.forEach((combo, idx) => {
+    // ✅ Use pre-built map — no DOM query for text!
+    const names = combo.map(id => optionValueNames[id] || `Unknown (${id})`).join(' / ');
+    const index = variantCounter + idx;
+
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td class="px-4 py-2 font-medium text-gray-900">${names}</td>
+      <td class="px-4 py-2">
+        <div class="variant-image-upload">
+          <div class="flex justify-center px-2 py-2 border-2 border-gray-300 border-dashed rounded-md">
+            <div class="text-center variant-preview" data-index="${index}">
+              <svg class="mx-auto h-6 w-6 text-gray-400 variant-placeholder" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div class="mt-1 flex text-xs text-gray-600 justify-center">
+                <label for="variant_image_${index}" class="relative cursor-pointer font-medium text-blue-600 hover:text-blue-500">
+                  <span>Upload</span>
+                  <input type="file" name="product[variants_attributes][${index}][image]" id="variant_image_${index}" accept="image/*" class="sr-only" />
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td class="px-4 py-2"><input type="text" name="product[variants_attributes][${index}][sku]" class="w-full text-sm border rounded px-2 py-1" required /></td>
+      <td class="px-4 py-2"><input type="number" step="0.01" name="product[variants_attributes][${index}][price]" class="w-full text-sm border rounded px-2 py-1" required /></td>
+      <td class="px-4 py-2"><input type="number" name="product[variants_attributes][${index}][stock]" class="w-full text-sm border rounded px-2 py-1" required /></td>
+      <td class="px-4 py-2 text-right">
+        <button type="button" class="text-red-600 hover:text-red-900">×</button>
+        ${combo.map(id => `<input type="hidden" name="product[variants_attributes][${index}][option_value_ids][]" value="${id}" />`).join('')}
+      </td>
+    `;
+    body.appendChild(row);
+
+    // Variant image preview
+    const fileInput = row.querySelector(`#variant_image_${index}`);
+    fileInput.addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      const preview = row.querySelector('.variant-preview');
+      const placeholder = preview.querySelector('.variant-placeholder');
+      const existingImg = preview.querySelector('.variant-img-preview');
+
+      if (existingImg) existingImg.remove();
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const img = document.createElement('img');
+          img.src = event.target.result;
+          img.className = 'mx-auto h-10 w-auto object-contain variant-img-preview';
+          preview.insertBefore(img, placeholder);
+          placeholder.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    row.querySelector('button').addEventListener('click', () => row.remove());
+  });
+  variantCounter += combos.length;
+});
+</script>

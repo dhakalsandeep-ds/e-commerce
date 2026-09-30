@@ -1,0 +1,79 @@
+<main class="bg-gray-50 min-h-screen py-6 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto space-y-6">
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+      <h1 class="text-2xl font-bold text-gray-900">User Interactions</h1>
+      <%= link_to "Add Interaction", new_dashboard_user_interaction_path, 
+          class: "px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700" %>
+    </div>
+
+    <!-- Search Form -->
+    <%= form_with url: dashboard_user_interactions_path, method: :get, local: true, class: "mb-6" do |f| %>
+      <div class="flex gap-2">
+        <%= f.text_field :search, 
+            value: @search_query,
+            placeholder: "Search user email or product name...",
+            class: "flex-1 rounded-md border-gray-300 shadow-sm px-3 py-2" %>
+        <%= f.submit "Search", class: "px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-800" %>
+        <% if @search_query.present? %>
+          <%= link_to "Clear", dashboard_user_interactions_path, 
+              class: "px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300" %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if @user_interactions.any? %>
+      <div class="bg-white shadow overflow-hidden sm:rounded-md">
+        <ul class="divide-y divide-gray-200">
+          <% @user_interactions.each do |ui| %>
+            <li>
+              <div class="px-4 py-4 sm:px-6 flex justify-between items-center">
+                <div>
+                  <p class="text-sm font-medium text-indigo-600 truncate">
+                    <%= ui.user&.email || "User ##{ui.user_id}" %>
+                  </p>
+                  <p class="mt-1 text-sm text-gray-500">
+                    <%= ui.product&.name || "Product ##{ui.product_id}" %>
+                  </p>
+                  <p class="mt-1">
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+                      <%= case ui.interaction_type
+                          when 'view' then 'bg-blue-100 text-blue-800'
+                          when 'add_to_cart' then 'bg-yellow-100 text-yellow-800'
+                          when 'purchase' then 'bg-green-100 text-green-800'
+                          else 'bg-gray-100 text-gray-800'
+                      end %>">
+                      <%= ui.interaction_type.titleize %>
+                    </span>
+                    <span class="ml-2 text-xs text-gray-500">score: <%= ui.score %></span>
+                  </p>
+                </div>
+                <div class="flex space-x-2">
+                  <%= link_to "Edit", edit_dashboard_user_interaction_path(ui), 
+                      class: "text-sm text-indigo-600 hover:text-indigo-900" %>
+                 <%= link_to "Delete", dashboard_user_interaction_path(ui),
+    class: "text-sm text-red-600 hover:text-red-900",
+    data: { turbo_method: :delete, turbo_confirm: "Delete this interaction?" } %>
+
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="mt-4">
+        <%= paginate @user_interactions %>
+      </div>
+    <% else %>
+      <div class="bg-white p-8 rounded-lg text-center">
+        <p class="text-gray-500">
+          <% if @search_query.present? %>
+            No interactions found for "<%= @search_query %>".
+          <% else %>
+            No user interactions yet.
+          <% end %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</main>

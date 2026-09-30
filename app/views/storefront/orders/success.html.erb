@@ -1,0 +1,395 @@
+<%# app/views/storefront/orders/success.html.erb %>
+<main class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto">
+    <!-- Success Banner -->
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
+        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+
+      <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        Payment Successful!
+      </h1>
+
+      <p class="mt-3 text-lg text-gray-600 max-w-md mx-auto">
+        Thank you for your order. Your payment has been processed successfully.
+      </p>
+
+      <% if @order %>
+        <div class="mt-4 inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+
+          Order #<span class="font-mono font-bold"><%= @order.id %></span>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Order Details -->
+    <% if @order %>
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden mb-8">
+
+        <div class="px-6 py-5 border-b border-gray-200 bg-gradient-to-r from-green-50 to-indigo-50">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+
+            <div>
+              <h2 class="text-xl font-semibold text-gray-900">
+                Order Confirmation
+              </h2>
+
+              <p class="text-sm text-gray-500 mt-1">
+                Placed on <%= @order.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+              </p>
+            </div>
+
+            <div class="mt-3 sm:mt-0">
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+
+                <%= @order.status.titleize %>
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="p-6">
+
+          <!-- Order Items -->
+          <h3 class="font-medium text-gray-900 mb-4">
+            Order Items
+          </h3>
+
+          <ul class="space-y-4">
+
+            <% @order.order_items.each do |item| %>
+
+              <li class="flex items-center">
+
+                <div class="flex-shrink-0 w-16 h-16 rounded-md bg-gray-100 overflow-hidden">
+
+                  <% if item.product&.image&.attached? %>
+
+                    <%= image_tag item.product.image,
+                        class: "w-full h-full object-cover",
+                        alt: item.product.name %>
+
+                  <% else %>
+
+                    <div class="w-full h-full flex items-center justify-center bg-gray-200">
+                      <span class="text-gray-500 text-xs font-bold">
+                        <%= item.product.name.to_s.split.map(&:first).join.upcase[0..1] %>
+                      </span>
+                    </div>
+
+                  <% end %>
+
+                </div>
+
+                <div class="ml-4 flex-1">
+
+                  <div class="flex justify-between">
+
+                    <div>
+
+                      <h4 class="font-medium text-gray-900">
+                        <%= item.product.name %>
+                      </h4>
+
+                      <% if item.variant %>
+
+                        <% option_values = item.variant.option_values.map(&:name) %>
+
+                        <% if option_values.any? %>
+
+                          <p class="text-sm text-gray-500">
+                            <%= option_values.join(", ") %>
+                          </p>
+
+                        <% elsif item.variant.sku.present? %>
+
+                          <p class="text-sm text-gray-500">
+                            SKU: <%= item.variant.sku %>
+                          </p>
+
+                        <% end %>
+
+                      <% end %>
+
+                    </div>
+
+                    <div class="text-right">
+
+                      <p class="font-medium text-gray-900">
+                        $<%= number_with_precision(
+                              item.price * item.quantity,
+                              precision: 2
+                            ) %>
+                      </p>
+
+                      <p class="text-sm text-gray-500">
+                        Qty: <%= item.quantity %>
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </li>
+
+            <% end %>
+
+          </ul>
+
+          <!-- Order Summary -->
+          <div class="mt-8 pt-6 border-t border-gray-200">
+
+            <h3 class="font-medium text-gray-900 mb-4">
+              Order Summary
+            </h3>
+
+            <dl class="space-y-3">
+
+              <div class="flex justify-between">
+                <dt class="text-gray-600">
+                  Subtotal
+                </dt>
+
+                <dd class="font-medium text-gray-900">
+                  $<%= number_with_precision(
+                        @order.order_items.sum { |item| item.price * item.quantity },
+                        precision: 2
+                      ) %>
+                </dd>
+              </div>
+
+              <div class="flex justify-between">
+
+                <dt class="text-gray-600">
+                  Shipping
+                </dt>
+
+                <dd class="font-medium text-gray-900">
+                  <% if @order.shipping_cost.to_f.zero? %>
+                    FREE
+                  <% else %>
+                    $<%= number_with_precision(
+                          @order.shipping_cost,
+                          precision: 2
+                        ) %>
+                  <% end %>
+                </dd>
+
+              </div>
+
+              <div class="flex justify-between pt-4 border-t border-gray-200 text-lg font-bold">
+
+                <dt>
+                  Total Paid
+                </dt>
+
+                <dd>
+                  $<%= number_with_precision(
+                        @order.total_price,
+                        precision: 2
+                      ) %>
+                </dd>
+
+              </div>
+
+            </dl>
+
+          </div>
+
+          <!-- Shipping Information -->
+          <div class="mt-8 pt-6 border-t border-gray-200">
+
+            <h3 class="font-medium text-gray-900 mb-3">
+              Shipping Information
+            </h3>
+
+            <div class="bg-gray-50 rounded-lg p-4">
+
+              <p class="font-medium text-gray-900">
+                <%= @order.first_name %> <%= @order.last_name %>
+              </p>
+
+              <p class="text-gray-600 mt-1">
+                <%= @order.address %>
+              </p>
+
+              <p class="text-gray-600">
+                <%= @order.city %>, <%= @order.state %> <%= @order.postal_code %>
+              </p>
+
+              <p class="text-gray-600">
+                <%= @order.country %>
+              </p>
+
+              <% if @order.phone.present? %>
+                <p class="text-gray-600 mt-2">
+                  <span class="font-medium">Phone:</span>
+                  <%= @order.phone %>
+                </p>
+              <% end %>
+
+              <p class="text-gray-600">
+                <span class="font-medium">Email:</span>
+                <%= @order.email %>
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- Payment Information -->
+          <div class="mt-6 pt-6 border-t border-gray-200">
+
+            <h3 class="font-medium text-gray-900 mb-3">
+              Payment Information
+            </h3>
+
+            <div class="bg-green-50 rounded-lg p-4">
+
+              <div class="flex items-center mb-2">
+
+                <svg class="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+
+                <span class="font-medium text-green-800">
+                  Payment Method:
+                </span>
+
+                <span class="ml-2 text-green-700">
+                  <%= @order.payment_method.titleize %>
+                </span>
+
+              </div>
+
+              <p class="text-sm text-green-600">
+                Payment ID:
+                <code class="text-xs">
+                  <%= @order.stripe_payment_intent_id %>
+                </code>
+              </p>
+
+              <p class="text-xs text-green-500 mt-2">
+
+                <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+
+                Secured and processed by Stripe
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+
+    <!-- Action Buttons -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 print:hidden">
+
+      <%= link_to products_path,
+                  class: "w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-4 rounded-lg text-center transition duration-150 ease-in-out" do %>
+
+        <div class="flex items-center justify-center">
+
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+
+          Continue Shopping
+
+        </div>
+
+      <% end %>
+
+      <button onclick="window.print()"
+              class="w-full bg-white hover:bg-gray-50 border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-lg text-center transition duration-150 ease-in-out">
+
+        <div class="flex items-center justify-center">
+
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+          </svg>
+
+          Print Receipt
+
+        </div>
+
+      </button>
+
+    </div>
+
+    <!-- Help Section -->
+    <div class="mt-8 text-center print:hidden">
+
+      <p class="text-sm text-gray-500">
+        Need help?
+
+        <%= link_to "Contact Support",
+                    contact_path,
+                    class: "text-indigo-600 hover:text-indigo-500" %>
+
+        or check your
+
+        <%= link_to "Order History",
+                    user_dashboard_orders_path,
+                    class: "text-indigo-600 hover:text-indigo-500" %>
+      </p>
+
+      <p class="mt-2 text-xs text-gray-400">
+        A confirmation email has been sent to
+        <%= @order.email if @order %>
+      </p>
+
+    </div>
+
+  </div>
+</main>
+
+<style>
+  @media print {
+    @page {
+      size: A4;
+      margin: 15mm;
+    }
+
+    body * {
+      visibility: hidden;
+    }
+
+    main,
+    main * {
+      visibility: visible;
+    }
+
+    main {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+
+    .print\:hidden {
+      display: none !important;
+    }
+
+    .no-print {
+      display: none !important;
+    }
+  }
+</style>

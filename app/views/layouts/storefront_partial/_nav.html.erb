@@ -1,0 +1,293 @@
+<!-- Sticky Header -->
+<div class="sticky top-0 z-50 w-full bg-white">
+
+  <!-- Developer Attribution -->
+  <div class="bg-gray-100 text-gray-900 print:hidden">
+    <div class="mx-auto flex min-h-14 items-center justify-center px-4 py-3 text-center">
+      <p class="text-sm font-medium text-gray-600">
+        Built by
+        <%= link_to "Sandeep Dhakal",
+              "https://github.com/dhakalsandeep-ds/",
+              target: "_blank",
+              rel: "noopener noreferrer",
+              class: "font-semibold text-gray-900 underline underline-offset-4 transition hover:text-gray-500" %>
+      </p>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="border-b border-gray-100 bg-white print:hidden">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+
+        <!-- Left -->
+        <div class="flex items-center space-x-4">
+
+          <!-- Mobile Menu -->
+          <button
+            id="toggle-sidebar-mobile"
+            type="button"
+            class="rounded-lg p-2 text-gray-600 transition hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-300 md:hidden"
+            aria-label="Open menu"
+          >
+            <svg
+              class="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Logo -->
+          <%= link_to root_path,
+                class: "flex items-center whitespace-nowrap" do %>
+            <%= image_tag "logoss.svg",
+                  class: "h-7 w-auto sm:h-8",
+                  alt: "Clotherya" %>
+          <% end %>
+
+          <!-- Categories -->
+          <% if Category.any? %>
+            <div class="relative hidden md:block group">
+
+              <button
+                type="button"
+                class="flex items-center text-sm font-medium text-gray-700 transition hover:text-gray-900"
+              >
+                Categories
+
+                <svg
+                  class="ml-1 h-3.5 w-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <!-- Categories Dropdown -->
+              <div
+                class="
+                  invisible absolute left-1/2 top-full z-50 mt-2
+                  min-w-[36rem] max-w-[90vw]
+                  -translate-x-1/3
+                  rounded-xl border border-gray-100 bg-white
+                  opacity-0 shadow-xl
+                  transition-all duration-200
+                  group-hover:visible group-hover:opacity-100
+                "
+              >
+                <div class="grid grid-cols-2 gap-6 p-6 sm:grid-cols-3 md:grid-cols-4">
+
+                  <% Category.order(:name).each do |category| %>
+
+                    <%= link_to category_path(category),
+                          class: "group/item block text-center transition-transform hover:scale-[1.02]" do %>
+
+                      <div class="relative mb-3 aspect-square w-full overflow-hidden rounded-lg border border-gray-200 bg-gray-100">
+
+                        <% if category.image.attached? %>
+
+                          <%= image_tag category.image,
+                                class: "h-full w-full object-cover transition-opacity group-hover/item:opacity-90",
+                                alt: category.name %>
+
+                        <% else %>
+
+                          <div class="flex h-full w-full items-center justify-center text-gray-400">
+                            <svg
+                              class="h-8 w-8"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                              />
+                            </svg>
+                          </div>
+
+                        <% end %>
+
+                      </div>
+
+                      <span class="text-sm font-medium text-gray-900 transition-colors group-hover/item:text-gray-600">
+                        <%= category.name %>
+                      </span>
+
+                    <% end %>
+
+                  <% end %>
+
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+          <!-- Shop All -->
+          <%= link_to "Shop All",
+                products_path,
+                class: "hidden text-sm font-medium text-gray-700 transition-colors hover:text-gray-900 sm:block #{'text-gray-900' if current_page?(products_path)}" %>
+
+        </div>
+
+        <!-- Search -->
+        <div class="hidden flex-1 justify-center px-4 md:flex">
+
+          <%= form_with url: search_path,
+                method: :get,
+                class: "relative w-full max-w-xl" do |f| %>
+
+            <div class="relative">
+
+              <%= f.text_field :q,
+                    value: params[:q],
+                    placeholder: "Search for anything...",
+                    class: "w-full rounded-full border border-gray-300 bg-white px-5 py-2 text-sm shadow-sm transition focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200",
+                    autocomplete: "off" %>
+
+              <button
+                type="submit"
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 transition hover:text-gray-700"
+                aria-label="Search"
+              >
+                <svg
+                  class="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </button>
+
+            </div>
+
+          <% end %>
+
+        </div>
+
+        <!-- Right -->
+        <div class="flex items-center space-x-2 sm:space-x-3">
+
+          <% if user_signed_in? %>
+
+            <!-- Account -->
+            <div class="relative group">
+
+              <button
+                type="button"
+                class="rounded-full p-2 text-gray-600 transition hover:bg-gray-100 hover:text-gray-900 focus:outline-none"
+                aria-label="Account menu"
+              >
+                <div class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200">
+                  <span class="text-xs font-medium text-gray-700">
+                    <%= current_user&.first_name&.first&.upcase || current_user.email[0].upcase %>
+                  </span>
+                </div>
+              </button>
+
+              <!-- Account Dropdown -->
+              <div
+                class="
+                  invisible absolute right-0 z-50 mt-2 w-48
+                  rounded-xl border border-gray-100 bg-white
+                  py-1 opacity-0 shadow-lg
+                  transition-all duration-200
+                  group-hover:visible group-hover:opacity-100
+                "
+              >
+
+                <div class="border-b border-gray-100 px-4 py-2.5">
+                  <p class="text-sm font-medium text-gray-900">
+                    <%= current_user.first_name.presence || current_user.email %>
+                  </p>
+
+                  <p class="truncate text-xs text-gray-500">
+                    <%= current_user.email %>
+                  </p>
+                </div>
+
+                <%= link_to "Dashboard",
+                      user_dashboard_path,
+                      class: "block px-4 py-2 text-sm text-gray-700 transition hover:bg-gray-50" %>
+
+                <div class="my-1 border-t border-gray-100"></div>
+
+                <%= button_to "Sign out",
+                      destroy_user_session_path,
+                      method: :delete,
+                      class: "block w-full px-4 py-2 text-left text-sm text-gray-700 transition hover:bg-gray-50" %>
+
+              </div>
+
+            </div>
+
+          <% else %>
+
+            <!-- Sign In -->
+            <%= link_to new_user_session_path,
+                  class: "rounded-full p-2 text-gray-600 transition hover:bg-gray-100 hover:text-gray-900",
+                  title: "Sign in",
+                  aria: { label: "Sign in" } do %>
+
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24" width="24">
+  <g id="Login">
+    <path id="Union" fill="#cdcade" d="M20.1025 3.00488C20.6067 3.05621 21 3.48232 21 4v16c0 0.5523 -0.4477 1 -1 1H10c-0.55228 0 -1 -0.4477 -1 -1v-1h10V5H9V4l0.00488 -0.10254C9.05621 3.39333 9.48232 3 10 3h10zM14.207 11.293l0.0684 0.0761c0.3203 0.3928 0.2977 0.9718 -0.0684 1.3379l-4 4 -1.41403 -1.414L11.0859 13H3v-2h8.0859L8.79297 8.70703 10.207 7.29297z" stroke-width="1"></path>
+  </g>
+</svg>
+            <% end %>
+
+          <% end %>
+
+          <!-- Cart -->
+          <%= link_to cart_path,
+                class: "relative rounded-full p-2 text-gray-600 transition hover:bg-gray-100 hover:text-gray-900",
+                title: "Cart",
+                aria: { label: "Cart" } do %>
+
+            <svg
+              class="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M18 18a2 2 0 11-4 0 2 2 0 014 0zM6 18a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+
+            <% if @cart&.cart_items&.any? %>
+              <span class="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-gray-900 text-[9px] font-bold text-white">
+                <%= @cart.cart_items.count %>
+              </span>
+            <% end %>
+
+          <% end %>
+
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+</div>

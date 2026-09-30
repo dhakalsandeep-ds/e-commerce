@@ -1,0 +1,97 @@
+<main class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto">
+    <%= link_to "← Back to Customers", dashboard_users_path, class: "inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 mb-6" %>
+
+    <div class="bg-white shadow sm:rounded-lg px-6 py-6">
+      <h2 class="text-lg font-medium text-gray-900 mb-4">Edit Customer</h2>
+
+      <%# Display error messages if any %>
+      <% if @user.errors.any? %>
+        <div class="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+          <h3 class="font-medium">Please fix the following errors:</h3>
+          <ul class="mt-2 list-disc list-inside">
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= form_with model: [:dashboard, @user], local: true do |f| %>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+
+          <!-- First Name -->
+          <div>
+            <%= f.label :first_name, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.text_field :first_name, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+          </div>
+
+          <!-- Last Name -->
+          <div>
+            <%= f.label :last_name, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.text_field :last_name, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+          </div>
+
+          <!-- Email -->
+          <div class="sm:col-span-2">
+            <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.email_field :email, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+          </div>
+
+          <!-- Phone Number -->
+          <div>
+            <%= f.label :phone_number, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.telephone_field :phone_number, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+          </div>
+
+          <!-- Date of Birth -->
+          <div>
+            <%= f.label :date_of_birth, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.date_field :date_of_birth, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+          </div>
+
+          <!-- Address (only using address_line1) -->
+          <div class="sm:col-span-2">
+            <%= f.label :address_line1, "Address", class: "block text-sm font-medium text-gray-700" %>
+            <%= f.text_field :address_line1, placeholder: "123 Main St, Kathmandu, Nepal", class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+          </div>
+
+          <!-- City -->
+          <div>
+            <%= f.label :city, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.text_field :city, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+          </div>
+
+          <!-- State -->
+          <div>
+            <%= f.label :state, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.text_field :state, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+          </div>
+
+          <!-- Postal Code -->
+          <div>
+            <%= f.label :postal_code, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.text_field :postal_code, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+          </div>
+
+          <!-- Country -->
+          <div>
+            <%= f.label :country, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.text_field :country, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+          </div>
+
+          <!-- Role -->
+          <div>
+            <%= f.label :role, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.select :role, User.roles.keys.map { |r| [r.humanize, r] }, {}, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+          </div>
+
+        </div>
+
+        <div class="mt-6">
+          <%= f.submit "Update Customer", class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>

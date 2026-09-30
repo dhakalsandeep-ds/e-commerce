@@ -1,0 +1,304 @@
+<main class="min-h-screen">
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8 lg:py-32">
+
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+
+        <!-- Hero Text -->
+        <div class="space-y-8">
+
+          <div class="space-y-4">
+
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
+              Clotherya
+            </p>
+
+            <h1 class="text-4xl font-bold tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
+              Elevate Your
+              <span class="block text-gray-500">
+                Everyday Style
+              </span>
+            </h1>
+
+            <p class="max-w-lg text-lg text-gray-600 md:text-xl">
+              Curated fashion for those who value quality, comfort, and timeless design.
+              Discover collections crafted for every moment that matters.
+            </p>
+
+          </div>
+
+          <!-- CTA -->
+          <div class="flex flex-col gap-4 sm:flex-row">
+
+            <%= link_to "Shop All",
+                  products_path,
+                  class: "inline-flex items-center justify-center rounded-lg bg-gray-900 px-8 py-3.5 text-base font-medium text-white shadow-lg transition-all duration-300 hover:bg-gray-800 hover:shadow-xl" %>
+
+          </div>
+
+        </div>
+
+
+        <!-- Hero Image -->
+        <div class="relative">
+
+          <div class="relative overflow-hidden rounded-2xl shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+
+            <%= image_tag "front.avif",
+                  alt: "Fashion collection",
+                  class: "h-[500px] w-full object-cover" %>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MAIN CONTENT -->
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+
+    <!-- SHOP BY CATEGORY -->
+    <section class="py-20 lg:py-24">
+
+      <!-- Section Intro -->
+      <div class="mx-auto max-w-2xl text-center">
+
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
+          Browse
+        </p>
+
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+          Shop By Category
+        </h2>
+
+        <p class="mt-5 text-base leading-7 text-gray-500 sm:text-lg">
+          Explore collections crafted for every moment that matters.
+        </p>
+
+      </div>
+
+
+      <% if @featured_categories.present? %>
+
+        <!-- Category Cards -->
+        <div class="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+          <% @featured_categories.each do |category| %>
+
+            <%= link_to products_path(category_id: category.id),
+                  class: "group relative block overflow-hidden rounded-2xl bg-gray-100" do %>
+
+              <!-- Image -->
+              <div class="aspect-[4/3]">
+
+                <% if category.image.attached? %>
+
+                  <%= image_tag category.image,
+                        class: "h-full w-full object-cover transition duration-700 group-hover:scale-105",
+                        alt: category.name %>
+
+                <% else %>
+
+                  <div class="flex h-full w-full items-center justify-center bg-gray-100">
+
+                    <span class="text-3xl font-semibold text-gray-300">
+
+                      <%
+                        words = category.name.to_s.strip.split
+
+                        initials =
+                          if words.size >= 2
+                            "#{words[0].first}#{words[1].first}".upcase
+                          else
+                            words[0]&.first&.upcase || "–"
+                          end
+                      %>
+
+                      <%= initials %>
+
+                    </span>
+
+                  </div>
+
+                <% end %>
+
+              </div>
+
+
+              <!-- Image Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent"></div>
+
+
+              <!-- Category Information -->
+              <div class="absolute inset-x-0 bottom-0 p-6">
+
+                <div class="flex items-end justify-between gap-4">
+
+                  <div>
+
+                    <p class="text-xs font-medium uppercase tracking-wider text-white/70">
+                      Collection
+                    </p>
+
+                    <h3 class="mt-1 text-xl font-semibold text-white">
+                      <%= category.name %>
+                    </h3>
+
+                  </div>
+
+
+                  <!-- Arrow -->
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-lg text-gray-900 transition duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+
+                </div>
+
+              </div>
+
+            <% end %>
+
+          <% end %>
+
+        </div>
+
+      <% else %>
+
+        <!-- Empty State -->
+        <div class="mt-12 rounded-xl bg-gray-50 py-14 text-center">
+
+          <p class="text-sm text-gray-500">
+            No categories available yet.
+          </p>
+
+        </div>
+
+      <% end %>
+
+    </section>
+
+
+    <!-- FEATURED PRODUCTS -->
+    <% if @featured_products.present? %>
+
+      <section class="border-y border-gray-100 py-20 lg:py-24">
+
+        <!-- Section Header -->
+        <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+
+          <div class="max-w-xl">
+
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
+              Featured
+            </p>
+
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+              Best Sellers
+            </h2>
+
+            <p class="mt-4 text-base leading-7 text-gray-500 sm:text-lg">
+              A selection of pieces worth taking a closer look at.
+            </p>
+
+          </div>
+
+
+          <!-- View All -->
+          <%= link_to products_path,
+                class: "shrink-0 text-sm font-semibold text-gray-900 underline decoration-gray-300 underline-offset-4 transition hover:decoration-gray-900" do %>
+
+            View All
+
+          <% end %>
+
+        </div>
+
+
+        <!-- Products -->
+        <div class="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+
+          <% @featured_products.each do |product| %>
+
+            <article class="group">
+
+              <!-- Product Image -->
+              <%= link_to product_path(product),
+                    class: "block overflow-hidden rounded-xl bg-gray-100" do %>
+
+                <div class="aspect-square">
+
+                  <% if product.image.attached? %>
+
+                    <%= image_tag product.image,
+                          class: "h-full w-full object-cover transition duration-700 group-hover:scale-105",
+                          alt: product.name %>
+
+                  <% else %>
+
+                    <div class="flex h-full w-full items-center justify-center bg-gray-100">
+
+                      <span class="text-lg font-semibold text-gray-300">
+
+                        <%
+                          words = product.name.to_s.strip.split
+
+                          initials =
+                            if words.size >= 2
+                              "#{words[0].first}#{words[1].first}".upcase
+                            else
+                              words[0]&.first&.upcase || "–"
+                            end
+                        %>
+
+                        <%= initials %>
+
+                      </span>
+
+                    </div>
+
+                  <% end %>
+
+                </div>
+
+              <% end %>
+
+
+              <!-- Product Information -->
+              <div class="mt-4">
+
+                <p class="text-xs font-medium uppercase tracking-wider text-gray-400">
+                  <%= product.category&.name || "Collection" %>
+                </p>
+
+                <h3 class="mt-1 text-sm font-medium text-gray-900">
+
+                  <%= link_to product.name.truncate(40),
+                        product_path(product),
+                        class: "transition hover:text-gray-600" %>
+
+                </h3>
+
+              </div>
+
+            </article>
+
+          <% end %>
+
+        </div>
+
+      </section>
+
+    <% end %>
+
+  </div>
+
+</main>

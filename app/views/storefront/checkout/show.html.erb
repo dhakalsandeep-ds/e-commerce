@@ -1,0 +1,215 @@
+<main class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl mb-6">Checkout</h1>
+
+    <!-- Order validation errors -->
+    <% if @order&.errors&.any? %>
+      <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-6 rounded">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="ml-3">
+            <h3 class="text-sm font-medium text-red-800">There were <%= pluralize(@order.errors.count, "error") %> with your submission</h3>
+            <div class="mt-2 text-sm text-red-700">
+              <ul class="list-disc pl-5 space-y-1">
+                <% @order.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <!-- Checkout Form -->
+    <%= form_with model: Order.new, url: orders_path, method: :post, local: true, id: "checkout-form", data: { turbo: false } do |form| %>
+      <div class="lg:grid lg:grid-cols-12 lg:gap-x-12 xl:gap-x-16">
+        <!-- Customer & Shipping Info -->
+        <div class="lg:col-span-7">
+          <!-- Shipping Information Section -->
+          <div class="bg-white rounded-xl shadow-sm overflow-hidden p-6 mb-6">
+            <h2 class="text-lg font-medium text-gray-900 mb-4">Shipping Information</h2>
+            <div class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <%= form.label :first_name, "First name", class: "block text-sm font-medium text-gray-700" %>
+                  <%= form.text_field :first_name, required: true, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+                </div>
+                <div>
+                  <%= form.label :last_name, "Last name", class: "block text-sm font-medium text-gray-700" %>
+                  <%= form.text_field :last_name, required: true, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+                </div>
+              </div>
+              <div>
+                <%= form.label :email, "Email address", class: "block text-sm font-medium text-gray-700" %>
+                <%= form.email_field :email, required: true, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+              </div>
+              <div>
+                <%= form.label :phone, "Phone number", class: "block text-sm font-medium text-gray-700" %>
+                <%= form.telephone_field :phone, required: true, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+              </div>
+              <div>
+                <%= form.label :address, "Street address", class: "block text-sm font-medium text-gray-700" %>
+                <%= form.text_field :address, required: true, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                  <%= form.label :city, "City", class: "block text-sm font-medium text-gray-700" %>
+                  <%= form.text_field :city, required: true, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+                </div>
+                <div>
+                  <%= form.label :state, "State / Province", class: "block text-sm font-medium text-gray-700" %>
+                  <%= form.text_field :state, required: true, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+                </div>
+                <div>
+                  <%= form.label :postal_code, "Postal code", class: "block text-sm font-medium text-gray-700" %>
+                  <%= form.text_field :postal_code, required: true, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+                </div>
+              </div>
+              <div>
+                <%= form.label :country, "Country", class: "block text-sm font-medium text-gray-700" %>
+                <%= form.select :country, ['Nepal'], { prompt: 'Select Country' }, { required: true, class: "mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" } %>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Method Notice -->
+          <div class="bg-white rounded-xl shadow-sm overflow-hidden p-6 mb-6 border-l-4 border-green-500">
+            <h2 class="text-lg font-medium text-gray-900 mb-2">Payment Method</h2>
+            <p class="text-green-700 font-medium">
+              🟢 Cash on Delivery (Pay when you receive your order)
+            </p>
+            <p class="mt-1 text-sm text-gray-600">
+              No payment needed now. You'll pay the delivery person in cash or card (if supported locally) upon arrival.
+            </p>
+          </div>
+
+          <!-- Terms and Conditions Checkbox -->
+          <div class="flex items-start mb-6">
+            <%= form.check_box :agree_to_terms, required: true, class: "h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded mt-0.5" %>
+            <%= form.label :agree_to_terms, class: "ml-2 block text-sm text-gray-900" do %>
+              I agree to the <%= link_to "Terms and Conditions", "#", class: "text-indigo-600 hover:text-indigo-500 underline" %> and <%= link_to "Privacy Policy", "#", class: "text-indigo-600 hover:text-indigo-500 underline" %>.
+            <% end %>
+          </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="mt-10 lg:mt-0 lg:col-span-5">
+          <div class="bg-white rounded-xl shadow-sm p-6 sticky top-6">
+            <h2 class="text-lg font-medium text-gray-900 mb-6">Order Summary</h2>
+
+            <% if @cart_items.any? %>
+              <ul role="list" class="divide-y divide-gray-200 mb-6">
+                <% @cart_items.each do |item| %>
+                  <li class="flex py-4">
+                    <div class="flex-shrink-0 w-16 h-16 border border-gray-200 rounded-md overflow-hidden">
+                      <% if item[:image]&.attached? %>
+                        <%= image_tag item[:image], class: "w-full h-full object-center object-cover", alt: item[:product].name %>
+                      <% else %>
+                        <!-- ✅ Use initials fallback instead of placeholder -->
+                        <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                          <span class="text-gray-500 text-xs font-bold">
+                            <%
+                              words = item[:product].name.to_s.strip.split
+                              if words.size >= 2
+                                initials = "#{words[0].first}#{words[1].first}".upcase
+                              else
+                                initials = words[0]&.first&.upcase || "–"
+                              end
+                            %>
+                            <%= initials %>
+                          </span>
+                        </div>
+                      <% end %>
+                    </div>
+                    <div class="ml-4 flex-1 flex flex-col">
+                      <div>
+                        <div class="flex justify-between text-base font-medium text-gray-900">
+                          <h3><%= item[:product].name.truncate(24) %></h3>
+                          <p class="ml-4">$<%= number_with_precision(item[:subtotal], precision: 2) %></p>
+                        </div>
+                        <% if item[:option_values_text] %>
+                          <p class="mt-1 text-sm text-gray-500"><%= item[:option_values_text] %></p>
+                        <% end %>
+                      </div>
+                      <div class="flex-1 flex items-end justify-between text-sm">
+                        <p class="text-gray-500">Qty: <%= item[:quantity] %></p>
+                      </div>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+
+              <dl class="space-y-4 border-t border-gray-200 pt-4">
+                <div class="flex items-center justify-between">
+                  <dt class="text-base font-medium text-gray-900">Subtotal</dt>
+                  <dd class="ml-4 text-base font-medium text-gray-900">
+                    $<%= number_with_precision(@cart_items.sum { |item| item[:subtotal] }, precision: 2) %>
+                  </dd>
+                </div>
+                <% shipping_cost = 0.00 # Adjust if COD has shipping fee %>
+                <div class="flex items-center justify-between">
+                  <dt class="flex text-sm text-gray-600">
+                    Shipping
+                    <span class="ml-2 rounded-full bg-gray-100 text-xs font-medium text-gray-500 px-2 py-0.5">Free</span>
+                  </dt>
+                  <dd class="ml-4 text-sm font-medium text-gray-900">
+                    $<%= number_with_precision(shipping_cost, precision: 2) %>
+                  </dd>
+                </div>
+                <div class="flex items-center justify-between border-t border-gray-200 pt-4">
+                  <dt class="text-base font-medium text-gray-900">Order total</dt>
+                  <dd class="ml-4 text-base font-medium text-gray-900">
+                    $<%= number_with_precision(@cart_items.sum { |item| item[:subtotal] } + shipping_cost, precision: 2) %>
+                  </dd>
+                </div>
+              </dl>
+
+              <!-- Payment Method Summary -->
+              <div class="mt-4 p-3 bg-green-50 rounded-lg">
+                <p class="text-sm font-medium text-green-800 flex items-center">
+                  <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Pay on delivery
+                </p>
+              </div>
+            <% else %>
+              <p class="text-gray-500">Your cart is empty.</p>
+            <% end %>
+
+            <!-- Submit Button -->
+            <div class="mt-6">
+              <%= form.submit "Place Order (Cash on Delivery)", 
+                  class: "w-full bg-green-600 hover:bg-green-700 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 cursor-pointer", 
+                  disabled: @cart_items.empty? %>
+            </div>
+
+            <div class="mt-4 text-center">
+              <%= link_to "Return to Cart", cart_path, class: "text-sm font-medium text-indigo-600 hover:text-indigo-500" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const checkoutForm = document.getElementById('checkout-form');
+    if (checkoutForm) {
+      checkoutForm.addEventListener('submit', function() {
+        const submitButton = this.querySelector('input[type="submit"]');
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.value = 'Placing Order...';
+        }
+      });
+    }
+  });
+</script>

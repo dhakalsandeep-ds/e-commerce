@@ -1,0 +1,6876 @@
+
+---
+action_text_rich_texts:
+  columns:
+  - id
+  - name
+  - body
+  - record_type
+  - record_id
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - description
+    - "<div>asfdas</div>"
+    - Product
+    - 1
+    - '2025-07-26 07:41:12.002564'
+    - '2025-07-26 07:41:12.002564'
+  - - 2
+    - description
+    - "<div>sfdfsdsd</div>"
+    - Product
+    - 2
+    - '2025-07-26 11:07:23.487921'
+    - '2025-07-26 11:07:23.487921'
+  - - 3
+    - description
+    - "<div>afsa</div>"
+    - Product
+    - 3
+    - '2025-07-26 11:07:49.856189'
+    - '2025-07-26 11:07:49.856189'
+  - - 4
+    - description
+    - "<div>sfa</div>"
+    - Product
+    - 4
+    - '2025-07-26 11:08:43.004854'
+    - '2025-07-26 11:08:43.004854'
+  - - 5
+    - description
+    - "<div>afsdfasfs</div>"
+    - Product
+    - 5
+    - '2025-07-26 12:25:45.842558'
+    - '2025-07-26 12:25:45.842558'
+  - - 6
+    - description
+    - "<div>sfasd</div>"
+    - Product
+    - 6
+    - '2025-07-26 12:26:25.205841'
+    - '2025-07-26 12:26:25.205841'
+  - - 7
+    - description
+    - "<div>dfgf</div>"
+    - Product
+    - 7
+    - '2025-07-26 12:27:36.237086'
+    - '2025-07-26 12:27:36.237086'
+  - - 8
+    - description
+    - "<div>fvafds safa fa fads fa fa fafsf&nbsp; asda fd adfsa afs asfasf</div>"
+    - Product
+    - 8
+    - '2025-10-22 11:09:20.130275'
+    - '2025-10-22 11:09:20.130275'
+  - - 9
+    - description
+    - sdfsdf
+    - Product
+    - 9
+    - '2025-10-24 07:31:24.754713'
+    - '2025-10-24 07:31:24.754713'
+  - - 10
+    - description
+    - jslf
+    - Product
+    - 10
+    - '2025-10-24 07:50:14.163709'
+    - '2025-10-24 07:50:14.163709'
+  - - 11
+    - description
+    - jlj
+    - Product
+    - 11
+    - '2025-10-24 14:01:00.959217'
+    - '2025-10-24 14:01:00.959217'
+  - - 12
+    - description
+    - fsfdsd
+    - Product
+    - 12
+    - '2025-10-24 14:52:53.423790'
+    - '2025-10-24 14:52:53.423790'
+  - - 13
+    - description
+    - "<div>asjfla sf as fa sjf a s<br>f asdf<br>a sfd<br>a&nbsp;<br>df sa<br><br></div>"
+    - Product
+    - 13
+    - '2025-10-25 05:21:17.760183'
+    - '2025-10-25 05:21:17.760183'
+  - - 14
+    - description
+    - "<div>asf</div>"
+    - Product
+    - 14
+    - '2025-10-25 05:23:43.257996'
+    - '2025-10-25 05:23:43.257996'
+  - - 15
+    - description
+    - "<div>jsfjs</div>"
+    - Product
+    - 15
+    - '2025-10-25 05:36:31.742937'
+    - '2025-10-25 05:36:31.742937'
+  - - 16
+    - description
+    - "<div>fsjldjfja sdjf asdjf</div>"
+    - Product
+    - 16
+    - '2025-10-25 05:44:15.967710'
+    - '2025-10-25 05:44:15.967710'
+  - - 17
+    - description
+    - "<div>asfasdfa</div>"
+    - Product
+    - 17
+    - '2025-10-25 05:54:18.140133'
+    - '2025-10-25 05:54:18.140133'
+  - - 18
+    - description
+    - "<div>fdsfsd sf sdfsd</div>"
+    - Product
+    - 18
+    - '2025-10-25 08:07:43.557605'
+    - '2025-10-25 08:07:43.557605'
+  - - 19
+    - description
+    - "<div>afsfsfsaf</div>"
+    - Product
+    - 19
+    - '2025-10-25 11:00:38.796972'
+    - '2025-10-25 11:00:38.796972'
+  - - 20
+    - description
+    - "<div>segt ewrwe4r wer we rew r</div>"
+    - Product
+    - 20
+    - '2025-10-25 11:35:23.737914'
+    - '2025-10-25 11:35:23.737914'
+  - - 21
+    - description
+    - "<div>afda</div>"
+    - Product
+    - 21
+    - '2025-10-25 15:46:03.070444'
+    - '2025-10-25 15:46:03.070444'
+  - - 22
+    - description
+    - "<div>nl</div>"
+    - Product
+    - 23
+    - '2025-10-27 08:29:06.884992'
+    - '2025-10-27 08:29:06.884992'
+  - - 23
+    - description
+    - IIJ
+    - Product
+    - 24
+    - '2025-10-27 11:40:09.872289'
+    - '2025-10-27 11:40:09.872289'
+  - - 24
+    - description
+    - "<div>&nbsp;jfsfljdsljflsd flsldf&nbsp;</div>"
+    - Product
+    - 25
+    - '2025-10-30 05:47:31.258691'
+    - '2025-10-30 17:08:04.440340'
+  - - 25
+    - description
+    - "<div>nljlk</div>"
+    - Product
+    - 26
+    - '2025-10-30 17:09:41.421996'
+    - '2025-10-30 17:09:41.421996'
+  - - 26
+    - description
+    - "<div>jljl ljljl j</div>"
+    - Product
+    - 27
+    - '2025-10-30 18:19:32.130991'
+    - '2025-10-30 18:19:32.130991'
+  - - 27
+    - description
+    - "<div>jjoj j oj o&nbsp;</div>"
+    - Product
+    - 28
+    - '2025-10-30 18:28:20.912637'
+    - '2025-10-30 18:28:20.912637'
+  - - 28
+    - description
+    - "<div>jljjljl</div>"
+    - Product
+    - 29
+    - '2025-10-31 09:17:26.003552'
+    - '2025-10-31 09:17:26.003552'
+  - - 29
+    - description
+    - "<div>jnkn</div>"
+    - Product
+    - 30
+    - '2025-10-31 09:20:46.430296'
+    - '2025-10-31 09:20:46.430296'
+  - - 30
+    - description
+    - "<div>sfs</div>"
+    - Product
+    - 31
+    - '2025-10-31 09:24:41.540136'
+    - '2025-10-31 09:24:41.540136'
+  - - 31
+    - description
+    - "<div>sfd sffd sf s dfsd fsfsd</div>"
+    - Product
+    - 32
+    - '2025-10-31 09:38:29.886601'
+    - '2025-10-31 09:38:29.886601'
+  - - 32
+    - description
+    - "<div>best shoes</div>"
+    - Product
+    - 33
+    - '2025-10-31 15:28:59.464265'
+    - '2025-10-31 15:28:59.464265'
+  - - 33
+    - description
+    - "<div>frokr</div>"
+    - Product
+    - 34
+    - '2025-10-31 16:55:58.370430'
+    - '2025-10-31 16:55:58.370430'
+  - - 34
+    - description
+    - "<div>j ji jij&nbsp;</div>"
+    - Product
+    - 35
+    - '2025-10-31 16:58:39.048604'
+    - '2025-10-31 16:58:39.048604'
+  - - 35
+    - description
+    - "<div>asfd</div>"
+    - Product
+    - 36
+    - '2025-10-31 17:09:19.681256'
+    - '2025-10-31 17:09:19.681256'
+  - - 36
+    - description
+    - "<div>edgse</div>"
+    - Product
+    - 37
+    - '2025-10-31 17:40:11.988252'
+    - '2025-10-31 17:40:11.988252'
+  - - 37
+    - description
+    - "<div>joij</div>"
+    - Product
+    - 38
+    - '2025-10-31 17:48:31.532460'
+    - '2025-10-31 17:48:31.532460'
+  - - 38
+    - description
+    - "<div>ajjalfjs</div>"
+    - Product
+    - 39
+    - '2025-11-02 06:52:11.220452'
+    - '2025-11-02 06:52:11.220452'
+  - - 39
+    - description
+    - "<div>sflas</div>"
+    - Product
+    - 40
+    - '2025-11-02 08:24:09.602536'
+    - '2025-11-02 08:24:09.602536'
+  - - 40
+    - description
+    - "<div>sf</div>"
+    - Product
+    - 41
+    - '2025-11-02 08:28:06.450579'
+    - '2025-11-02 08:28:06.450579'
+  - - 41
+    - description
+    - "<div>sfas</div>"
+    - Product
+    - 42
+    - '2025-11-02 08:35:57.417698'
+    - '2025-11-02 08:35:57.417698'
+  - - 42
+    - description
+    - "<div>fgsdf</div>"
+    - Product
+    - 43
+    - '2025-11-02 08:42:15.016748'
+    - '2025-11-02 08:42:15.016748'
+  - - 43
+    - description
+    - "<div>jkpkp</div>"
+    - Product
+    - 44
+    - '2025-11-02 09:05:24.336901'
+    - '2025-11-02 09:05:24.336901'
+  - - 44
+    - description
+    - "<div>joij</div>"
+    - Product
+    - 45
+    - '2025-11-02 09:09:37.424621'
+    - '2025-11-02 09:09:37.424621'
+  - - 45
+    - description
+    - "<div>sdff sfs</div>"
+    - Product
+    - 46
+    - '2025-11-02 09:22:34.602826'
+    - '2025-11-02 09:22:34.602826'
+  - - 46
+    - description
+    - "<div>asdf</div>"
+    - Product
+    - 47
+    - '2025-11-02 10:27:41.586040'
+    - '2025-11-02 10:27:41.586040'
+  - - 47
+    - description
+    - "<div>sf ds fd sdf sd fs fds df sdf sdfsd</div>"
+    - Product
+    - 48
+    - '2025-11-02 10:31:12.657674'
+    - '2025-11-02 10:31:12.657674'
+  - - 48
+    - description
+    - ''
+    - Product
+    - 49
+    - '2025-11-02 10:33:46.784701'
+    - '2025-11-02 10:33:46.784701'
+  - - 49
+    - description
+    - "<div>jhio</div>"
+    - Product
+    - 50
+    - '2025-11-02 10:44:17.092969'
+    - '2025-11-02 10:44:17.092969'
+  - - 50
+    - description
+    - "<div>hhu</div>"
+    - Product
+    - 51
+    - '2025-11-02 10:45:28.876841'
+    - '2025-11-02 10:45:28.876841'
+  - - 51
+    - description
+    - ''
+    - Product
+    - 52
+    - '2025-11-02 10:48:34.424962'
+    - '2025-11-02 10:48:34.424962'
+  - - 52
+    - description
+    - "<div>jhjk</div>"
+    - Product
+    - 53
+    - '2025-11-02 10:49:20.472998'
+    - '2025-11-02 10:49:20.472998'
+  - - 53
+    - description
+    - "<div>huhk</div>"
+    - Product
+    - 54
+    - '2025-11-02 10:57:31.973492'
+    - '2025-11-02 10:57:31.973492'
+  - - 54
+    - description
+    - "<div>lnlnh l njl ljlk jl l&nbsp;</div>"
+    - Product
+    - 55
+    - '2025-11-02 11:27:45.503814'
+    - '2025-11-02 11:27:45.503814'
+  - - 55
+    - description
+    - "<div>asfsfa</div>"
+    - Product
+    - 56
+    - '2025-11-02 11:35:46.244863'
+    - '2025-11-02 11:35:46.244863'
+  - - 56
+    - description
+    - "<div>jjiojo</div>"
+    - Product
+    - 57
+    - '2025-11-02 12:16:53.809674'
+    - '2025-11-02 12:16:53.809674'
+  - - 57
+    - description
+    - "<div>sgfsd</div>"
+    - Product
+    - 58
+    - '2025-11-02 13:08:38.692519'
+    - '2025-11-02 13:08:38.692519'
+  - - 58
+    - description
+    - "<div>pijpij</div>"
+    - Product
+    - 59
+    - '2025-11-02 13:35:06.359314'
+    - '2025-11-02 13:35:06.359314'
+  - - 59
+    - description
+    - "<div>sfasfsfdasdfadf</div>"
+    - Product
+    - 60
+    - '2025-11-02 19:33:51.045558'
+    - '2025-11-02 19:33:51.045558'
+  - - 60
+    - description
+    - <div>image<action-text-attachment sgid="eyJfcmFpbHMiOnsiZGF0YSI6ImdpZDovL2JyYW5kLXN0b3JlL0FjdGl2ZVN0b3JhZ2U6OkJsb2IvMTc1P2V4cGlyZXNfaW4iLCJwdXIiOiJhdHRhY2hhYmxlIn19--21122c6ba736fab478a4962f78e507e50c600155"
+      content-type="image/png" url="http://127.0.0.1:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTc1LCJwdXIiOiJibG9iX2lkIn19--11635951ab4d832a6ba3819903d31dd5b620ae17/ganttr.png"
+      filename="ganttr.png" filesize="17446" width="977" height="195" previewable="true"
+      presentation="gallery" caption="jljl"></action-text-attachment></div>
+    - Product
+    - 61
+    - '2025-11-02 19:36:31.610116'
+    - '2025-11-03 14:48:56.724066'
+  - - 61
+    - description
+    - "<div>hoiujo</div>"
+    - Product
+    - 62
+    - '2025-11-02 20:00:31.668278'
+    - '2025-11-02 20:00:31.668278'
+  - - 62
+    - description
+    - "<div>sdfds</div>"
+    - Product
+    - 63
+    - '2025-11-02 20:01:16.487313'
+    - '2025-11-02 20:01:16.487313'
+  - - 63
+    - description
+    - <div><strong>fajsdljf ajs dfkja sjd f'ja dsf<br></strong><em>sfajsfdlfa <br><br><br></em><a
+      href="https://www.google.com"><em>fajsjdflkjas</em></a></div>
+    - Product
+    - 64
+    - '2025-11-07 08:15:16.447325'
+    - '2025-11-07 08:15:16.447325'
+  - - 64
+    - description
+    - <h1>Material</h1><div>100% recycled polyester with Dri-FIT technology.</div><div>Fit</div><blockquote><ul><li>Standard
+      fit for a relaxed, comfortable feel.<ul><li>Care Instructions</li></ul></li></ul></blockquote><div>Machine
+      wash cold. <a href="https://www.google.com">Do not bleach</a>.</div>
+    - Product
+    - 65
+    - '2025-11-08 04:49:57.877261'
+    - '2025-12-04 02:52:43.918447'
+  - - 65
+    - description
+    - "<blockquote><blockquote><blockquote><blockquote>sdfsd</blockquote></blockquote></blockquote><ol><li>sfs<ol><li>d</li></ol></li></ol></blockquote>"
+    - Product
+    - 66
+    - '2025-12-14 10:26:43.344793'
+    - '2025-12-14 10:26:43.344793'
+  - - 66
+    - description
+    - Simple cotton t-shirt
+    - Product
+    - 67
+    - '2025-12-15 08:43:25.251544'
+    - '2025-12-15 08:43:25.251544'
+  - - 67
+    - description
+    - Regular fit jeans
+    - Product
+    - 68
+    - '2025-12-15 08:43:25.643671'
+    - '2025-12-15 08:43:25.643671'
+  - - 68
+    - description
+    - Relaxed Fit Cotton T-Shirt in White. Perfect for everyday wear.
+    - Product
+    - 2000
+    - '2025-12-15 11:52:19.964129'
+    - '2025-12-15 11:52:19.964129'
+  - - 69
+    - description
+    - Slim Fit Denim Jeans in Blue. Perfect for everyday wear.
+    - Product
+    - 2001
+    - '2025-12-15 11:52:19.993669'
+    - '2025-12-15 11:52:19.993669'
+  - - 70
+    - description
+    - Oversized Hoodie in Black. Perfect for everyday wear.
+    - Product
+    - 2002
+    - '2025-12-15 11:52:20.075334'
+    - '2025-12-15 11:52:20.075334'
+  - - 71
+    - description
+    - Floral Summer Dress in Multicolor. Perfect for everyday wear.
+    - Product
+    - 2003
+    - '2025-12-15 11:52:20.117213'
+    - '2025-12-15 11:52:20.117213'
+  - - 72
+    - description
+    - Cargo Pants in Khaki. Perfect for everyday wear.
+    - Product
+    - 2004
+    - '2025-12-15 11:52:20.152633'
+    - '2025-12-15 11:52:20.152633'
+  - - 73
+    - description
+    - Knit Sweater in Beige. Perfect for everyday wear.
+    - Product
+    - 2005
+    - '2025-12-15 11:52:20.184515'
+    - '2025-12-15 11:52:20.184515'
+  - - 74
+    - description
+    - Leather Jacket in Brown. Perfect for everyday wear.
+    - Product
+    - 2006
+    - '2025-12-15 11:52:20.213936'
+    - '2025-12-15 11:52:20.213936'
+  - - 75
+    - description
+    - Striped Polo Shirt in Navy. Perfect for everyday wear.
+    - Product
+    - 2007
+    - '2025-12-15 11:52:20.239550'
+    - '2025-12-15 11:52:20.239550'
+  - - 76
+    - description
+    - High-Waisted Leggings in Black. Perfect for everyday wear.
+    - Product
+    - 2008
+    - '2025-12-15 11:52:20.306046'
+    - '2025-12-15 11:52:20.306046'
+  - - 77
+    - description
+    - Linen Button-Up Shirt in White. Perfect for everyday wear.
+    - Product
+    - 2009
+    - '2025-12-15 11:52:20.332056'
+    - '2025-12-15 11:52:20.332056'
+  - - 78
+    - description
+    - Winter Puffer Jacket in Black. Perfect for everyday wear.
+    - Product
+    - 2010
+    - '2025-12-15 11:52:20.353938'
+    - '2025-12-15 11:52:20.353938'
+  - - 79
+    - description
+    - Maxi Skirt in Floral. Perfect for everyday wear.
+    - Product
+    - 2011
+    - '2025-12-15 11:52:20.386374'
+    - '2025-12-15 11:52:20.386374'
+  - - 80
+    - description
+    - Graphic Print T-Shirt in Gray. Perfect for everyday wear.
+    - Product
+    - 2012
+    - '2025-12-15 11:52:20.409132'
+    - '2025-12-15 11:52:20.409132'
+  - - 81
+    - description
+    - Chino Shorts in Beige. Perfect for everyday wear.
+    - Product
+    - 2013
+    - '2025-12-15 11:52:20.428823'
+    - '2025-12-15 11:52:20.428823'
+  - - 82
+    - description
+    - Wool Blend Coat in Camel. Perfect for everyday wear.
+    - Product
+    - 2014
+    - '2025-12-15 11:52:20.464482'
+    - '2025-12-15 11:52:20.464482'
+
+---
+active_storage_attachments:
+  columns:
+  - id
+  - name
+  - record_type
+  - record_id
+  - blob_id
+  - created_at
+  records: 
+  - - 1
+    - image
+    - Product
+    - 1
+    - 1
+    - '2025-07-26 07:41:12.563305'
+  - - 2
+    - thumbnails
+    - Product
+    - 1
+    - 2
+    - '2025-07-26 07:41:12.899930'
+  - - 3
+    - image
+    - ActiveStorage::VariantRecord
+    - 1
+    - 3
+    - '2025-07-26 07:41:20.182220'
+  - - 4
+    - image
+    - ActiveStorage::VariantRecord
+    - 2
+    - 4
+    - '2025-07-26 08:11:03.630703'
+  - - 5
+    - image
+    - ActiveStorage::VariantRecord
+    - 3
+    - 5
+    - '2025-07-26 08:18:28.827149'
+  - - 6
+    - image
+    - ActiveStorage::VariantRecord
+    - 4
+    - 6
+    - '2025-07-26 08:20:53.772863'
+  - - 7
+    - image
+    - ActiveStorage::VariantRecord
+    - 5
+    - 7
+    - '2025-07-26 10:40:04.662126'
+  - - 8
+    - image
+    - Product
+    - 2
+    - 8
+    - '2025-07-26 11:07:23.519438'
+  - - 9
+    - image
+    - ActiveStorage::VariantRecord
+    - 6
+    - 9
+    - '2025-07-26 11:07:28.638444'
+  - - 10
+    - image
+    - Product
+    - 3
+    - 10
+    - '2025-07-26 11:07:49.874228'
+  - - 11
+    - image
+    - ActiveStorage::VariantRecord
+    - 7
+    - 11
+    - '2025-07-26 11:07:53.034078'
+  - - 12
+    - image
+    - Product
+    - 4
+    - 12
+    - '2025-07-26 11:08:43.024026'
+  - - 13
+    - image
+    - ActiveStorage::VariantRecord
+    - 8
+    - 13
+    - '2025-07-26 11:08:46.286088'
+  - - 14
+    - image
+    - Product
+    - 5
+    - 14
+    - '2025-07-26 12:25:45.876756'
+  - - 15
+    - image
+    - ActiveStorage::VariantRecord
+    - 9
+    - 15
+    - '2025-07-26 12:25:51.011818'
+  - - 16
+    - image
+    - Product
+    - 6
+    - 16
+    - '2025-07-26 12:26:25.225330'
+  - - 17
+    - image
+    - ActiveStorage::VariantRecord
+    - 10
+    - 17
+    - '2025-07-26 12:26:30.421915'
+  - - 18
+    - image
+    - Product
+    - 7
+    - 18
+    - '2025-07-26 12:27:36.255904'
+  - - 19
+    - image
+    - ActiveStorage::VariantRecord
+    - 11
+    - 19
+    - '2025-07-26 12:27:42.387353'
+  - - 20
+    - image
+    - Category
+    - 6
+    - 20
+    - '2025-07-28 21:25:19.199820'
+  - - 21
+    - image
+    - Category
+    - 7
+    - 21
+    - '2025-07-28 21:26:10.948167'
+  - - 22
+    - image
+    - Category
+    - 1
+    - 22
+    - '2025-07-29 05:03:33.706034'
+  - - 23
+    - image
+    - Product
+    - 9
+    - 23
+    - '2025-10-24 07:31:24.780915'
+  - - 24
+    - thumbnails
+    - Product
+    - 9
+    - 24
+    - '2025-10-24 07:31:24.798110'
+  - - 25
+    - image
+    - ActiveStorage::VariantRecord
+    - 12
+    - 25
+    - '2025-10-24 07:39:55.831327'
+  - - 26
+    - image
+    - ActiveStorage::VariantRecord
+    - 13
+    - 26
+    - '2025-10-24 07:45:54.987545'
+  - - 27
+    - image
+    - ActiveStorage::VariantRecord
+    - 14
+    - 27
+    - '2025-10-24 07:45:55.153747'
+  - - 28
+    - image
+    - Product
+    - 10
+    - 28
+    - '2025-10-24 07:50:14.180903'
+  - - 29
+    - thumbnails
+    - Product
+    - 10
+    - 29
+    - '2025-10-24 07:50:14.197601'
+  - - 30
+    - image
+    - ActiveStorage::VariantRecord
+    - 15
+    - 30
+    - '2025-10-24 07:50:14.807062'
+  - - 31
+    - image
+    - ActiveStorage::VariantRecord
+    - 16
+    - 31
+    - '2025-10-24 07:50:22.510995'
+  - - 32
+    - image
+    - ActiveStorage::VariantRecord
+    - 17
+    - 32
+    - '2025-10-24 07:50:22.564841'
+  - - 33
+    - image
+    - Product
+    - 11
+    - 33
+    - '2025-10-24 14:01:00.982447'
+  - - 34
+    - thumbnails
+    - Product
+    - 11
+    - 34
+    - '2025-10-24 14:01:01.018567'
+  - - 35
+    - image
+    - ActiveStorage::VariantRecord
+    - 18
+    - 35
+    - '2025-10-24 14:11:03.908487'
+  - - 36
+    - image
+    - ActiveStorage::VariantRecord
+    - 19
+    - 36
+    - '2025-10-24 14:11:11.123600'
+  - - 37
+    - image
+    - ActiveStorage::VariantRecord
+    - 20
+    - 37
+    - '2025-10-24 14:11:11.159383'
+  - - 38
+    - image
+    - Product
+    - 12
+    - 38
+    - '2025-10-24 14:52:53.440829'
+  - - 39
+    - thumbnails
+    - Product
+    - 12
+    - 39
+    - '2025-10-24 14:52:53.450837'
+  - - 40
+    - image
+    - ActiveStorage::VariantRecord
+    - 21
+    - 40
+    - '2025-10-24 14:52:54.077578'
+  - - 41
+    - image
+    - ActiveStorage::VariantRecord
+    - 22
+    - 41
+    - '2025-10-24 14:52:57.091187'
+  - - 42
+    - image
+    - ActiveStorage::VariantRecord
+    - 23
+    - 42
+    - '2025-10-24 14:52:57.146543'
+  - - 43
+    - image
+    - Product
+    - 13
+    - 43
+    - '2025-10-25 05:21:17.787931'
+  - - 44
+    - thumbnails
+    - Product
+    - 13
+    - 44
+    - '2025-10-25 05:21:17.823672'
+  - - 45
+    - thumbnails
+    - Product
+    - 13
+    - 45
+    - '2025-10-25 05:21:17.831800'
+  - - 46
+    - thumbnails
+    - Product
+    - 13
+    - 46
+    - '2025-10-25 05:21:17.845132'
+  - - 47
+    - thumbnails
+    - Product
+    - 13
+    - 47
+    - '2025-10-25 05:21:17.861128'
+  - - 48
+    - image
+    - Product
+    - 14
+    - 48
+    - '2025-10-25 05:23:43.277859'
+  - - 49
+    - thumbnails
+    - Product
+    - 14
+    - 49
+    - '2025-10-25 05:23:43.295291'
+  - - 50
+    - image
+    - ActiveStorage::VariantRecord
+    - 24
+    - 50
+    - '2025-10-25 05:23:44.061567'
+  - - 51
+    - image
+    - ActiveStorage::VariantRecord
+    - 25
+    - 51
+    - '2025-10-25 05:23:48.723562'
+  - - 52
+    - image
+    - ActiveStorage::VariantRecord
+    - 26
+    - 52
+    - '2025-10-25 05:23:48.767504'
+  - - 53
+    - image
+    - ActiveStorage::VariantRecord
+    - 27
+    - 53
+    - '2025-10-25 05:23:48.827905'
+  - - 54
+    - image
+    - ActiveStorage::VariantRecord
+    - 28
+    - 54
+    - '2025-10-25 05:23:50.723464'
+  - - 55
+    - image
+    - ActiveStorage::VariantRecord
+    - 29
+    - 55
+    - '2025-10-25 05:23:50.765135'
+  - - 56
+    - image
+    - ActiveStorage::VariantRecord
+    - 30
+    - 56
+    - '2025-10-25 05:23:51.193942'
+  - - 57
+    - image
+    - Product
+    - 15
+    - 57
+    - '2025-10-25 05:36:31.767338'
+  - - 58
+    - thumbnails
+    - Product
+    - 15
+    - 58
+    - '2025-10-25 05:36:31.784221'
+  - - 59
+    - thumbnails
+    - Product
+    - 15
+    - 59
+    - '2025-10-25 05:36:31.792165'
+  - - 60
+    - thumbnails
+    - Product
+    - 15
+    - 60
+    - '2025-10-25 05:36:31.798602'
+  - - 61
+    - thumbnails
+    - Product
+    - 15
+    - 61
+    - '2025-10-25 05:36:31.805531'
+  - - 62
+    - thumbnails
+    - Product
+    - 15
+    - 62
+    - '2025-10-25 05:36:31.812221'
+  - - 63
+    - image
+    - ActiveStorage::VariantRecord
+    - 31
+    - 63
+    - '2025-10-25 05:36:33.007137'
+  - - 64
+    - image
+    - ActiveStorage::VariantRecord
+    - 32
+    - 64
+    - '2025-10-25 05:36:33.093910'
+  - - 65
+    - image
+    - ActiveStorage::VariantRecord
+    - 33
+    - 65
+    - '2025-10-25 05:36:33.774708'
+  - - 66
+    - image
+    - ActiveStorage::VariantRecord
+    - 34
+    - 66
+    - '2025-10-25 05:36:34.092234'
+  - - 67
+    - image
+    - ActiveStorage::VariantRecord
+    - 35
+    - 67
+    - '2025-10-25 05:36:34.138556'
+  - - 68
+    - image
+    - ActiveStorage::VariantRecord
+    - 36
+    - 68
+    - '2025-10-25 05:36:47.807516'
+  - - 69
+    - image
+    - ActiveStorage::VariantRecord
+    - 37
+    - 69
+    - '2025-10-25 05:36:47.858082'
+  - - 70
+    - image
+    - ActiveStorage::VariantRecord
+    - 38
+    - 70
+    - '2025-10-25 05:36:47.904755'
+  - - 71
+    - image
+    - ActiveStorage::VariantRecord
+    - 39
+    - 71
+    - '2025-10-25 05:36:48.582891'
+  - - 72
+    - image
+    - Product
+    - 16
+    - 72
+    - '2025-10-25 05:44:15.981577'
+  - - 73
+    - thumbnails
+    - Product
+    - 16
+    - 73
+    - '2025-10-25 05:44:15.996996'
+  - - 74
+    - thumbnails
+    - Product
+    - 16
+    - 74
+    - '2025-10-25 05:44:16.003628'
+  - - 75
+    - thumbnails
+    - Product
+    - 16
+    - 75
+    - '2025-10-25 05:44:16.009587'
+  - - 76
+    - thumbnails
+    - Product
+    - 16
+    - 76
+    - '2025-10-25 05:44:16.015596'
+  - - 77
+    - thumbnails
+    - Product
+    - 16
+    - 77
+    - '2025-10-25 05:44:16.021196'
+  - - 78
+    - image
+    - ActiveStorage::VariantRecord
+    - 40
+    - 78
+    - '2025-10-25 05:44:16.855044'
+  - - 79
+    - image
+    - ActiveStorage::VariantRecord
+    - 41
+    - 79
+    - '2025-10-25 05:44:16.899788'
+  - - 80
+    - image
+    - ActiveStorage::VariantRecord
+    - 42
+    - 80
+    - '2025-10-25 05:44:17.251633'
+  - - 81
+    - image
+    - ActiveStorage::VariantRecord
+    - 43
+    - 81
+    - '2025-10-25 05:44:17.523841'
+  - - 82
+    - image
+    - ActiveStorage::VariantRecord
+    - 44
+    - 82
+    - '2025-10-25 05:44:17.643830'
+  - - 83
+    - image
+    - ActiveStorage::VariantRecord
+    - 45
+    - 83
+    - '2025-10-25 05:44:20.408409'
+  - - 84
+    - image
+    - ActiveStorage::VariantRecord
+    - 46
+    - 84
+    - '2025-10-25 05:44:20.445533'
+  - - 85
+    - image
+    - ActiveStorage::VariantRecord
+    - 47
+    - 85
+    - '2025-10-25 05:44:20.488514'
+  - - 86
+    - image
+    - ActiveStorage::VariantRecord
+    - 48
+    - 86
+    - '2025-10-25 05:44:22.351256'
+  - - 87
+    - image
+    - Product
+    - 17
+    - 87
+    - '2025-10-25 05:54:18.161450'
+  - - 96
+    - image
+    - ActiveStorage::VariantRecord
+    - 54
+    - 96
+    - '2025-10-25 05:54:23.981277'
+  - - 98
+    - image
+    - Product
+    - 18
+    - 98
+    - '2025-10-25 08:07:43.573559'
+  - - 99
+    - thumbnails
+    - Product
+    - 18
+    - 99
+    - '2025-10-25 08:07:43.585248'
+  - - 100
+    - thumbnails
+    - Product
+    - 18
+    - 100
+    - '2025-10-25 08:07:43.590249'
+  - - 101
+    - image
+    - ActiveStorage::VariantRecord
+    - 56
+    - 101
+    - '2025-10-25 08:07:44.491618'
+  - - 102
+    - image
+    - ActiveStorage::VariantRecord
+    - 57
+    - 102
+    - '2025-10-25 08:07:44.544044'
+  - - 103
+    - image
+    - ActiveStorage::VariantRecord
+    - 58
+    - 103
+    - '2025-10-25 08:07:52.719691'
+  - - 104
+    - image
+    - ActiveStorage::VariantRecord
+    - 59
+    - 104
+    - '2025-10-25 08:07:52.817719'
+  - - 105
+    - image
+    - ActiveStorage::VariantRecord
+    - 60
+    - 105
+    - '2025-10-25 08:07:52.902815'
+  - - 106
+    - image
+    - Product
+    - 20
+    - 106
+    - '2025-10-25 11:35:23.762890'
+  - - 107
+    - thumbnails
+    - Product
+    - 20
+    - 107
+    - '2025-10-25 11:35:23.795418'
+  - - 108
+    - image
+    - ActiveStorage::VariantRecord
+    - 61
+    - 108
+    - '2025-10-25 11:35:25.403467'
+  - - 109
+    - image
+    - ActiveStorage::VariantRecord
+    - 62
+    - 109
+    - '2025-10-25 11:35:32.942001'
+  - - 110
+    - image
+    - ActiveStorage::VariantRecord
+    - 63
+    - 110
+    - '2025-10-25 11:35:32.988019'
+  - - 111
+    - image
+    - Product
+    - 21
+    - 111
+    - '2025-10-25 15:46:03.103645'
+  - - 112
+    - thumbnails
+    - Product
+    - 21
+    - 112
+    - '2025-10-25 15:46:03.130364'
+  - - 113
+    - image
+    - ActiveStorage::VariantRecord
+    - 64
+    - 113
+    - '2025-10-25 15:46:05.032955'
+  - - 114
+    - image
+    - ActiveStorage::VariantRecord
+    - 65
+    - 114
+    - '2025-10-25 15:46:12.203712'
+  - - 115
+    - image
+    - ActiveStorage::VariantRecord
+    - 66
+    - 115
+    - '2025-10-25 15:46:12.260956'
+  - - 116
+    - image
+    - Product
+    - 23
+    - 116
+    - '2025-10-27 08:29:06.961767'
+  - - 117
+    - thumbnails
+    - Product
+    - 23
+    - 117
+    - '2025-10-27 08:29:07.005094'
+  - - 118
+    - image
+    - ActiveStorage::VariantRecord
+    - 67
+    - 118
+    - '2025-10-27 08:29:09.108985'
+  - - 119
+    - image
+    - ActiveStorage::VariantRecord
+    - 68
+    - 119
+    - '2025-10-27 08:29:32.377538'
+  - - 120
+    - image
+    - ActiveStorage::VariantRecord
+    - 69
+    - 120
+    - '2025-10-27 08:29:32.461846'
+  - - 121
+    - image
+    - Category
+    - 8
+    - 121
+    - '2025-10-27 16:03:59.077034'
+  - - 122
+    - image
+    - Product
+    - 25
+    - 122
+    - '2025-10-30 05:47:31.339392'
+  - - 126
+    - image
+    - ActiveStorage::VariantRecord
+    - 72
+    - 126
+    - '2025-10-30 05:47:45.232482'
+  - - 127
+    - image
+    - Product
+    - 26
+    - 127
+    - '2025-10-30 17:09:41.439874'
+  - - 128
+    - image
+    - ActiveStorage::VariantRecord
+    - 73
+    - 128
+    - '2025-10-30 17:09:44.431264'
+  - - 129
+    - image
+    - Variant
+    - 44
+    - 129
+    - '2025-10-30 18:19:31.939096'
+  - - 130
+    - image
+    - Variant
+    - 45
+    - 130
+    - '2025-10-30 18:19:32.000065'
+  - - 133
+    - image
+    - Product
+    - 27
+    - 133
+    - '2025-10-30 18:19:32.143963'
+  - - 136
+    - image
+    - ActiveStorage::VariantRecord
+    - 75
+    - 136
+    - '2025-10-30 18:19:36.091475'
+  - - 138
+    - image
+    - Product
+    - 55
+    - 138
+    - '2025-11-02 11:27:45.528536'
+  - - 139
+    - thumbnails
+    - Product
+    - 55
+    - 139
+    - '2025-11-02 11:27:45.547157'
+  - - 140
+    - image
+    - ActiveStorage::VariantRecord
+    - 77
+    - 140
+    - '2025-11-02 11:27:47.954442'
+  - - 141
+    - image
+    - ActiveStorage::VariantRecord
+    - 78
+    - 141
+    - '2025-11-02 11:34:04.924430'
+  - - 142
+    - image
+    - ActiveStorage::VariantRecord
+    - 79
+    - 142
+    - '2025-11-02 11:34:05.112236'
+  - - 143
+    - image
+    - Variant
+    - 81
+    - 143
+    - '2025-11-02 11:35:46.238848'
+  - - 144
+    - image
+    - Product
+    - 56
+    - 144
+    - '2025-11-02 11:35:46.256120'
+  - - 145
+    - thumbnails
+    - Product
+    - 56
+    - 145
+    - '2025-11-02 11:35:46.265659'
+  - - 146
+    - image
+    - ActiveStorage::VariantRecord
+    - 80
+    - 146
+    - '2025-11-02 11:35:46.869194'
+  - - 147
+    - image
+    - ActiveStorage::VariantRecord
+    - 81
+    - 147
+    - '2025-11-02 11:36:18.481824'
+  - - 148
+    - image
+    - ActiveStorage::VariantRecord
+    - 82
+    - 148
+    - '2025-11-02 11:36:18.524311'
+  - - 149
+    - image
+    - Product
+    - 57
+    - 149
+    - '2025-11-02 12:16:53.840195'
+  - - 150
+    - thumbnails
+    - Product
+    - 57
+    - 150
+    - '2025-11-02 12:16:53.852506'
+  - - 151
+    - thumbnails
+    - Product
+    - 57
+    - 151
+    - '2025-11-02 12:16:53.859440'
+  - - 152
+    - image
+    - ActiveStorage::VariantRecord
+    - 83
+    - 152
+    - '2025-11-02 12:16:54.739602'
+  - - 153
+    - image
+    - ActiveStorage::VariantRecord
+    - 84
+    - 153
+    - '2025-11-02 12:16:54.824163'
+  - - 154
+    - image
+    - ActiveStorage::VariantRecord
+    - 85
+    - 154
+    - '2025-11-02 12:17:11.777516'
+  - - 155
+    - image
+    - ActiveStorage::VariantRecord
+    - 86
+    - 155
+    - '2025-11-02 12:17:11.850131'
+  - - 156
+    - image
+    - ActiveStorage::VariantRecord
+    - 87
+    - 156
+    - '2025-11-02 12:17:11.909895'
+  - - 157
+    - image
+    - Product
+    - 58
+    - 157
+    - '2025-11-02 13:08:38.709952'
+  - - 158
+    - thumbnails
+    - Product
+    - 58
+    - 158
+    - '2025-11-02 13:08:38.752306'
+  - - 159
+    - image
+    - ActiveStorage::VariantRecord
+    - 88
+    - 159
+    - '2025-11-02 13:08:42.096941'
+  - - 160
+    - image
+    - Product
+    - 59
+    - 160
+    - '2025-11-02 13:35:06.373305'
+  - - 161
+    - thumbnails
+    - Product
+    - 59
+    - 161
+    - '2025-11-02 13:35:06.382902'
+  - - 162
+    - image
+    - ActiveStorage::VariantRecord
+    - 89
+    - 162
+    - '2025-11-02 13:35:08.121425'
+  - - 163
+    - image
+    - Product
+    - 60
+    - 163
+    - '2025-11-02 19:33:51.167616'
+  - - 164
+    - thumbnails
+    - Product
+    - 60
+    - 164
+    - '2025-11-02 19:33:51.206565'
+  - - 165
+    - thumbnails
+    - Product
+    - 60
+    - 165
+    - '2025-11-02 19:33:51.228317'
+  - - 166
+    - image
+    - ActiveStorage::VariantRecord
+    - 90
+    - 166
+    - '2025-11-02 19:33:57.644034'
+  - - 167
+    - image
+    - ActiveStorage::VariantRecord
+    - 91
+    - 167
+    - '2025-11-02 19:33:57.974365'
+  - - 168
+    - image
+    - ActiveStorage::VariantRecord
+    - 92
+    - 168
+    - '2025-11-02 19:34:30.628655'
+  - - 169
+    - image
+    - ActiveStorage::VariantRecord
+    - 93
+    - 169
+    - '2025-11-02 19:34:30.696848'
+  - - 170
+    - image
+    - ActiveStorage::VariantRecord
+    - 94
+    - 170
+    - '2025-11-02 19:34:30.835081'
+  - - 171
+    - image
+    - ActiveStorage::VariantRecord
+    - 95
+    - 171
+    - '2025-11-02 19:34:31.378564'
+  - - 172
+    - image
+    - ActiveStorage::VariantRecord
+    - 96
+    - 172
+    - '2025-11-02 19:34:33.156515'
+  - - 173
+    - image
+    - ActiveStorage::VariantRecord
+    - 97
+    - 173
+    - '2025-11-02 19:34:33.214569'
+  - - 174
+    - image
+    - ActiveStorage::VariantRecord
+    - 98
+    - 174
+    - '2025-11-02 19:34:33.562668'
+  - - 175
+    - embeds
+    - ActionText::RichText
+    - 60
+    - 175
+    - '2025-11-02 19:36:31.650326'
+  - - 176
+    - image
+    - ActiveStorage::VariantRecord
+    - 99
+    - 176
+    - '2025-11-02 19:36:32.302267'
+  - - 181
+    - image
+    - Product
+    - 63
+    - 181
+    - '2025-11-02 20:01:16.497149'
+  - - 182
+    - image
+    - ActiveStorage::VariantRecord
+    - 102
+    - 182
+    - '2025-11-02 20:01:25.910578'
+  - - 183
+    - thumbnails
+    - Product
+    - 63
+    - 183
+    - '2025-11-03 14:47:27.154995'
+  - - 184
+    - image
+    - ActiveStorage::VariantRecord
+    - 103
+    - 184
+    - '2025-11-03 14:47:28.922446'
+  - - 185
+    - image
+    - ActiveStorage::VariantRecord
+    - 104
+    - 185
+    - '2025-11-03 14:47:38.787347'
+  - - 186
+    - image
+    - Variant
+    - 86
+    - 186
+    - '2025-11-03 14:48:11.801564'
+  - - 187
+    - image
+    - Variant
+    - 85
+    - 187
+    - '2025-11-03 14:48:56.708171'
+  - - 188
+    - image
+    - Product
+    - 61
+    - 188
+    - '2025-11-03 14:48:56.738286'
+  - - 189
+    - thumbnails
+    - Product
+    - 61
+    - 189
+    - '2025-11-03 14:48:56.747342'
+  - - 190
+    - image
+    - ActiveStorage::VariantRecord
+    - 105
+    - 190
+    - '2025-11-03 14:48:57.435790'
+  - - 191
+    - image
+    - ActiveStorage::VariantRecord
+    - 106
+    - 191
+    - '2025-11-03 14:50:04.871278'
+  - - 192
+    - image
+    - ActiveStorage::VariantRecord
+    - 107
+    - 192
+    - '2025-11-03 14:50:04.904102'
+  - - 193
+    - image
+    - Variant
+    - 87
+    - 193
+    - '2025-11-07 08:15:16.411911'
+  - - 194
+    - image
+    - Product
+    - 64
+    - 194
+    - '2025-11-07 08:15:16.468132'
+  - - 195
+    - thumbnails
+    - Product
+    - 64
+    - 195
+    - '2025-11-07 08:15:16.485688'
+  - - 196
+    - thumbnails
+    - Product
+    - 64
+    - 196
+    - '2025-11-07 08:15:16.497523'
+  - - 197
+    - thumbnails
+    - Product
+    - 64
+    - 197
+    - '2025-11-07 08:15:16.505786'
+  - - 198
+    - image
+    - ActiveStorage::VariantRecord
+    - 108
+    - 198
+    - '2025-11-07 08:15:18.891668'
+  - - 199
+    - image
+    - ActiveStorage::VariantRecord
+    - 109
+    - 199
+    - '2025-11-07 08:15:19.295403'
+  - - 200
+    - image
+    - ActiveStorage::VariantRecord
+    - 110
+    - 200
+    - '2025-11-07 08:15:19.354057'
+  - - 201
+    - image
+    - ActiveStorage::VariantRecord
+    - 111
+    - 201
+    - '2025-11-08 04:20:18.993925'
+  - - 202
+    - image
+    - ActiveStorage::VariantRecord
+    - 112
+    - 202
+    - '2025-11-08 04:20:19.086590'
+  - - 203
+    - image
+    - ActiveStorage::VariantRecord
+    - 113
+    - 203
+    - '2025-11-08 04:20:19.913084'
+  - - 204
+    - image
+    - ActiveStorage::VariantRecord
+    - 114
+    - 204
+    - '2025-11-08 04:20:20.470312'
+  - - 205
+    - image
+    - Variant
+    - 88
+    - 205
+    - '2025-11-08 04:49:57.783837'
+  - - 206
+    - image
+    - Variant
+    - 89
+    - 206
+    - '2025-11-08 04:49:57.814048'
+  - - 207
+    - image
+    - Variant
+    - 90
+    - 207
+    - '2025-11-08 04:49:57.843578'
+  - - 208
+    - image
+    - Product
+    - 65
+    - 208
+    - '2025-11-08 04:49:57.894996'
+  - - 211
+    - image
+    - ActiveStorage::VariantRecord
+    - 116
+    - 211
+    - '2025-11-08 06:37:14.781918'
+  - - 213
+    - image
+    - ActiveStorage::VariantRecord
+    - 118
+    - 213
+    - '2025-11-30 12:15:44.828956'
+  - - 214
+    - image
+    - ActiveStorage::VariantRecord
+    - 119
+    - 214
+    - '2025-11-30 12:15:44.971578'
+  - - 215
+    - image
+    - ActiveStorage::VariantRecord
+    - 120
+    - 215
+    - '2025-11-30 12:15:45.155476'
+  - - 216
+    - image
+    - ActiveStorage::VariantRecord
+    - 121
+    - 216
+    - '2025-11-30 12:15:46.896400'
+  - - 217
+    - image
+    - ActiveStorage::VariantRecord
+    - 122
+    - 217
+    - '2025-11-30 12:15:47.231299'
+  - - 218
+    - image
+    - ActiveStorage::VariantRecord
+    - 123
+    - 218
+    - '2025-11-30 12:15:47.413303'
+  - - 219
+    - image
+    - ActiveStorage::VariantRecord
+    - 124
+    - 219
+    - '2025-11-30 12:15:48.225065'
+  - - 220
+    - image
+    - Category
+    - 9
+    - 220
+    - '2025-12-14 09:23:58.021034'
+  - - 221
+    - image
+    - Variant
+    - 91
+    - 221
+    - '2025-12-14 10:26:43.210166'
+  - - 222
+    - image
+    - Variant
+    - 92
+    - 222
+    - '2025-12-14 10:26:43.236778'
+  - - 228
+    - image
+    - Product
+    - 66
+    - 228
+    - '2025-12-14 10:37:48.429401'
+  - - 229
+    - image
+    - ActiveStorage::VariantRecord
+    - 128
+    - 229
+    - '2025-12-14 10:38:01.934433'
+
+---
+active_storage_blobs:
+  columns:
+  - id
+  - key
+  - filename
+  - content_type
+  - metadata
+  - service_name
+  - byte_size
+  - checksum
+  - created_at
+  records: 
+  - - 1
+    - pcivxewiga092zqk497xu74lq93t
+    - Cube.png
+    - image/png
+    - '{"identified":true,"width":68,"height":68,"analyzed":true}'
+    - local
+    - 522
+    - AEhlreYiroH8+m2IQa68qg==
+    - '2025-07-26 07:41:12.466618'
+  - - 2
+    - 6udjleuxzwcjd4cccgwnzyhf79q0
+    - Cube3.png
+    - image/png
+    - '{"identified":true,"width":68,"height":68,"analyzed":true}'
+    - local
+    - 1221
+    - yDMmtU/aaqalWi4vwg3xFw==
+    - '2025-07-26 07:41:12.815503'
+  - - 3
+    - hq6qwiu3ulu6rhw3li3m6t2y2mpa
+    - Cube3.png
+    - image/png
+    - '{"identified":true,"width":60,"height":60,"analyzed":true}'
+    - local
+    - 6293
+    - 6PfjyFoW1RBekvd+SvJHJg==
+    - '2025-07-26 07:41:20.144367'
+  - - 4
+    - b51yj1j2u60gt8jcqhj99bsros9w
+    - Cube.png
+    - image/png
+    - '{"identified":true,"width":40,"height":40,"analyzed":true}'
+    - local
+    - 465
+    - SzXjJCvZtuo3lF6Nu3X8Zg==
+    - '2025-07-26 08:11:03.625920'
+  - - 5
+    - gh41bhn806drcnqd0hsvjqnymhhc
+    - Cube.png
+    - image/png
+    - '{"identified":true,"width":68,"height":68,"analyzed":true}'
+    - local
+    - 427
+    - vhMPeMQ2A8S54RqWcovvqQ==
+    - '2025-07-26 08:18:28.818728'
+  - - 6
+    - 425o40t5vdtqizyfvpgwahov2fcd
+    - Cube.png
+    - image/png
+    - '{"identified":true,"width":68,"height":68,"analyzed":true}'
+    - local
+    - 427
+    - BoPWzrRWEzHfOhTS3s4ydw==
+    - '2025-07-26 08:20:53.763156'
+  - - 7
+    - bvbswlliqle1hsz1zt3a59deoovx
+    - Cube3.png
+    - image/png
+    - '{"identified":true,"width":30,"height":30,"analyzed":true}'
+    - local
+    - 1584
+    - Hf/EoV7arnWOvQe1SuB0Bw==
+    - '2025-07-26 10:40:04.627189'
+  - - 8
+    - bh631y1pnh2xwzu0ji0puohe1xzf
+    - path111.png
+    - image/png
+    - '{"identified":true,"width":253,"height":339,"analyzed":true}'
+    - local
+    - 14811
+    - 9diKl2JTrKk8Ukh75plV2Q==
+    - '2025-07-26 11:07:23.513276'
+  - - 9
+    - q6twuxjhi5ud2kt2icmxu00rptxa
+    - path111.png
+    - image/png
+    - '{"identified":true,"width":30,"height":40,"analyzed":true}'
+    - local
+    - 1536
+    - m5fMXKoOtGsdUizNs/i5Zw==
+    - '2025-07-26 11:07:28.633854'
+  - - 10
+    - 6w30zt97gp5iwof7m0g7620welem
+    - Cube3.png
+    - image/png
+    - '{"identified":true,"width":68,"height":68,"analyzed":true}'
+    - local
+    - 1221
+    - yDMmtU/aaqalWi4vwg3xFw==
+    - '2025-07-26 11:07:49.870003'
+  - - 11
+    - f66i456fz89zfv05w6fjehe5j7ft
+    - Cube3.png
+    - image/png
+    - '{"identified":true,"width":40,"height":40,"analyzed":true}'
+    - local
+    - 2147
+    - BNz9eRPhCQisXp9V8OphYw==
+    - '2025-07-26 11:07:53.027061'
+  - - 12
+    - nhyuikxlgum5wqh6tsz1qwshc2ir
+    - avatar.png
+    - image/png
+    - '{"identified":true,"width":200,"height":200,"analyzed":true}'
+    - local
+    - 89210
+    - bpwXW6sla/ZmHS2w5dMHKA==
+    - '2025-07-26 11:08:43.017370'
+  - - 13
+    - o6b83w5rksufj967nzrb7lngwe6x
+    - avatar.png
+    - image/png
+    - '{"identified":true,"width":40,"height":40,"analyzed":true}'
+    - local
+    - 3979
+    - 5+ePEASlE5b8a1THhkkEFg==
+    - '2025-07-26 11:08:46.279310'
+  - - 14
+    - kxdf21famkvbvw2ipwgn52qmhylu
+    - キャラクターチップス公開用1.png
+    - image/png
+    - '{"identified":true,"width":200,"height":132,"analyzed":true}'
+    - local
+    - 44105
+    - 8TeRbbJdfqZecaCrAbuUsQ==
+    - '2025-07-26 12:25:45.869516'
+  - - 15
+    - c2xej6jebdzxua3k1uym1iil0tm5
+    - キャラクターチップス公開用1.png
+    - image/png
+    - '{"identified":true,"width":40,"height":26,"analyzed":true}'
+    - local
+    - 3487
+    - NXsIO2oS9iBXqEEml5muOQ==
+    - '2025-07-26 12:25:51.006283'
+  - - 16
+    - kr5hdyjr30nnw8ek2wt4f4e4mrup
+    - redmi_14c_3.jpg
+    - image/jpeg
+    - '{"identified":true,"width":1800,"height":1800,"analyzed":true}'
+    - local
+    - 400411
+    - 77DGuM9rYm8rfXjyg5Lnpw==
+    - '2025-07-26 12:26:25.220735'
+  - - 17
+    - tv1fz0ih6euemz4r8mq5jkdo5hsc
+    - redmi_14c_3.jpg
+    - image/jpeg
+    - '{"identified":true,"width":40,"height":40,"analyzed":true}'
+    - local
+    - 209013
+    - EXMIrvXQxFuCdR0kA5Cp3g==
+    - '2025-07-26 12:26:30.413203'
+  - - 18
+    - mqpfv3hitkb9hx07pvjolixvphoc
+    - Color Hunt Palette 3674b5578fcaf5f0cdfada7a.png
+    - image/png
+    - '{"identified":true,"width":400,"height":400,"analyzed":true}'
+    - local
+    - 479
+    - v4+D4t2UC1qYoEDUUDmOOw==
+    - '2025-07-26 12:27:36.252598'
+  - - 19
+    - zb0o3efd9qsndwh0ze0ojqdr5miz
+    - Color Hunt Palette 3674b5578fcaf5f0cdfada7a.png
+    - image/png
+    - '{"identified":true,"width":40,"height":40,"analyzed":true}'
+    - local
+    - 257
+    - SahgSN2EOiMNwQxGZutOwA==
+    - '2025-07-26 12:27:42.382415'
+  - - 20
+    - aow2bm3ciw80vf6mnvz9owztq4lh
+    - Cube3.png
+    - image/png
+    - '{"identified":true,"width":68,"height":68,"analyzed":true}'
+    - local
+    - 1221
+    - yDMmtU/aaqalWi4vwg3xFw==
+    - '2025-07-28 21:25:19.187924'
+  - - 21
+    - lkiyy40l6rfrlvbct1xy1bo9m2vs
+    - path111.png
+    - image/png
+    - '{"identified":true,"width":253,"height":339,"analyzed":true}'
+    - local
+    - 14811
+    - 9diKl2JTrKk8Ukh75plV2Q==
+    - '2025-07-28 21:26:10.943299'
+  - - 22
+    - 3jp6og5qgr2vub484vo048ns2snw
+    - Shambhala_2024_film_poster.jpg
+    - image/jpeg
+    - '{"identified":true,"width":237,"height":421,"analyzed":true}'
+    - local
+    - 87222
+    - 3lsSc71kIfOjyKhnKizOjQ==
+    - '2025-07-29 05:03:33.667164'
+  - - 23
+    - m9vud9bz6j5fuhxb8n9meq9j00ki
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-24 07:31:24.775519'
+  - - 24
+    - w75i83rccoyym6wgfu0o85j241ly
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-24 07:31:24.793484'
+  - - 25
+    - w5ymiqll1nobmt5bt9ruq7pcxkbi
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":60,"height":12,"analyzed":true}'
+    - local
+    - 1169
+    - "+cs8n5evKXGfsgufDszypw=="
+    - '2025-10-24 07:39:55.824073'
+  - - 26
+    - g8k81s2amgoet5y0gniwbjqvm59a
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":40,"height":8,"analyzed":true}'
+    - local
+    - 754
+    - FsOjRByb9GFvr400c349Ng==
+    - '2025-10-24 07:45:54.982441'
+  - - 27
+    - y3e26vnu97fmtwo3w48rxu6gbgd9
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 555
+    - AjWfeENMyxrXVWrdqyKEwg==
+    - '2025-10-24 07:45:55.142716'
+  - - 28
+    - yjdqb6cl9e07j85ayqfiuvtebndm
+    - ganttChart
+    - image/png
+    - '{"identified":true,"width":1009,"height":178,"analyzed":true}'
+    - local
+    - 15914
+    - zdld0hACqIJEy/e21GAcrg==
+    - '2025-10-24 07:50:14.176128'
+  - - 29
+    - 5a4b3vgdr3drgnjl90f53gk1vyfg
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-24 07:50:14.194823'
+  - - 30
+    - p6u1s2qewkkwr8vahp11br7e5biv
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":60,"height":12,"analyzed":true}'
+    - local
+    - 1169
+    - yGja9dqG7/+Dt8OttBTt7w==
+    - '2025-10-24 07:50:14.801331'
+  - - 31
+    - 3qtaa3pcue1shyxbhlpqgoof6iia
+    - ganttChart.png
+    - image/png
+    - '{"identified":true,"width":40,"height":7,"analyzed":true}'
+    - local
+    - 761
+    - QuUYVSMZPcwUrLTHevBCJg==
+    - '2025-10-24 07:50:22.501779'
+  - - 32
+    - 6ugme7sdffdwov10u40ve9sgwuwh
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 555
+    - k5Jxd9COIOXDy3r92M5ciA==
+    - '2025-10-24 07:50:22.555910'
+  - - 33
+    - 6jjxvjvd9wu78o5yqp5zp2xbfx29
+    - ganttChart
+    - image/png
+    - '{"identified":true,"width":1009,"height":178,"analyzed":true}'
+    - local
+    - 15914
+    - zdld0hACqIJEy/e21GAcrg==
+    - '2025-10-24 14:01:00.976654'
+  - - 34
+    - fslst9kfuxi1r1ig3s77oa3bqhae
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-24 14:01:00.998978'
+  - - 35
+    - xrknk2hlnxt5wtkb1gfz6i3lxads
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":60,"height":12,"analyzed":true}'
+    - local
+    - 1169
+    - HFzRztWjbGCGi7sAQhhWAA==
+    - '2025-10-24 14:11:03.900033'
+  - - 36
+    - y5cs7aditcg9quagn0akn1f49iud
+    - ganttChart.png
+    - image/png
+    - '{"identified":true,"width":40,"height":7,"analyzed":true}'
+    - local
+    - 761
+    - HYP6hyKWSVz8ZyWvkKwaRw==
+    - '2025-10-24 14:11:11.117184'
+  - - 37
+    - v2gb67n4mm0czkxwmk5vkwhe4nbm
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 555
+    - 0qLpcjzZA1zZH1WMazNM3Q==
+    - '2025-10-24 14:11:11.153512'
+  - - 38
+    - 14zektz19vqrq4iltcel43qv4vgi
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-24 14:52:53.435701'
+  - - 39
+    - 9669mtxpcjkejk52onblmdlu9rt6
+    - ganttChart
+    - image/png
+    - '{"identified":true,"width":1009,"height":178,"analyzed":true}'
+    - local
+    - 15914
+    - zdld0hACqIJEy/e21GAcrg==
+    - '2025-10-24 14:52:53.448240'
+  - - 40
+    - 17v19rv9bq6wrhhrz0061lru96r8
+    - ganttChart.png
+    - image/png
+    - '{"identified":true,"width":60,"height":11,"analyzed":true}'
+    - local
+    - 1145
+    - 3tVGAwFhAXCClFYdtUeK9Q==
+    - '2025-10-24 14:52:54.073826'
+  - - 41
+    - szwwagqoovo3f93p3jiuc9lni7lm
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":40,"height":8,"analyzed":true}'
+    - local
+    - 754
+    - "/e0ICh/SIImgTx6teieWDg=="
+    - '2025-10-24 14:52:57.082794'
+  - - 42
+    - uv7gq72bxu79xjaccesjf2cnecgq
+    - ganttChart.png
+    - image/png
+    - '{"identified":true,"width":30,"height":5,"analyzed":true}'
+    - local
+    - 577
+    - 6ZQYNCJZ9rkJHwLCLrLwwQ==
+    - '2025-10-24 14:52:57.138804'
+  - - 43
+    - x1vicwcushs7cc6o3k8h77pcoxga
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-25 05:21:17.780111'
+  - - 44
+    - 7dmnndjsmoa9zpgs9ikf5uhcf1xn
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":602,"height":412,"analyzed":true}'
+    - local
+    - 38752
+    - EAQUVuy4crsQGCcyF7skYw==
+    - '2025-10-25 05:21:17.818017'
+  - - 45
+    - vv64bvznlukt8oljlz7ra34vh27e
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 17446
+    - sM3n38EadgGeaOc4Trk1XQ==
+    - '2025-10-25 05:21:17.828071'
+  - - 46
+    - g94mkj5t8pjgbzmzmdw9ogmu3c3o
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-25 05:21:17.838913'
+  - - 47
+    - ay1qgfpv1dct1581m448w9ujsbdv
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-10-25 05:21:17.855570'
+  - - 48
+    - ctg05nklw5f2kyewrza9n7y91s35
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":463,"height":329,"analyzed":true}'
+    - local
+    - 45295
+    - NufD4DxaSN9gE7PUFkVr2A==
+    - '2025-10-25 05:23:43.272628'
+  - - 49
+    - r42az3l06jg9z9d3vplsd46c36or
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-25 05:23:43.290787'
+  - - 50
+    - hr0uelyjwiehenkfrgwout5ut8up
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":60,"height":12,"analyzed":true}'
+    - local
+    - 1169
+    - 28Xy+T2wXAaqCyfqsxdydw==
+    - '2025-10-25 05:23:44.056033'
+  - - 51
+    - 75fsi6eu0itwowwjzw3rk07z0qom
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":40,"height":28,"analyzed":true}'
+    - local
+    - 564
+    - jT5CPQtlF9H8jfVEMsvCXw==
+    - '2025-10-25 05:23:48.718489'
+  - - 52
+    - bgpxe6lhqgac230as203tlahg8rb
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 555
+    - Xty8Oa0fwojRMMdlhlJQew==
+    - '2025-10-25 05:23:48.763288'
+  - - 53
+    - 8fel7gm3b5q7pjhjd4nmyvyodv8o
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":30,"height":21,"analyzed":true}'
+    - local
+    - 501
+    - m9KjRh/GytrU2Nuf4FoKQA==
+    - '2025-10-25 05:23:48.799969'
+  - - 54
+    - 5h4tzi699hai81gptg29zgn34a58
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":40,"height":8,"analyzed":true}'
+    - local
+    - 754
+    - fxH/s0vFzRzZBgGJIqbfcQ==
+    - '2025-10-25 05:23:50.718425'
+  - - 55
+    - sab6nmv6g99ogw5wi1d824deo7yx
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 610
+    - "/uK1GH0x56b6Uc9PH2miWQ=="
+    - '2025-10-25 05:23:50.758163'
+  - - 56
+    - i4zy2g014szv7jmadcbsuef4pf2b
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 555
+    - "+9btbKrkf5Jj8uwSy4yoWA=="
+    - '2025-10-25 05:23:51.188966'
+  - - 57
+    - jho7mfujuzl44wlm0k1fbejb3lsg
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-10-25 05:36:31.763362'
+  - - 58
+    - 3n1t9jjjl1kyx6kkhcuct6hyassv
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":602,"height":412,"analyzed":true}'
+    - local
+    - 38752
+    - EAQUVuy4crsQGCcyF7skYw==
+    - '2025-10-25 05:36:31.780409'
+  - - 59
+    - c6ssa8zcnjygguy0ft9mfdx02god
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 17446
+    - sM3n38EadgGeaOc4Trk1XQ==
+    - '2025-10-25 05:36:31.789365'
+  - - 60
+    - t0i7trd183g8d3ef6morsanchgrp
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-25 05:36:31.795159'
+  - - 61
+    - co6pk6puiv3o6uze7m3wavp5komt
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":463,"height":329,"analyzed":true}'
+    - local
+    - 45295
+    - NufD4DxaSN9gE7PUFkVr2A==
+    - '2025-10-25 05:36:31.802769'
+  - - 62
+    - weht3s92ju4v1v66v0wj0adze8fj
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-10-25 05:36:31.808661'
+  - - 63
+    - ag2d7nu1mz9cvkpslg4trr9hb185
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":60,"height":12,"analyzed":true}'
+    - local
+    - 1228
+    - iA4b2Tkr+Q5iSdDFQIZGxg==
+    - '2025-10-25 05:36:32.999844'
+  - - 64
+    - asqn56iegbw2f2pt0cpmuzbgl3is
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":60,"height":41,"analyzed":true}'
+    - local
+    - 1119
+    - N+6c3dmFOjAtVCerOQgTbw==
+    - '2025-10-25 05:36:33.074072'
+  - - 65
+    - 6pfbvygahl2o6k7xqoq00cxh7egm
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":60,"height":43,"analyzed":true}'
+    - local
+    - 1120
+    - hSHaZLXgRl/4hbD8wSJPVw==
+    - '2025-10-25 05:36:33.759261'
+  - - 66
+    - r6j8jq4hvyevua56jk7o1jxkanxc
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":60,"height":12,"analyzed":true}'
+    - local
+    - 1169
+    - VloTUKAHYmh+r3wQSoxRnA==
+    - '2025-10-25 05:36:34.086401'
+  - - 67
+    - 0o2jbjmh9ntdzjc8o0uxwd1zf7e5
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":60,"height":47,"analyzed":true}'
+    - local
+    - 3167
+    - "+onz+AHlU1sXIgjs+DY47Q=="
+    - '2025-10-25 05:36:34.134412'
+  - - 68
+    - 6sbfdhknnznmvqkpqejhtqjq25mg
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":30,"height":21,"analyzed":true}'
+    - local
+    - 501
+    - m9KjRh/GytrU2Nuf4FoKQA==
+    - '2025-10-25 05:36:47.800135'
+  - - 69
+    - kstm48ratxw2k8nmq9mucry53emp
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 610
+    - b2b+xn8r6BtxKALNRW1gzA==
+    - '2025-10-25 05:36:47.852411'
+  - - 70
+    - jmhj1xhf8r862k87jmctqiudjv22
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":40,"height":31,"analyzed":true}'
+    - local
+    - 1738
+    - 7jcljhcYNUjzpB7MkqEcSg==
+    - '2025-10-25 05:36:47.898144'
+  - - 71
+    - o6tgzitfbobgmxj7tynv4clv7wsu
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 555
+    - RJ+JafS6F3jcFEKdgPrbrA==
+    - '2025-10-25 05:36:48.578782'
+  - - 72
+    - 6kkr0tedv0whka8pcinllov5malj
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":463,"height":329,"analyzed":true}'
+    - local
+    - 45295
+    - NufD4DxaSN9gE7PUFkVr2A==
+    - '2025-10-25 05:44:15.978856'
+  - - 73
+    - rf0bcqxty9n08fpgrzkqnerztkae
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":602,"height":412,"analyzed":true}'
+    - local
+    - 38752
+    - EAQUVuy4crsQGCcyF7skYw==
+    - '2025-10-25 05:44:15.992991'
+  - - 74
+    - b2su08wqyzxolti8u6o0h7l4s57f
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 17446
+    - sM3n38EadgGeaOc4Trk1XQ==
+    - '2025-10-25 05:44:16.000244'
+  - - 75
+    - qx5z755nococcq25josavwdiertw
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-25 05:44:16.007039'
+  - - 76
+    - g8zp0yyopvzxkfcmlrb7l8erug6v
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":463,"height":329,"analyzed":true}'
+    - local
+    - 45295
+    - NufD4DxaSN9gE7PUFkVr2A==
+    - '2025-10-25 05:44:16.013059'
+  - - 77
+    - qrhjkvro68lobro47cprfmp2qyhd
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-10-25 05:44:16.018525'
+  - - 78
+    - 8cv9jl902u74kksy8nokh1wtvldj
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":60,"height":41,"analyzed":true}'
+    - local
+    - 1119
+    - N+6c3dmFOjAtVCerOQgTbw==
+    - '2025-10-25 05:44:16.849949'
+  - - 79
+    - kocjj9ifa95bu77xtdmwhhf43iea
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":60,"height":12,"analyzed":true}'
+    - local
+    - 1228
+    - AyjWct5QVLJzUJGm+PQNBg==
+    - '2025-10-25 05:44:16.892848'
+  - - 80
+    - 4t6q5x45waajomc100yjkllbdlhh
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":60,"height":12,"analyzed":true}'
+    - local
+    - 1169
+    - VBQW/ZLYk5jJLCITsGzFfw==
+    - '2025-10-25 05:44:17.246060'
+  - - 81
+    - p2ap9ed986ax9fmdgwzxc18vy1ty
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":60,"height":43,"analyzed":true}'
+    - local
+    - 1120
+    - hSHaZLXgRl/4hbD8wSJPVw==
+    - '2025-10-25 05:44:17.515547'
+  - - 82
+    - 0r5fjxifkmhgpxkszctndg8cdpkx
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":60,"height":47,"analyzed":true}'
+    - local
+    - 3167
+    - TkcyGN9djCgNk5XoT2+J6w==
+    - '2025-10-25 05:44:17.626708'
+  - - 83
+    - yylh3qmq79rp01fzk7utirql8wxg
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":40,"height":28,"analyzed":true}'
+    - local
+    - 564
+    - jT5CPQtlF9H8jfVEMsvCXw==
+    - '2025-10-25 05:44:20.403953'
+  - - 84
+    - 1lv0s9kfk2izefgsbel1iu4qhn5s
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 610
+    - T6etYNxKmnIe8moVmqytww==
+    - '2025-10-25 05:44:20.438772'
+  - - 85
+    - rafejzv0yr5ldzkoim4ar0mdp6ej
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":30,"height":21,"analyzed":true}'
+    - local
+    - 501
+    - m9KjRh/GytrU2Nuf4FoKQA==
+    - '2025-10-25 05:44:20.483366'
+  - - 86
+    - xb20r1915tm3gbprvkf1spcvhy4u
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 555
+    - 3bAqDbnQywY0q2TgiPl5YA==
+    - '2025-10-25 05:44:22.340653'
+  - - 87
+    - 6n4kgpbrd45uj70q9zn73hrirlfa
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-10-25 05:54:18.155400'
+  - - 96
+    - zsz41x3kk65rnw8ti21sq209aazl
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":40,"height":31,"analyzed":true}'
+    - local
+    - 1738
+    - IoBds1g9kw9gEhmq3RPS+g==
+    - '2025-10-25 05:54:23.976187'
+  - - 98
+    - m0ovy5ngow3jmu8jit90a3phis65
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-25 08:07:43.568179'
+  - - 99
+    - ivz04k17lcb0xcmw7cmkeru389e3
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":463,"height":329,"analyzed":true}'
+    - local
+    - 45295
+    - NufD4DxaSN9gE7PUFkVr2A==
+    - '2025-10-25 08:07:43.583010'
+  - - 100
+    - eq1yvyb0zpge8eqz6dl0rfp08drm
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-10-25 08:07:43.588387'
+  - - 101
+    - l9zewn39hhyob34h86c0ibxann9b
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":60,"height":43,"analyzed":true}'
+    - local
+    - 1120
+    - hSHaZLXgRl/4hbD8wSJPVw==
+    - '2025-10-25 08:07:44.487473'
+  - - 102
+    - 9fzzjfqir2pojd2ubmu8ct99ubom
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":60,"height":47,"analyzed":true}'
+    - local
+    - 3167
+    - dYShco1dXFXkZWzHWzMlxA==
+    - '2025-10-25 08:07:44.533897'
+  - - 103
+    - fjgxpfssx7y8dyjj3m01ev0mo783
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":40,"height":8,"analyzed":true}'
+    - local
+    - 754
+    - cSnVyOdbRZ2ozs7C+2VFnw==
+    - '2025-10-25 08:07:52.716186'
+  - - 104
+    - ud7ldmb2hgkjwosiwznfhusgh4ai
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":30,"height":21,"analyzed":true}'
+    - local
+    - 398
+    - qnR3cDF4YExqxPozd/08fA==
+    - '2025-10-25 08:07:52.813214'
+  - - 105
+    - 51cln1v4h631432ojm6cg7wsuqmc
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":30,"height":23,"analyzed":true}'
+    - local
+    - 1149
+    - lA6hDyJEYOkxPq9/OeLt8w==
+    - '2025-10-25 08:07:52.897247'
+  - - 106
+    - w5iv6ziwws9g96ps4vjccdl33lwg
+    - ganttChart
+    - image/png
+    - '{"identified":true,"width":1009,"height":178,"analyzed":true}'
+    - local
+    - 15914
+    - zdld0hACqIJEy/e21GAcrg==
+    - '2025-10-25 11:35:23.755555'
+  - - 107
+    - qh7oevm8b74da1663pmjgxskbxu0
+    - ganttChart
+    - image/png
+    - '{"identified":true,"width":1009,"height":178,"analyzed":true}'
+    - local
+    - 15914
+    - zdld0hACqIJEy/e21GAcrg==
+    - '2025-10-25 11:35:23.783758'
+  - - 108
+    - q0idtmz89v8dwbcy2y0684kff1wp
+    - ganttChart.png
+    - image/png
+    - '{"identified":true,"width":60,"height":11,"analyzed":true}'
+    - local
+    - 1145
+    - 23zb9gK6h00JZ9NSZ2H9NQ==
+    - '2025-10-25 11:35:25.397657'
+  - - 109
+    - bcq6kv4j0kacto1k2zylx1x5cuhq
+    - ganttChart.png
+    - image/png
+    - '{"identified":true,"width":40,"height":7,"analyzed":true}'
+    - local
+    - 761
+    - ySFvm5PCE2s2wNnjj8gYcA==
+    - '2025-10-25 11:35:32.933408'
+  - - 110
+    - jrd26o774nxqiii2dlmjxpt94j3b
+    - ganttChart.png
+    - image/png
+    - '{"identified":true,"width":30,"height":5,"analyzed":true}'
+    - local
+    - 577
+    - YsIduxfa6YEYPU9QEX0wUA==
+    - '2025-10-25 11:35:32.976143'
+  - - 111
+    - kz6ymw84w16rxio4ba9u69gnw067
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-25 15:46:03.094210'
+  - - 112
+    - ha77kjrgzitgau9dl0m3symxw2oa
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-10-25 15:46:03.126671'
+  - - 113
+    - gofjh9hzbnk1smwsbh3ooer2pg8t
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":60,"height":47,"analyzed":true}'
+    - local
+    - 3167
+    - YKJYhXYNqCynVCnNOq45wQ==
+    - '2025-10-25 15:46:05.027259'
+  - - 114
+    - id87fhgcs95stur4tmihrlav5dv6
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":40,"height":8,"analyzed":true}'
+    - local
+    - 754
+    - nC+uOEFxWfXXHdKVj8utUg==
+    - '2025-10-25 15:46:12.194008'
+  - - 115
+    - p5sjng1psxhpn5jjbp43lwl8vs76
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":30,"height":23,"analyzed":true}'
+    - local
+    - 1149
+    - 5Ox7Rc3Fxn5HLhljiF7RPw==
+    - '2025-10-25 15:46:12.254747'
+  - - 116
+    - 3txr087h4pttrahcqlchbtsy4euh
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":602,"height":412,"analyzed":true}'
+    - local
+    - 38752
+    - EAQUVuy4crsQGCcyF7skYw==
+    - '2025-10-27 08:29:06.955859'
+  - - 117
+    - u99dc7k4yxf89mr8geiremcpzows
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-27 08:29:07.002072'
+  - - 118
+    - coej65h3erbdbc0bxtpinxkl6nqq
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":60,"height":12,"analyzed":true}'
+    - local
+    - 1169
+    - zkOctgHn7W5jvMQjkq1BPg==
+    - '2025-10-27 08:29:09.105131'
+  - - 119
+    - 714xmy0oit8aqyf7sn1kf2waaxa0
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":40,"height":27,"analyzed":true}'
+    - local
+    - 655
+    - QlFcGLoS/A0xAgPtBHCITw==
+    - '2025-10-27 08:29:32.373617'
+  - - 120
+    - xup0vpng0qaegc2e575qjnp0bky9
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 555
+    - aFOZk3OO8ZHUnDAvoCtwOw==
+    - '2025-10-27 08:29:32.455588'
+  - - 121
+    - f5yfvwq6pr49ytgiuddenk60ueue
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-10-27 16:03:59.057521'
+  - - 122
+    - ru7m4por5el2hosh4kn04fgkctp8
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-10-30 05:47:31.332425'
+  - - 126
+    - e0ejto4f4a8e8dzgglpf9ljx8arv
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":40,"height":31,"analyzed":true}'
+    - local
+    - 1738
+    - z7GXovc4DKIqVR8vDUetAA==
+    - '2025-10-30 05:47:45.227112'
+  - - 127
+    - wgnr30rksypc2n3gy49wygv5yv4z
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 17446
+    - sM3n38EadgGeaOc4Trk1XQ==
+    - '2025-10-30 17:09:41.434804'
+  - - 128
+    - dom62hiyreq4uzblddcol24uw04g
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":40,"height":8,"analyzed":true}'
+    - local
+    - 812
+    - d5d4Sm3HWLs8OCgn5HJRiA==
+    - '2025-10-30 17:09:44.426348'
+  - - 129
+    - vc6dejqjearrs4sbbh6g7tsm6xr2
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-10-30 18:19:31.936069'
+  - - 130
+    - 2n2qiapjcb4epyg93nzhy0o67htv
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 17446
+    - sM3n38EadgGeaOc4Trk1XQ==
+    - '2025-10-30 18:19:31.989531'
+  - - 133
+    - 6ivlkuezcixs3th4k3a5jer8lmw9
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 17446
+    - sM3n38EadgGeaOc4Trk1XQ==
+    - '2025-10-30 18:19:32.141930'
+  - - 136
+    - oah6ngb830x5h1zy2e0a8yhnlvp9
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":40,"height":8,"analyzed":true}'
+    - local
+    - 812
+    - 4YUbC2GpdiVwA4bLYAL7cA==
+    - '2025-10-30 18:19:36.085632'
+  - - 138
+    - 63vbkd9ujpvwvbcferwwtfpri2h5
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-11-02 11:27:45.520071'
+  - - 139
+    - kcftp5172ammqdlzoycljzy16zn3
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":463,"height":329,"analyzed":true}'
+    - local
+    - 45295
+    - NufD4DxaSN9gE7PUFkVr2A==
+    - '2025-11-02 11:27:45.542709'
+  - - 140
+    - t1naua4o96lry8hdj9503qrd9myw
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":80,"height":57,"analyzed":true}'
+    - local
+    - 1765
+    - LUN5YD6ToCOTgzrVVRaF/g==
+    - '2025-11-02 11:27:47.923580'
+  - - 141
+    - kg53ng9jr75265m8xu88imy2cub2
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":30,"height":21,"analyzed":true}'
+    - local
+    - 398
+    - qnR3cDF4YExqxPozd/08fA==
+    - '2025-11-02 11:34:04.919989'
+  - - 142
+    - 1914yxd0cidpjpaal55mqbogywva
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":40,"height":31,"analyzed":true}'
+    - local
+    - 1738
+    - B+yKeBLsxV+uWh4N/PHnzQ==
+    - '2025-11-02 11:34:05.106793'
+  - - 143
+    - 5f6o3chcraf2b8z8yr53hufovl74
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-11-02 11:35:46.235173'
+  - - 144
+    - 75pjii7w8oqonud9b7xnec30i4eh
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-11-02 11:35:46.252924'
+  - - 145
+    - ie9y5kcw4ovs2wnpf01tz5r4v6nl
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":463,"height":329,"analyzed":true}'
+    - local
+    - 45295
+    - NufD4DxaSN9gE7PUFkVr2A==
+    - '2025-11-02 11:35:46.262816'
+  - - 146
+    - plwsbm4e90rzrvdgjp6tloyvhlfu
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":80,"height":57,"analyzed":true}'
+    - local
+    - 1765
+    - LUN5YD6ToCOTgzrVVRaF/g==
+    - '2025-11-02 11:35:46.841116'
+  - - 147
+    - kle3fxusw7i98qsm9rydktpg6xen
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":30,"height":21,"analyzed":true}'
+    - local
+    - 398
+    - qnR3cDF4YExqxPozd/08fA==
+    - '2025-11-02 11:36:18.473486'
+  - - 148
+    - oc7u28zwzwstqctm96qh7wcv40ft
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":40,"height":8,"analyzed":true}'
+    - local
+    - 754
+    - vHvyDAKPX9lp0seWzO3y0g==
+    - '2025-11-02 11:36:18.519048'
+  - - 149
+    - g92vqphe82ekwrxs2gqavxawt9g2
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-11-02 12:16:53.832268'
+  - - 150
+    - l8hh181qgrzxocl6igiamcjetw5g
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":463,"height":329,"analyzed":true}'
+    - local
+    - 45295
+    - NufD4DxaSN9gE7PUFkVr2A==
+    - '2025-11-02 12:16:53.849248'
+  - - 151
+    - fxsqmjrjf6jt9iltp9d6z95jmr4g
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-11-02 12:16:53.856276'
+  - - 152
+    - d11o7bp4m7jij6ix7ymqao54hp1d
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":80,"height":57,"analyzed":true}'
+    - local
+    - 1765
+    - LUN5YD6ToCOTgzrVVRaF/g==
+    - '2025-11-02 12:16:54.733010'
+  - - 153
+    - unhy8b5ze3oj3r49ph7qusr66tj1
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":80,"height":62,"analyzed":true}'
+    - local
+    - 5000
+    - 55i1UWRp3sX/szAc0r/W5A==
+    - '2025-11-02 12:16:54.817070'
+  - - 154
+    - cxd7s4d7ih7cpmbua714uop0vsjc
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":30,"height":21,"analyzed":true}'
+    - local
+    - 398
+    - qnR3cDF4YExqxPozd/08fA==
+    - '2025-11-02 12:17:11.769701'
+  - - 155
+    - gk35wy56orxtofbvgpi7pylmpfpa
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":40,"height":8,"analyzed":true}'
+    - local
+    - 754
+    - WoPzL8AXb25aqg2BdIpqYA==
+    - '2025-11-02 12:17:11.843783'
+  - - 156
+    - esy91t3qcbkjvftrnwxpakk0n0hf
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":30,"height":23,"analyzed":true}'
+    - local
+    - 1149
+    - H8lLjIxR/DotF38ldyPmSw==
+    - '2025-11-02 12:17:11.903707'
+  - - 157
+    - qb9b9bcnn1o0sm5n7wjpzpc0orzm
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 17446
+    - sM3n38EadgGeaOc4Trk1XQ==
+    - '2025-11-02 13:08:38.704853'
+  - - 158
+    - kp29jjd3kclysvamnbaazx9s4mcf
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-11-02 13:08:38.721995'
+  - - 159
+    - 4cjd2mp05hgyiirnlscr6pqqk7iz
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":80,"height":62,"analyzed":true}'
+    - local
+    - 5000
+    - Rr5vV8wc5N+Vk/GR8dNyiQ==
+    - '2025-11-02 13:08:42.091159'
+  - - 160
+    - 32d1quf7i1ei8dc1dz933ghzof83
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-11-02 13:35:06.370436'
+  - - 161
+    - qy87ly4m8boznpgdpgsgwl8mkfjf
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-11-02 13:35:06.380577'
+  - - 162
+    - s3bb96ogv0kqi05qdgmsth1afqkj
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":80,"height":16,"analyzed":true}'
+    - local
+    - 1745
+    - moLkeo1GpJPhIEKgZtS0vw==
+    - '2025-11-02 13:35:08.117679'
+  - - 163
+    - u9pkucya2c7mt9vkjwngtthap4ul
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-11-02 19:33:51.136975'
+  - - 164
+    - hgvk81k13yjy8g9qmh7ftuvnvdjr
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":602,"height":412,"analyzed":true}'
+    - local
+    - 38752
+    - EAQUVuy4crsQGCcyF7skYw==
+    - '2025-11-02 19:33:51.201513'
+  - - 165
+    - pefqacjr1gnzhp5r3rc8ozffi93m
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 17446
+    - sM3n38EadgGeaOc4Trk1XQ==
+    - '2025-11-02 19:33:51.221217'
+  - - 166
+    - qdxe9xm7xforeq5h7qvp023oh8ks
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":80,"height":55,"analyzed":true}'
+    - local
+    - 1675
+    - BwTx0IJ1mAsv492GXnK2bw==
+    - '2025-11-02 19:33:57.627526'
+  - - 167
+    - c5xu78yzfxj5za3s5x33aecptktj
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":80,"height":16,"analyzed":true}'
+    - local
+    - 1798
+    - 7F8p7A4lQ5BI90YGkpXD5w==
+    - '2025-11-02 19:33:57.943971'
+  - - 168
+    - ugnqidjsetndh3odkefi6bty5dfm
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":30,"height":21,"analyzed":true}'
+    - local
+    - 501
+    - m9KjRh/GytrU2Nuf4FoKQA==
+    - '2025-11-02 19:34:30.599465'
+  - - 169
+    - 3nc98ds1a8rfrlhouatmuyiurx44
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":40,"height":8,"analyzed":true}'
+    - local
+    - 754
+    - PooLkINT3hsANw57NRx5Ew==
+    - '2025-11-02 19:34:30.687276'
+  - - 170
+    - 72skcdtfq6rowdskfabt0ia0zllk
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":40,"height":8,"analyzed":true}'
+    - local
+    - 812
+    - bKi1AKvbFw64/qetPZ5UoA==
+    - '2025-11-02 19:34:30.827530'
+  - - 171
+    - guw1odbw91ot0uti4vylfu9xp0q7
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":30,"height":23,"analyzed":true}'
+    - local
+    - 1149
+    - Gj5c46olBKOyDGN9X87v6Q==
+    - '2025-11-02 19:34:31.373277'
+  - - 172
+    - lr01vt55jeil3mf8vx92pveqw05h
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 555
+    - ndNoOTmVo81SibdryMXGnQ==
+    - '2025-11-02 19:34:33.134056'
+  - - 173
+    - osai33lhhx5le3hho10f66uiekjq
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":40,"height":31,"analyzed":true}'
+    - local
+    - 1738
+    - tCxZmkcYFLi7WY0pjgMYxA==
+    - '2025-11-02 19:34:33.209223'
+  - - 174
+    - o1psxy2mtbk2jdwxvfahr5bvw0l7
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 610
+    - Bxvq4Tc8pbrPPIG/TVmirg==
+    - '2025-11-02 19:34:33.558118'
+  - - 175
+    - 1xsaa1wprjjikqw7d31yb0msql48
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 17446
+    - sM3n38EadgGeaOc4Trk1XQ==
+    - '2025-11-02 19:35:47.424607'
+  - - 176
+    - 7ej25rmeigjve7f7kw1ba9q2esn8
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16695
+    - wCSXJ6S+L25PWEKj3jKp2Q==
+    - '2025-11-02 19:36:32.297409'
+  - - 181
+    - cxn4u7nkjk3hun2zjw6l752xm7ea
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 17446
+    - sM3n38EadgGeaOc4Trk1XQ==
+    - '2025-11-02 20:01:16.494307'
+  - - 182
+    - 5hg9tdk5lhtf0e3r42ateicuxz96
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":40,"height":8,"analyzed":true}'
+    - local
+    - 812
+    - "/j7qna07ZT9qJ1zT6WRNyQ=="
+    - '2025-11-02 20:01:25.907027'
+  - - 183
+    - pv7xqz6zqxiolupj9axfdbac73em
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-11-03 14:47:27.131049'
+  - - 184
+    - 1b4a1tzc6h40lkgti7nrly3z8hda
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":80,"height":16,"analyzed":true}'
+    - local
+    - 1745
+    - J1R83GXOFdbC+TVgNAle9Q==
+    - '2025-11-03 14:47:28.908382'
+  - - 185
+    - w0v52q9vim2s8s0faysretu5jujh
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 555
+    - Dl10rXdJtuOd/n19KJgO9A==
+    - '2025-11-03 14:47:38.781662'
+  - - 186
+    - vded7gvkwnj3ac9xjylal8m2rinf
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":602,"height":412,"analyzed":true}'
+    - local
+    - 38752
+    - EAQUVuy4crsQGCcyF7skYw==
+    - '2025-11-03 14:48:11.797574'
+  - - 187
+    - edjr1o5nydj3amqrxq19ii4aw1zx
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-11-03 14:48:56.704855'
+  - - 188
+    - 9qyv03rzedtgh8913dkuzuig25yj
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":602,"height":412,"analyzed":true}'
+    - local
+    - 38752
+    - EAQUVuy4crsQGCcyF7skYw==
+    - '2025-11-03 14:48:56.735637'
+  - - 189
+    - 4twchg2z975qmz9cvip451aogqf7
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":463,"height":329,"analyzed":true}'
+    - local
+    - 45295
+    - NufD4DxaSN9gE7PUFkVr2A==
+    - '2025-11-03 14:48:56.744320'
+  - - 190
+    - s7nkktdky5h3elm42yqzc1j638li
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":80,"height":57,"analyzed":true}'
+    - local
+    - 1765
+    - LUN5YD6ToCOTgzrVVRaF/g==
+    - '2025-11-03 14:48:57.431749'
+  - - 191
+    - 4m9hqxoemgxl2anv2p3zq6k187ib
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":30,"height":21,"analyzed":true}'
+    - local
+    - 398
+    - qnR3cDF4YExqxPozd/08fA==
+    - '2025-11-03 14:50:04.864084'
+  - - 192
+    - stdlpluetnyaqj79ctf0jqoav1nq
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":40,"height":27,"analyzed":true}'
+    - local
+    - 655
+    - QlFcGLoS/A0xAgPtBHCITw==
+    - '2025-11-03 14:50:04.898971'
+  - - 193
+    - mzoj98q7jkp4aidhqelxs1qgaq0d
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 17446
+    - sM3n38EadgGeaOc4Trk1XQ==
+    - '2025-11-07 08:15:16.400519'
+  - - 194
+    - jrt070o8r7pza280ccubkgal8evq
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":602,"height":412,"analyzed":true}'
+    - local
+    - 38752
+    - EAQUVuy4crsQGCcyF7skYw==
+    - '2025-11-07 08:15:16.461794'
+  - - 195
+    - rfktd6esihicgd6qtf7ihfibu2bc
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-11-07 08:15:16.481087'
+  - - 196
+    - fsnfer1jkyf1dk6z4e783fxgg6ek
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":463,"height":329,"analyzed":true}'
+    - local
+    - 45295
+    - NufD4DxaSN9gE7PUFkVr2A==
+    - '2025-11-07 08:15:16.492252'
+  - - 197
+    - 0ps6jomyntiv08lutgaebgpmldxi
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-11-07 08:15:16.501963'
+  - - 198
+    - djfxmow5siy7ht4lpls89tffgv5o
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":80,"height":62,"analyzed":true}'
+    - local
+    - 5000
+    - Lq240W5mmxPC19lpAaihag==
+    - '2025-11-07 08:15:18.882107'
+  - - 199
+    - 1zg8g8ia288ed3m2rfeiy30dlmj2
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":80,"height":57,"analyzed":true}'
+    - local
+    - 1765
+    - LUN5YD6ToCOTgzrVVRaF/g==
+    - '2025-11-07 08:15:19.287131'
+  - - 200
+    - kll2hj9oyexhq67frgtvv85hmjac
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":80,"height":16,"analyzed":true}'
+    - local
+    - 1745
+    - 61Co57RnnMTmLtGL2JIrYw==
+    - '2025-11-07 08:15:19.345485'
+  - - 201
+    - qbrgug1dc9i2eisduujqsx03g02p
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":40,"height":27,"analyzed":true}'
+    - local
+    - 655
+    - QlFcGLoS/A0xAgPtBHCITw==
+    - '2025-11-08 04:20:18.981710'
+  - - 202
+    - z26kwajfcfzz66iylvwovx05vk4r
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":30,"height":6,"analyzed":true}'
+    - local
+    - 555
+    - 0pGXnw/zTKotrNVf5IJgfQ==
+    - '2025-11-08 04:20:19.081224'
+  - - 203
+    - vjug35pn4zji5nuz1m0o9cyb9qce
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":30,"height":21,"analyzed":true}'
+    - local
+    - 398
+    - qnR3cDF4YExqxPozd/08fA==
+    - '2025-11-08 04:20:19.909202'
+  - - 204
+    - gn8c4gzgopb1zkxwf778jcdi4mcl
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":30,"height":23,"analyzed":true}'
+    - local
+    - 1149
+    - mJ9e3PtDHwlz5TxLM+0+gA==
+    - '2025-11-08 04:20:20.450460'
+  - - 205
+    - 3ho97w6rxen563q6vcwx7l9qjjif
+    - abcde.png
+    - image/png
+    - '{"identified":true,"width":1193,"height":927,"analyzed":true}'
+    - local
+    - 199966
+    - 1XsHKXmwF/TG3HnVjiiIkA==
+    - '2025-11-08 04:49:57.779148'
+  - - 206
+    - sktc48si1svgtuw2fog4zo9yqwzx
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":602,"height":412,"analyzed":true}'
+    - local
+    - 38752
+    - EAQUVuy4crsQGCcyF7skYw==
+    - '2025-11-08 04:49:57.810470'
+  - - 207
+    - d5lqre6q21y9ubsxzybgy0p4aexv
+    - favourite_quote.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":463,"height":329,"analyzed":true}'
+    - local
+    - 45295
+    - NufD4DxaSN9gE7PUFkVr2A==
+    - '2025-11-08 04:49:57.840454'
+  - - 208
+    - 2wngep2wa4xeip6qs13cv5mju0lq
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":977,"height":195,"analyzed":true}'
+    - local
+    - 16949
+    - 2graJeUbNQYeS2GZ8K6tAA==
+    - '2025-11-08 04:49:57.892131'
+  - - 211
+    - w10nydmkr5fxto4zfyr54neebwhu
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":40,"height":8,"analyzed":true}'
+    - local
+    - 754
+    - G5UU1Z8wVMcMDA1aXQUz9w==
+    - '2025-11-08 06:37:14.771482'
+  - - 213
+    - 30fygj665msss1zlbtbl6q4utu27
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":600,"height":411,"analyzed":true}'
+    - local
+    - 40195
+    - S435g+d312N7+Y3ZwW4T6A==
+    - '2025-11-30 12:15:44.796165'
+  - - 214
+    - mk524f9414scrs4ukevbnm7fdwg6
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":600,"height":120,"analyzed":true}'
+    - local
+    - 29047
+    - XCaSP4ZhRyalxX0WIgOCJw==
+    - '2025-11-30 12:15:44.962127'
+  - - 215
+    - cwjxw0ta9diqsgvtcr9w0cnqg6yh
+    - main-qimg-1b06b8b74cf671aeaa65b267ce36c81f-lq.jpeg
+    - image/jpeg
+    - '{"identified":true,"width":600,"height":411,"analyzed":true}'
+    - local
+    - 40195
+    - S435g+d312N7+Y3ZwW4T6A==
+    - '2025-11-30 12:15:45.145622'
+  - - 216
+    - rrxd3tqqfvnh7hdpnsnzldv5kqvr
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":600,"height":120,"analyzed":true}'
+    - local
+    - 29047
+    - TLvNFWHEMl9UJ4Er4bGe5g==
+    - '2025-11-30 12:15:46.885869'
+  - - 217
+    - jr4y6wntuinybe8dgm5gecvdfl5b
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":600,"height":120,"analyzed":true}'
+    - local
+    - 29047
+    - p/Hl1tXoSPuL5WnoorbSJA==
+    - '2025-11-30 12:15:47.223847'
+  - - 218
+    - omjaqtjha2g7n6wvnmlqml6u9s6p
+    - ganttr.png
+    - image/png
+    - '{"identified":true,"width":600,"height":120,"analyzed":true}'
+    - local
+    - 28597
+    - mN1EGH9P1aUG3rgxV/ZZzQ==
+    - '2025-11-30 12:15:47.388046'
+  - - 219
+    - bg1ru15tt3a9b8p17tupwc52lxto
+    - ganntr.png
+    - image/png
+    - '{"identified":true,"width":600,"height":120,"analyzed":true}'
+    - local
+    - 29047
+    - K806Fa0LMyNDyw4t0+nWUQ==
+    - '2025-11-30 12:15:48.217502'
+  - - 220
+    - 0mjdlismecrbp4u9gr4ydwtnqkn5
+    - recap-topics-covered-in-consistency-models-n.jpg
+    - image/jpeg
+    - '{"identified":true,"width":720,"height":540,"analyzed":true}'
+    - local
+    - 39059
+    - j/XNL5wzBNXR45mKLDrl6A==
+    - '2025-12-14 09:23:58.015094'
+  - - 221
+    - n35a3slmgnr17epanarcftkqojw9
+    - recap-topics-covered-in-consistency-models-n.jpg
+    - image/jpeg
+    - '{"identified":true,"width":720,"height":540,"analyzed":true}'
+    - local
+    - 39059
+    - j/XNL5wzBNXR45mKLDrl6A==
+    - '2025-12-14 10:26:43.202996'
+  - - 222
+    - qsjkb2343aa4hpp230sgh5uf20pa
+    - summary-of-consistency-protocols-n.jpg
+    - image/jpeg
+    - '{"identified":true,"width":720,"height":540,"analyzed":true}'
+    - local
+    - 36954
+    - 86xmvleQJ1L2gFNrCQyGSQ==
+    - '2025-12-14 10:26:43.232689'
+  - - 228
+    - zgschh25eemptpqfslj65tosvs8j
+    - recap-topics-covered-in-consistency-models-n.jpg
+    - image/jpeg
+    - '{"identified":true,"width":720,"height":540,"analyzed":true}'
+    - local
+    - 39059
+    - j/XNL5wzBNXR45mKLDrl6A==
+    - '2025-12-14 10:37:48.425854'
+  - - 229
+    - uawhmphknqhb0hhzok76cnhw7myt
+    - recap-topics-covered-in-consistency-models-n.jpg
+    - image/jpeg
+    - '{"identified":true,"width":40,"height":30,"analyzed":true}'
+    - local
+    - 621
+    - SlYJuCiyAkajhf53u6QOLw==
+    - '2025-12-14 10:38:01.897389'
+
+---
+active_storage_variant_records:
+  columns:
+  - id
+  - blob_id
+  - variation_digest
+  records: 
+  - - 1
+    - 2
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 2
+    - 1
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 3
+    - 1
+    - v6IuqLJQWEPGNKISml/oZSS7Cdo=
+  - - 4
+    - 1
+    - AVhe34RpC3e4+rWumIQP+ekaFtc=
+  - - 5
+    - 2
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 6
+    - 8
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 7
+    - 10
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 8
+    - 12
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 9
+    - 14
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 10
+    - 16
+    - zueyRMx6NQe4IG85gn8z0hqj9lg=
+  - - 11
+    - 18
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 12
+    - 24
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 13
+    - 23
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 14
+    - 24
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 15
+    - 29
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 16
+    - 28
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 17
+    - 29
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 18
+    - 34
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 19
+    - 33
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 20
+    - 34
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 21
+    - 39
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 22
+    - 38
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 23
+    - 39
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 24
+    - 49
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 25
+    - 48
+    - biGZ1YUjtdLPyIKmY6lFm9todDs=
+  - - 26
+    - 49
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 27
+    - 44
+    - qa55MD9MjIzrSSPw5Tm2gR6+1jI=
+  - - 28
+    - 43
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 29
+    - 45
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 30
+    - 46
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 31
+    - 59
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 32
+    - 58
+    - 8FealpjcrUwW7UvUo1IGLIrxRbo=
+  - - 33
+    - 61
+    - 8FealpjcrUwW7UvUo1IGLIrxRbo=
+  - - 34
+    - 60
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 35
+    - 62
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 36
+    - 58
+    - qa55MD9MjIzrSSPw5Tm2gR6+1jI=
+  - - 37
+    - 59
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 38
+    - 57
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 39
+    - 60
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 40
+    - 73
+    - 8FealpjcrUwW7UvUo1IGLIrxRbo=
+  - - 41
+    - 74
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 42
+    - 75
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 43
+    - 76
+    - 8FealpjcrUwW7UvUo1IGLIrxRbo=
+  - - 44
+    - 77
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 45
+    - 72
+    - biGZ1YUjtdLPyIKmY6lFm9todDs=
+  - - 46
+    - 74
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 47
+    - 73
+    - qa55MD9MjIzrSSPw5Tm2gR6+1jI=
+  - - 48
+    - 75
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 54
+    - 87
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 56
+    - 99
+    - 8FealpjcrUwW7UvUo1IGLIrxRbo=
+  - - 57
+    - 100
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 58
+    - 98
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 59
+    - 99
+    - qa55MD9MjIzrSSPw5Tm2gR6+1jI=
+  - - 60
+    - 100
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 61
+    - 107
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 62
+    - 106
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 63
+    - 107
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 64
+    - 112
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 65
+    - 111
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 66
+    - 112
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 67
+    - 117
+    - bh9KqAHj1HnrjLv+V+tZJ+2UqiQ=
+  - - 68
+    - 116
+    - biGZ1YUjtdLPyIKmY6lFm9todDs=
+  - - 69
+    - 117
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 72
+    - 122
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 73
+    - 127
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 75
+    - 133
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 77
+    - 139
+    - P+cEfT4tZ+Mx9YihyaPxVD0LZac=
+  - - 78
+    - 139
+    - qa55MD9MjIzrSSPw5Tm2gR6+1jI=
+  - - 79
+    - 138
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 80
+    - 145
+    - P+cEfT4tZ+Mx9YihyaPxVD0LZac=
+  - - 81
+    - 145
+    - qa55MD9MjIzrSSPw5Tm2gR6+1jI=
+  - - 82
+    - 144
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 83
+    - 150
+    - P+cEfT4tZ+Mx9YihyaPxVD0LZac=
+  - - 84
+    - 151
+    - 0OhC6uS/nbV+UzAjIhojAwRYVg8=
+  - - 85
+    - 150
+    - qa55MD9MjIzrSSPw5Tm2gR6+1jI=
+  - - 86
+    - 149
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 87
+    - 151
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 88
+    - 158
+    - 0OhC6uS/nbV+UzAjIhojAwRYVg8=
+  - - 89
+    - 161
+    - 0OhC6uS/nbV+UzAjIhojAwRYVg8=
+  - - 90
+    - 164
+    - P+cEfT4tZ+Mx9YihyaPxVD0LZac=
+  - - 91
+    - 165
+    - 0OhC6uS/nbV+UzAjIhojAwRYVg8=
+  - - 92
+    - 164
+    - qa55MD9MjIzrSSPw5Tm2gR6+1jI=
+  - - 93
+    - 163
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 94
+    - 157
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 95
+    - 158
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 96
+    - 161
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 97
+    - 160
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 98
+    - 165
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 99
+    - 175
+    - wjqVtOuFppDd1oEBBMUc2TyD8vk=
+  - - 102
+    - 181
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 103
+    - 183
+    - 0OhC6uS/nbV+UzAjIhojAwRYVg8=
+  - - 104
+    - 183
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 105
+    - 189
+    - P+cEfT4tZ+Mx9YihyaPxVD0LZac=
+  - - 106
+    - 189
+    - qa55MD9MjIzrSSPw5Tm2gR6+1jI=
+  - - 107
+    - 188
+    - biGZ1YUjtdLPyIKmY6lFm9todDs=
+  - - 108
+    - 197
+    - 0OhC6uS/nbV+UzAjIhojAwRYVg8=
+  - - 109
+    - 196
+    - P+cEfT4tZ+Mx9YihyaPxVD0LZac=
+  - - 110
+    - 195
+    - 0OhC6uS/nbV+UzAjIhojAwRYVg8=
+  - - 111
+    - 194
+    - biGZ1YUjtdLPyIKmY6lFm9todDs=
+  - - 112
+    - 195
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 113
+    - 196
+    - qa55MD9MjIzrSSPw5Tm2gR6+1jI=
+  - - 114
+    - 197
+    - pMLe9OnT/1jUfCPPrYXNQpageME=
+  - - 116
+    - 208
+    - pkv4/IQ1f5YfhuazE2Sr8sZ4Kh0=
+  - - 118
+    - 188
+    - HZ19o/6dNDpimRk2PRRW+pjsZss=
+  - - 119
+    - 208
+    - Qf43UUrCAHcLMQKl8+06HI/IH0c=
+  - - 120
+    - 194
+    - HZ19o/6dNDpimRk2PRRW+pjsZss=
+  - - 121
+    - 144
+    - Qf43UUrCAHcLMQKl8+06HI/IH0c=
+  - - 122
+    - 163
+    - Qf43UUrCAHcLMQKl8+06HI/IH0c=
+  - - 123
+    - 157
+    - Qf43UUrCAHcLMQKl8+06HI/IH0c=
+  - - 124
+    - 149
+    - Qf43UUrCAHcLMQKl8+06HI/IH0c=
+  - - 128
+    - 228
+    - zueyRMx6NQe4IG85gn8z0hqj9lg=
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - '2025-07-23 11:15:40.269037'
+    - '2025-07-23 11:15:40.269045'
+  - - schema_sha1
+    - 304fe853693c8703e374a9e1a59433c7d63e9ef6
+    - '2025-07-23 11:15:40.286815'
+    - '2025-07-23 11:15:40.286820'
+
+---
+campaigns:
+  columns:
+  - id
+  - name
+  - description
+  - campaign_type
+  - start_date
+  - end_date
+  - budget
+  - active
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - dffsfsa
+    - afsd
+    - email
+    - '2025-09-14'
+    - '2025-09-18'
+    - 422
+    - true
+    - '2025-09-06 08:47:33.062429'
+    - '2025-09-06 09:10:15.177229'
+
+---
+cart_items:
+  columns:
+  - id
+  - cart_id
+  - product_id
+  - quantity
+  - size
+  - color
+  - created_at
+  - updated_at
+  - variant_id
+  records: 
+  - - 1
+    - 1
+    - 7
+    - 1
+    - M
+    - Black
+    - '2025-07-26 13:49:22.438612'
+    - '2025-07-26 13:49:22.438612'
+    -
+  - - 2
+    - 1
+    - 4
+    - 1
+    - M
+    - Black
+    - '2025-07-26 13:49:50.250443'
+    - '2025-07-26 13:49:50.250443'
+    -
+  - - 10
+    - 3
+    - 7
+    - 1
+    - M
+    - Black
+    - '2025-07-28 07:57:03.003331'
+    - '2025-07-28 14:09:39.253378'
+    -
+  - - 11
+    - 3
+    - 6
+    - 1
+    - M
+    - Black
+    - '2025-07-28 13:45:36.785959'
+    - '2025-07-28 13:45:36.785959'
+    -
+  - - 12
+    - 3
+    - 1
+    - 2
+    - M
+    - Black
+    - '2025-07-28 13:45:43.256362'
+    - '2025-07-28 13:50:03.045387'
+    -
+  - - 15
+    - 55
+    - 7
+    - 8
+    -
+    -
+    - '2025-10-22 04:39:26.249546'
+    - '2025-10-22 05:24:01.116026'
+    -
+  - - 16
+    - 55
+    - 7
+    - 10
+    - S
+    - "#000000"
+    - '2025-10-22 04:48:16.464183'
+    - '2025-10-22 04:48:40.189242'
+    -
+  - - 17
+    - 55
+    - 6
+    - 1
+    -
+    -
+    - '2025-10-22 05:24:46.478429'
+    - '2025-10-22 05:24:46.478429'
+    -
+  - - 18
+    - 55
+    - 4
+    - 1
+    -
+    -
+    - '2025-10-22 05:30:13.603308'
+    - '2025-10-22 05:30:13.603308'
+    -
+  - - 28
+    - 61
+    - 12
+    - 1
+    -
+    -
+    - '2025-10-24 17:01:41.312669'
+    - '2025-10-24 17:01:41.312669'
+    -
+  - - 29
+    - 61
+    - 12
+    - 1
+    - ''
+    - ''
+    - '2025-10-24 17:01:49.251932'
+    - '2025-10-24 17:01:49.251932'
+    -
+  - - 30
+    - 61
+    - 10
+    - 3
+    - axl
+    - '343'
+    - '2025-10-24 18:12:24.816554'
+    - '2025-10-24 18:12:24.816554'
+    -
+  - - 31
+    - 61
+    - 10
+    - 1
+    -
+    -
+    - '2025-10-24 18:12:28.828501'
+    - '2025-10-24 18:12:28.828501'
+    -
+  - - 32
+    - 61
+    - 10
+    - 1
+    - ''
+    - ''
+    - '2025-10-24 18:12:46.220553'
+    - '2025-10-24 18:12:46.220553'
+    -
+  - - 33
+    - 75
+    - 12
+    - 1
+    - ''
+    - ''
+    - '2025-10-29 07:21:39.364224'
+    - '2025-10-29 07:21:39.364224'
+    -
+  - - 34
+    - 86
+    - 63
+    - 1
+    -
+    -
+    - '2025-11-03 17:44:31.232974'
+    - '2025-11-03 17:53:44.225122'
+    -
+  - - 35
+    - 86
+    - 62
+    - 2
+    - ''
+    - ''
+    - '2025-11-03 17:50:42.588860'
+    - '2025-11-03 17:51:08.987408'
+    -
+  - - 36
+    - 91
+    - 16
+    - 2
+    -
+    -
+    - '2025-11-07 05:02:40.175609'
+    - '2025-11-07 05:02:44.927041'
+    -
+  - - 37
+    - 91
+    - 60
+    - 4
+    - ''
+    - ''
+    - '2025-11-07 07:59:54.926483'
+    - '2025-11-07 07:59:54.926483'
+    -
+  - - 38
+    - 91
+    - 61
+    - 1
+    -
+    -
+    - '2025-11-07 08:02:19.758781'
+    - '2025-11-07 08:02:19.758781'
+    -
+  - - 60
+    - 96
+    - 64
+    - 3
+    -
+    -
+    - '2025-11-08 16:06:34.679386'
+    - '2025-11-08 16:07:05.525040'
+    - 87
+  - - 61
+    - 96
+    - 65
+    - 1
+    -
+    -
+    - '2025-11-08 16:07:50.434826'
+    - '2025-11-08 16:07:50.434826'
+    - 90
+  - - 62
+    - 101
+    - 58
+    - 1
+    -
+    -
+    - '2025-11-11 03:40:36.701219'
+    - '2025-11-11 03:40:36.701219'
+    - 83
+  - - 63
+    - 101
+    - 65
+    - 1
+    -
+    -
+    - '2025-11-11 05:20:31.968162'
+    - '2025-11-11 05:20:31.968162'
+    - 90
+  - - 64
+    - 101
+    - 33
+    - 1
+    -
+    -
+    - '2025-11-11 06:07:15.665407'
+    - '2025-11-11 06:07:15.665407'
+    -
+  - - 65
+    - 104
+    - 65
+    - 14
+    -
+    -
+    - '2025-11-27 15:27:40.120023'
+    - '2025-11-27 15:28:06.970920'
+    - 90
+  - - 66
+    - 109
+    - 64
+    - 1
+    -
+    -
+    - '2025-11-30 15:06:35.341480'
+    - '2025-11-30 15:06:42.971262'
+    - 87
+  - - 67
+    - 112
+    - 65
+    - 13
+    -
+    -
+    - '2025-12-04 04:02:37.848603'
+    - '2025-12-04 06:09:50.293589'
+    - 90
+  - - 68
+    - 112
+    - 65
+    - 2
+    -
+    -
+    - '2025-12-04 04:09:38.785464'
+    - '2025-12-04 04:09:52.839247'
+    -
+  - - 69
+    - 112
+    - 65
+    - 33
+    -
+    -
+    - '2025-12-04 04:57:19.834335'
+    - '2025-12-04 06:03:05.285057'
+    - 88
+  - - 71
+    - 117
+    - 65
+    - 2
+    -
+    -
+    - '2025-12-06 07:12:55.748394'
+    - '2025-12-06 19:07:52.235670'
+    - 90
+  - - 73
+    - 121
+    - 65
+    - 1
+    -
+    -
+    - '2025-12-06 20:31:13.524188'
+    - '2025-12-06 20:31:13.524188'
+    - 90
+  - - 74
+    - 122
+    - 65
+    - 1
+    -
+    -
+    - '2025-12-07 01:48:21.150369'
+    - '2025-12-07 01:48:21.150369'
+    - 89
+  - - 75
+    - 133
+    - 65
+    - 1
+    -
+    -
+    - '2025-12-14 03:41:03.898410'
+    - '2025-12-14 03:41:03.898410'
+    - 90
+  - - 79
+    - 134
+    - 65
+    - 1
+    -
+    -
+    - '2025-12-14 08:47:12.624158'
+    - '2025-12-14 08:47:12.624158'
+    - 90
+  - - 84
+    - 135
+    - 66
+    - 5
+    -
+    -
+    - '2025-12-14 13:17:55.086313'
+    - '2025-12-14 14:36:40.101729'
+    - 92
+  - - 85
+    - 136
+    - 66
+    - 1
+    -
+    -
+    - '2025-12-14 15:04:28.836431'
+    - '2025-12-14 15:04:28.836431'
+    - 92
+  - - 97
+    - 138
+    - 66
+    - 1
+    -
+    -
+    - '2025-12-14 18:18:04.493003'
+    - '2025-12-14 18:18:04.493003'
+    - 92
+  - - 98
+    - 139
+    - 51
+    - 1
+    -
+    -
+    - '2025-12-14 19:47:30.517009'
+    - '2025-12-14 19:47:30.517009'
+    - 79
+  - - 99
+    - 139
+    - 66
+    - 3
+    -
+    -
+    - '2025-12-14 20:12:48.692250'
+    - '2025-12-14 20:28:43.674719'
+    - 92
+
+---
+carts:
+  columns:
+  - id
+  - user_id
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    -
+    - '2025-07-26 13:49:21.521476'
+    - '2025-07-26 13:49:21.521476'
+  - - 2
+    -
+    - '2025-07-26 16:20:03.057490'
+    - '2025-07-26 16:20:03.057490'
+  - - 3
+    -
+    - '2025-07-28 06:17:24.893278'
+    - '2025-07-28 06:17:24.893278'
+  - - 4
+    -
+    - '2025-07-28 15:37:24.503856'
+    - '2025-07-28 15:37:24.503856'
+  - - 5
+    -
+    - '2025-07-29 03:48:14.729068'
+    - '2025-07-29 03:48:14.729068'
+  - - 6
+    -
+    - '2025-07-29 15:15:04.249741'
+    - '2025-07-29 15:15:04.249741'
+  - - 7
+    -
+    - '2025-07-29 15:19:33.021935'
+    - '2025-07-29 15:19:33.021935'
+  - - 8
+    -
+    - '2025-07-29 15:19:38.893501'
+    - '2025-07-29 15:19:38.893501'
+  - - 9
+    -
+    - '2025-07-29 15:20:28.447905'
+    - '2025-07-29 15:20:28.447905'
+  - - 10
+    -
+    - '2025-07-29 15:27:03.477810'
+    - '2025-07-29 15:27:03.477810'
+  - - 11
+    -
+    - '2025-07-29 16:30:13.012729'
+    - '2025-07-29 16:30:13.012729'
+  - - 12
+    -
+    - '2025-07-30 03:04:24.349709'
+    - '2025-07-30 03:04:24.349709'
+  - - 13
+    -
+    - '2025-07-30 03:19:27.478566'
+    - '2025-07-30 03:19:27.478566'
+  - - 14
+    -
+    - '2025-08-02 03:14:22.355551'
+    - '2025-08-02 03:14:22.355551'
+  - - 15
+    -
+    - '2025-08-02 03:16:26.832297'
+    - '2025-08-02 03:16:26.832297'
+  - - 16
+    -
+    - '2025-08-25 11:13:20.218466'
+    - '2025-08-25 11:13:20.218466'
+  - - 17
+    -
+    - '2025-08-25 11:13:22.481671'
+    - '2025-08-25 11:13:22.481671'
+  - - 18
+    -
+    - '2025-08-25 11:13:22.904151'
+    - '2025-08-25 11:13:22.904151'
+  - - 19
+    -
+    - '2025-08-25 11:57:01.043886'
+    - '2025-08-25 11:57:01.043886'
+  - - 20
+    -
+    - '2025-08-26 04:32:40.271110'
+    - '2025-08-26 04:32:40.271110'
+  - - 21
+    -
+    - '2025-08-27 06:03:00.928756'
+    - '2025-08-27 06:03:00.928756'
+  - - 22
+    -
+    - '2025-08-27 07:23:34.416627'
+    - '2025-08-27 07:23:34.416627'
+  - - 23
+    -
+    - '2025-08-27 17:05:51.467873'
+    - '2025-08-27 17:05:51.467873'
+  - - 24
+    -
+    - '2025-08-27 18:00:29.988360'
+    - '2025-08-27 18:00:29.988360'
+  - - 25
+    -
+    - '2025-08-27 18:57:16.891364'
+    - '2025-08-27 18:57:16.891364'
+  - - 26
+    -
+    - '2025-08-27 18:58:54.383587'
+    - '2025-08-27 18:58:54.383587'
+  - - 27
+    -
+    - '2025-08-27 19:16:33.241665'
+    - '2025-08-27 19:16:33.241665'
+  - - 28
+    -
+    - '2025-08-28 05:33:45.134861'
+    - '2025-08-28 05:33:45.134861'
+  - - 29
+    -
+    - '2025-08-28 08:51:10.662214'
+    - '2025-08-28 08:51:10.662214'
+  - - 30
+    -
+    - '2025-08-28 12:31:45.557750'
+    - '2025-08-28 12:31:45.557750'
+  - - 31
+    -
+    - '2025-08-29 05:48:14.099303'
+    - '2025-08-29 05:48:14.099303'
+  - - 32
+    -
+    - '2025-08-29 07:47:28.388711'
+    - '2025-08-29 07:47:28.388711'
+  - - 33
+    -
+    - '2025-09-05 07:44:13.755959'
+    - '2025-09-05 07:44:13.755959'
+  - - 34
+    -
+    - '2025-09-05 07:57:00.025423'
+    - '2025-09-05 07:57:00.025423'
+  - - 35
+    -
+    - '2025-09-06 07:52:32.255835'
+    - '2025-09-06 07:52:32.255835'
+  - - 36
+    -
+    - '2025-09-06 07:53:25.496444'
+    - '2025-09-06 07:53:25.496444'
+  - - 37
+    -
+    - '2025-09-21 10:38:31.190833'
+    - '2025-09-21 10:38:31.190833'
+  - - 38
+    -
+    - '2025-10-02 05:26:53.520045'
+    - '2025-10-02 05:26:53.520045'
+  - - 39
+    -
+    - '2025-10-02 08:48:48.599844'
+    - '2025-10-02 08:48:48.599844'
+  - - 40
+    -
+    - '2025-10-02 08:48:51.729810'
+    - '2025-10-02 08:48:51.729810'
+  - - 41
+    -
+    - '2025-10-05 07:46:08.226697'
+    - '2025-10-05 07:46:08.226697'
+  - - 42
+    -
+    - '2025-10-05 07:46:09.529671'
+    - '2025-10-05 07:46:09.529671'
+  - - 43
+    -
+    - '2025-10-05 07:46:10.208508'
+    - '2025-10-05 07:46:10.208508'
+  - - 44
+    -
+    - '2025-10-05 07:46:10.667516'
+    - '2025-10-05 07:46:10.667516'
+  - - 45
+    -
+    - '2025-10-05 07:46:10.983511'
+    - '2025-10-05 07:46:10.983511'
+  - - 46
+    -
+    - '2025-10-05 07:46:11.219818'
+    - '2025-10-05 07:46:11.219818'
+  - - 47
+    -
+    - '2025-10-05 07:46:11.933651'
+    - '2025-10-05 07:46:11.933651'
+  - - 48
+    -
+    - '2025-10-05 07:46:12.292005'
+    - '2025-10-05 07:46:12.292005'
+  - - 49
+    -
+    - '2025-10-20 06:30:53.066487'
+    - '2025-10-20 06:30:53.066487'
+  - - 50
+    -
+    - '2025-10-20 06:32:55.110804'
+    - '2025-10-20 06:32:55.110804'
+  - - 51
+    -
+    - '2025-10-20 06:35:08.748125'
+    - '2025-10-20 06:35:08.748125'
+  - - 52
+    -
+    - '2025-10-20 06:35:31.017347'
+    - '2025-10-20 06:35:31.017347'
+  - - 53
+    -
+    - '2025-10-20 07:12:30.803324'
+    - '2025-10-20 07:12:30.803324'
+  - - 54
+    -
+    - '2025-10-20 18:21:14.563273'
+    - '2025-10-20 18:21:14.563273'
+  - - 55
+    -
+    - '2025-10-22 03:57:42.317634'
+    - '2025-10-22 03:57:42.317634'
+  - - 56
+    -
+    - '2025-10-22 06:16:32.200105'
+    - '2025-10-22 06:16:32.200105'
+  - - 57
+    -
+    - '2025-10-22 10:49:22.128860'
+    - '2025-10-22 10:49:22.128860'
+  - - 58
+    -
+    - '2025-10-23 15:44:39.811088'
+    - '2025-10-23 15:44:39.811088'
+  - - 59
+    -
+    - '2025-10-23 15:44:42.421814'
+    - '2025-10-23 15:44:42.421814'
+  - - 60
+    -
+    - '2025-10-24 06:32:21.175229'
+    - '2025-10-24 06:32:21.175229'
+  - - 61
+    -
+    - '2025-10-24 06:32:24.327602'
+    - '2025-10-24 06:32:24.327602'
+  - - 62
+    -
+    - '2025-10-24 19:45:04.310359'
+    - '2025-10-24 19:45:04.310359'
+  - - 63
+    -
+    - '2025-10-25 03:25:29.254069'
+    - '2025-10-25 03:25:29.254069'
+  - - 64
+    -
+    - '2025-10-25 09:34:41.839419'
+    - '2025-10-25 09:34:41.839419'
+  - - 65
+    -
+    - '2025-10-25 15:56:47.104936'
+    - '2025-10-25 15:56:47.104936'
+  - - 66
+    -
+    - '2025-10-26 15:20:33.837650'
+    - '2025-10-26 15:20:33.837650'
+  - - 67
+    -
+    - '2025-10-26 15:20:36.190783'
+    - '2025-10-26 15:20:36.190783'
+  - - 68
+    -
+    - '2025-10-26 15:20:36.649481'
+    - '2025-10-26 15:20:36.649481'
+  - - 69
+    -
+    - '2025-10-26 15:20:36.839946'
+    - '2025-10-26 15:20:36.839946'
+  - - 70
+    -
+    - '2025-10-26 15:20:37.006446'
+    - '2025-10-26 15:20:37.006446'
+  - - 71
+    -
+    - '2025-10-27 03:08:16.307373'
+    - '2025-10-27 03:08:16.307373'
+  - - 72
+    -
+    - '2025-10-27 03:08:19.051709'
+    - '2025-10-27 03:08:19.051709'
+  - - 73
+    -
+    - '2025-10-27 05:45:43.760469'
+    - '2025-10-27 05:45:43.760469'
+  - - 74
+    -
+    - '2025-10-27 16:13:40.594138'
+    - '2025-10-27 16:13:40.594138'
+  - - 75
+    -
+    - '2025-10-29 07:15:50.285528'
+    - '2025-10-29 07:15:50.285528'
+  - - 76
+    -
+    - '2025-10-30 04:22:45.071604'
+    - '2025-10-30 04:22:45.071604'
+  - - 77
+    -
+    - '2025-10-31 07:27:58.902376'
+    - '2025-10-31 07:27:58.902376'
+  - - 78
+    -
+    - '2025-10-31 07:28:00.478149'
+    - '2025-10-31 07:28:00.478149'
+  - - 79
+    -
+    - '2025-10-31 07:28:00.897928'
+    - '2025-10-31 07:28:00.897928'
+  - - 80
+    -
+    - '2025-10-31 07:28:01.122418'
+    - '2025-10-31 07:28:01.122418'
+  - - 81
+    -
+    - '2025-10-31 07:28:01.321381'
+    - '2025-10-31 07:28:01.321381'
+  - - 82
+    -
+    - '2025-10-31 07:28:01.484643'
+    - '2025-10-31 07:28:01.484643'
+  - - 83
+    -
+    - '2025-11-01 19:09:41.740706'
+    - '2025-11-01 19:09:41.740706'
+  - - 84
+    -
+    - '2025-11-02 06:49:06.256487'
+    - '2025-11-02 06:49:06.256487'
+  - - 85
+    -
+    - '2025-11-02 06:49:10.050538'
+    - '2025-11-02 06:49:10.050538'
+  - - 86
+    -
+    - '2025-11-03 14:33:05.831971'
+    - '2025-11-03 14:33:05.831971'
+  - - 87
+    -
+    - '2025-11-06 05:38:42.646476'
+    - '2025-11-06 05:38:42.646476'
+  - - 88
+    -
+    - '2025-11-06 15:38:01.428595'
+    - '2025-11-06 15:38:01.428595'
+  - - 89
+    -
+    - '2025-11-06 15:38:35.276192'
+    - '2025-11-06 15:38:35.276192'
+  - - 90
+    -
+    - '2025-11-06 15:40:03.805379'
+    - '2025-11-06 15:40:03.805379'
+  - - 91
+    -
+    - '2025-11-07 02:48:06.715831'
+    - '2025-11-07 02:48:06.715831'
+  - - 92
+    -
+    - '2025-11-07 08:10:07.359057'
+    - '2025-11-07 08:10:07.359057'
+  - - 93
+    -
+    - '2025-11-07 08:17:58.432201'
+    - '2025-11-07 08:17:58.432201'
+  - - 94
+    -
+    - '2025-11-08 02:29:47.821984'
+    - '2025-11-08 02:29:47.821984'
+  - - 95
+    -
+    - '2025-11-08 02:29:49.926338'
+    - '2025-11-08 02:29:49.926338'
+  - - 96
+    -
+    - '2025-11-08 02:29:50.268203'
+    - '2025-11-08 02:29:50.268203'
+  - - 97
+    -
+    - '2025-11-10 06:11:49.762173'
+    - '2025-11-10 06:11:49.762173'
+  - - 98
+    -
+    - '2025-11-10 06:11:51.152604'
+    - '2025-11-10 06:11:51.152604'
+  - - 99
+    -
+    - '2025-11-11 03:05:06.833583'
+    - '2025-11-11 03:05:06.833583'
+  - - 100
+    -
+    - '2025-11-11 03:05:14.120734'
+    - '2025-11-11 03:05:14.120734'
+  - - 101
+    -
+    - '2025-11-11 03:05:14.478160'
+    - '2025-11-11 03:05:14.478160'
+  - - 102
+    -
+    - '2025-11-12 11:51:33.968331'
+    - '2025-11-12 11:51:33.968331'
+  - - 103
+    -
+    - '2025-11-27 15:26:22.374342'
+    - '2025-11-27 15:26:22.374342'
+  - - 104
+    -
+    - '2025-11-27 15:26:27.905520'
+    - '2025-11-27 15:26:27.905520'
+  - - 106
+    -
+    - '2025-11-27 16:06:33.363082'
+    - '2025-11-27 16:06:33.363082'
+  - - 107
+    -
+    - '2025-11-29 04:55:03.803094'
+    - '2025-11-29 04:55:03.803094'
+  - - 108
+    -
+    - '2025-11-29 05:48:25.306316'
+    - '2025-11-29 05:48:25.306316'
+  - - 109
+    -
+    - '2025-11-30 11:37:53.312996'
+    - '2025-11-30 11:37:53.312996'
+  - - 110
+    -
+    - '2025-12-01 03:16:58.523502'
+    - '2025-12-01 03:16:58.523502'
+  - - 111
+    -
+    - '2025-12-03 11:16:40.131958'
+    - '2025-12-03 11:16:40.131958'
+  - - 112
+    -
+    - '2025-12-04 02:39:36.655268'
+    - '2025-12-04 02:39:36.655268'
+  - - 113
+    -
+    - '2025-12-06 02:55:52.830821'
+    - '2025-12-06 02:55:52.830821'
+  - - 114
+    -
+    - '2025-12-06 03:25:03.547733'
+    - '2025-12-06 03:25:03.547733'
+  - - 115
+    -
+    - '2025-12-06 04:53:11.297502'
+    - '2025-12-06 04:53:11.297502'
+  - - 116
+    - 5
+    - '2025-12-06 04:55:57.561334'
+    - '2025-12-06 04:55:57.561334'
+  - - 117
+    -
+    - '2025-12-06 04:56:08.646337'
+    - '2025-12-06 04:56:08.646337'
+  - - 118
+    -
+    - '2025-12-06 05:52:34.620627'
+    - '2025-12-06 05:52:34.620627'
+  - - 119
+    -
+    - '2025-12-06 05:52:34.963397'
+    - '2025-12-06 05:52:34.963397'
+  - - 120
+    -
+    - '2025-12-06 19:33:39.432617'
+    - '2025-12-06 19:33:39.432617'
+  - - 121
+    -
+    - '2025-12-06 20:00:51.044992'
+    - '2025-12-06 20:00:51.044992'
+  - - 122
+    -
+    - '2025-12-07 01:09:09.215333'
+    - '2025-12-07 01:09:09.215333'
+  - - 123
+    -
+    - '2025-12-07 02:09:08.004891'
+    - '2025-12-07 02:09:08.004891'
+  - - 124
+    - 6
+    - '2025-12-07 02:11:14.017651'
+    - '2025-12-07 02:11:14.017651'
+  - - 125
+    -
+    - '2025-12-07 02:11:19.899107'
+    - '2025-12-07 02:11:19.899107'
+  - - 126
+    -
+    - '2025-12-10 03:52:37.520038'
+    - '2025-12-10 03:52:37.520038'
+  - - 127
+    -
+    - '2025-12-10 14:28:34.252882'
+    - '2025-12-10 14:28:34.252882'
+  - - 128
+    -
+    - '2025-12-11 06:14:21.462527'
+    - '2025-12-11 06:14:21.462527'
+  - - 129
+    -
+    - '2025-12-11 06:14:22.619058'
+    - '2025-12-11 06:14:22.619058'
+  - - 130
+    -
+    - '2025-12-11 06:14:22.895919'
+    - '2025-12-11 06:14:22.895919'
+  - - 131
+    -
+    - '2025-12-11 07:05:48.490075'
+    - '2025-12-11 07:05:48.490075'
+  - - 132
+    -
+    - '2025-12-13 03:09:57.742812'
+    - '2025-12-13 03:09:57.742812'
+  - - 133
+    -
+    - '2025-12-13 17:31:33.118946'
+    - '2025-12-13 17:31:33.118946'
+  - - 134
+    -
+    - '2025-12-14 07:22:30.881620'
+    - '2025-12-14 07:22:30.881620'
+  - - 135
+    -
+    - '2025-12-14 13:16:11.148642'
+    - '2025-12-14 13:16:11.148642'
+  - - 136
+    - 3
+    - '2025-12-14 15:04:14.546711'
+    - '2025-12-14 15:04:14.546711'
+  - - 137
+    - 3
+    - '2025-12-14 15:58:15.552870'
+    - '2025-12-14 15:59:00.437589'
+  - - 138
+    - 3
+    - '2025-12-14 17:27:17.973937'
+    - '2025-12-14 17:27:41.930988'
+  - - 139
+    - 3
+    - '2025-12-14 19:00:10.575023'
+    - '2025-12-14 20:28:28.434266'
+  - - 140
+    - 3
+    - '2025-12-15 07:29:44.001758'
+    - '2025-12-15 07:32:41.975217'
+  - - 141
+    - 7
+    - '2025-12-15 12:02:39.599247'
+    - '2025-12-15 12:04:33.252437'
+  - - 142
+    - 7
+    - '2025-12-15 12:04:24.916665'
+    - '2025-12-15 12:04:24.916665'
+  - - 143
+    - 3
+    - '2025-12-15 12:08:43.464897'
+    - '2025-12-15 12:09:02.288629'
+  - - 144
+    - 8
+    - '2025-12-15 12:18:35.830623'
+    - '2025-12-15 12:18:35.830623'
+
+---
+categories:
+  columns:
+  - id
+  - name
+  - description
+  - featured
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Men's Clothing
+    - Stylish apparel for men.
+    - true
+    - '2025-07-28 09:24:32.916715'
+    - '2025-07-29 05:03:42.300555'
+  - - 2
+    - Women's Clothing
+    - Fashionable clothing for women.
+    - true
+    - '2025-07-28 09:24:33.194373'
+    - '2025-07-28 09:24:33.194373'
+  - - 3
+    - Accessories
+    - Complete your look with our accessories.
+    - true
+    - '2025-07-28 09:24:33.231052'
+    - '2025-07-28 09:24:33.231052'
+  - - 4
+    - Footwear
+    - Step out in style with our footwear collection.
+    - true
+    - '2025-07-28 09:24:33.253724'
+    - '2025-07-28 09:24:33.253724'
+  - - 5
+    - Kids
+    - Clothing and accessories for kids.
+    - false
+    - '2025-07-28 09:24:33.268500'
+    - '2025-07-28 09:24:33.268500'
+  - - 6
+    - jj
+    - hj
+    - true
+    - '2025-07-28 21:25:18.991102'
+    - '2025-07-28 21:25:22.643387'
+  - - 7
+    - jljlml
+    - kl
+    - true
+    - '2025-07-28 21:26:10.864158'
+    - '2025-07-28 21:26:14.150465'
+  - - 8
+    - sfs
+    - sfs
+    - false
+    - '2025-10-27 16:03:58.939449'
+    - '2025-10-27 16:04:00.121079'
+  - - 9
+    - lkl
+    - ml
+    - false
+    - '2025-12-14 09:23:57.867035'
+    - '2025-12-14 09:23:58.670382'
+  - - 10
+    - T-Shirts
+    - Casual wear
+    - false
+    - '2025-12-15 08:43:25.001066'
+    - '2025-12-15 08:43:25.001066'
+  - - 11
+    - Jeans
+    - Denim pants
+    - false
+    - '2025-12-15 08:43:25.014408'
+    - '2025-12-15 08:43:25.014408'
+  - - 12
+    - Tops
+    -
+    - false
+    - '2025-12-15 11:52:19.505003'
+    - '2025-12-15 11:52:19.505003'
+  - - 13
+    - Bottoms
+    -
+    - false
+    - '2025-12-15 11:52:19.566449'
+    - '2025-12-15 11:52:19.566449'
+  - - 14
+    - Outerwear
+    -
+    - false
+    - '2025-12-15 11:52:19.575215'
+    - '2025-12-15 11:52:19.575215'
+  - - 15
+    - Dresses
+    -
+    - false
+    - '2025-12-15 11:52:19.582243'
+    - '2025-12-15 11:52:19.582243'
+
+---
+contact_messages:
+  columns:
+  - id
+  - name
+  - email
+  - subject
+  - message
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - k
+    - k@gmail.com
+    - k
+    - jnj
+    - '2025-12-06 21:00:58.747937'
+    - '2025-12-06 21:00:58.747937'
+
+---
+discounts:
+  columns:
+  - id
+  - name
+  - code
+  - discount_type
+  - value
+  - minimum_order_amount
+  - usage_limit
+  - starts_at
+  - ends_at
+  - active
+  - created_at
+  - updated_at
+  - status
+  - description
+  records: 
+  - - 1
+    - discount
+    - DISCOUNT-KQJ2Y1
+    - percentage
+    - 20
+    - 32
+    - 600
+    - '2025-09-06 15:47:00'
+    - '2025-09-30 15:47:00'
+    - false
+    - '2025-09-06 10:02:59.143834'
+    - '2025-09-06 10:02:59.143834'
+    - active
+    -
+
+---
+option_types:
+  columns:
+  - id
+  - name
+  - position
+  - created_at
+  - updated_at
+  records: 
+  - - 14
+    - Size
+    - 0
+    - '2025-12-15 08:43:24.809959'
+    - '2025-12-15 08:43:24.809959'
+  - - 15
+    - Color
+    - 0
+    - '2025-12-15 08:43:24.860844'
+    - '2025-12-15 08:43:24.860844'
+
+---
+option_values:
+  columns:
+  - id
+  - name
+  - option_type_id
+  - position
+  - created_at
+  - updated_at
+  records: 
+  - - 87
+    - S
+    - 14
+    -
+    - '2025-12-15 08:43:24.897080'
+    - '2025-12-15 08:43:24.897080'
+  - - 88
+    - M
+    - 14
+    -
+    - '2025-12-15 08:43:24.903689'
+    - '2025-12-15 08:43:24.903689'
+  - - 89
+    - L
+    - 14
+    -
+    - '2025-12-15 08:43:24.911925'
+    - '2025-12-15 08:43:24.911925'
+  - - 90
+    - Black
+    - 15
+    -
+    - '2025-12-15 08:43:24.921705'
+    - '2025-12-15 08:43:24.921705'
+  - - 91
+    - White
+    - 15
+    -
+    - '2025-12-15 08:43:24.928669'
+    - '2025-12-15 08:43:24.928669'
+  - - 92
+    - Blue
+    - 15
+    -
+    - '2025-12-15 08:43:24.937512'
+    - '2025-12-15 08:43:24.937512'
+
+---
+order_items:
+  columns:
+  - id
+  - order_id
+  - product_id
+  - quantity
+  - price
+  - created_at
+  - updated_at
+  - size
+  - color
+  - variant_id
+  records: 
+  - - 87
+    - 89
+    - 68
+    - 1
+    - 49.99
+    - '2025-12-15 09:56:28.455975'
+    - '2025-12-15 09:56:28.455975'
+    -
+    -
+    - 99
+  - - 88
+    - 91
+    - 67
+    - 1
+    - 19.99
+    - '2025-12-15 10:08:07.668844'
+    - '2025-12-15 10:08:07.668844'
+    -
+    -
+    - 95
+  - - 89
+    - 92
+    - 67
+    - 1
+    - 19.99
+    - '2025-12-15 12:05:14.811734'
+    - '2025-12-15 12:05:14.811734'
+    -
+    -
+    - 95
+
+---
+orders:
+  columns:
+  - id
+  - user_id
+  - total_price
+  - status
+  - created_at
+  - updated_at
+  - first_name
+  - last_name
+  - email
+  - address
+  - city
+  - state
+  - postal_code
+  - country
+  - agree_to_terms
+  - tracking_number
+  - phone
+  - stripe_session_id
+  - stripe_payment_intent_id
+  - payment_method
+  - payment_status
+  - paid_at
+  - checkout_session_id
+  - stripe_customer_id
+  - shipping_cost
+  - tax
+  records: 
+  - - 87
+    - 3
+    -
+    - pending
+    - '2025-12-15 09:53:39.772930'
+    - '2025-12-15 09:53:40.970801'
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    - false
+    -
+    -
+    -
+    -
+    - stripe
+    - pending
+    -
+    - cs_test_a19uSuz64lDwcN6G2wYk6vKudrNedgP6U470AyCh5GOAAoKcCCiQ2XACqT
+    -
+    - 0
+    - 0
+  - - 88
+    - 3
+    -
+    - pending
+    - '2025-12-15 09:54:48.716457'
+    - '2025-12-15 09:54:50.094661'
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    - false
+    -
+    -
+    -
+    -
+    - stripe
+    - pending
+    -
+    - cs_test_a1Vxoa7D3oNJieEgqYSTSz65aJtbyiY6jejBpZz5xcFRJ6nQt1nKo83xeQ
+    -
+    - 0
+    - 0
+  - - 89
+    - 3
+    -
+    - processing
+    - '2025-12-15 09:55:54.807936'
+    - '2025-12-15 09:56:28.400408'
+    - sandeep
+    - sandeep
+    - admin@example.com
+    - Tarkeshwork,Kathmandu
+    - Kathmandu
+    -
+    - '5643'
+    - NP
+    - false
+    -
+    -
+    -
+    -
+    - stripe
+    - paid
+    - '2025-12-15 09:56:28.399468'
+    - cs_test_a1RR1JZYtfaIFaDyGARkFMsRJ8bqXksCseOLqnOQtDU8xqTnNJkmTsJ7qo
+    -
+    - 0
+    - 0
+  - - 90
+    - 3
+    -
+    - pending
+    - '2025-12-15 10:04:14.949094'
+    - '2025-12-15 10:04:15.857367'
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    - false
+    -
+    -
+    -
+    -
+    - stripe
+    - pending
+    -
+    - cs_test_a132g8PiU2iUFt4WBN09L5xlkCoHAjRwDP2C3jsJpIoak9mv0FUgGv1xIR
+    -
+    - 0
+    - 0
+  - - 91
+    - 3
+    -
+    - processing
+    - '2025-12-15 10:07:34.758848'
+    - '2025-12-15 10:08:07.589807'
+    - sandeep
+    - sandeep
+    - admin@example.com
+    - Tarkeshwork,Kathmandu
+    - Kathmandu
+    -
+    - '5643'
+    - NP
+    - false
+    -
+    -
+    -
+    -
+    - stripe
+    - paid
+    - '2025-12-15 10:08:07.588794'
+    - cs_test_a1GSxfbWpH1Om9FFPZeKqvZIpHonZGLjxlwJMKx7kPMNklSzY71AuZE2E9
+    -
+    - 0
+    - 0
+  - - 92
+    - 7
+    -
+    - processing
+    - '2025-12-15 12:04:44.084476'
+    - '2025-12-15 12:05:14.756604'
+    - sandeep
+    - sandeep
+    - a@gmail.com
+    - Tarkeshwork,Kathmandu
+    - Kathmandu
+    -
+    - '5643'
+    - NP
+    - false
+    -
+    -
+    -
+    -
+    - stripe
+    - paid
+    - '2025-12-15 12:05:14.753436'
+    - cs_test_a1o2zcJCUrnUvm44zddjZznKcnGoYbiMVxIX1atoHx1BrgLFx3wmwSS9nJ
+    -
+    - 0
+    - 0
+
+---
+product_option_types:
+  columns:
+  - id
+  - product_id
+  - option_type_id
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 67
+    - 14
+    - '2025-12-15 08:43:25.329027'
+    - '2025-12-15 08:43:25.329027'
+  - - 2
+    - 67
+    - 15
+    - '2025-12-15 08:43:25.337998'
+    - '2025-12-15 08:43:25.337998'
+  - - 3
+    - 68
+    - 14
+    - '2025-12-15 08:43:25.676804'
+    - '2025-12-15 08:43:25.676804'
+  - - 4
+    - 68
+    - 15
+    - '2025-12-15 08:43:25.685478'
+    - '2025-12-15 08:43:25.685478'
+
+---
+products:
+  columns:
+  - id
+  - name
+  - description
+  - created_at
+  - updated_at
+  - stock
+  - published
+  - featured
+  - category_id
+  - stock_quantity
+  - option_types
+  records: 
+  - - 1
+    - fsasf
+    -
+    - '2025-07-26 07:41:11.421195'
+    - '2025-07-26 07:41:17.296418'
+    - 2342
+    - false
+    - true
+    -
+    - 0
+    -
+  - - 2
+    - sfsd
+    -
+    - '2025-07-26 11:07:23.433288'
+    - '2025-07-26 11:07:24.917602'
+    - 2323
+    - false
+    - true
+    -
+    - 0
+    -
+  - - 3
+    - sfa
+    -
+    - '2025-07-26 11:07:49.849421'
+    - '2025-07-26 11:07:49.965159'
+    - 2234
+    - false
+    - true
+    -
+    - 0
+    -
+  - - 4
+    - sf
+    -
+    - '2025-07-26 11:08:42.996225'
+    - '2025-07-26 11:08:43.148409'
+    - 23
+    - false
+    - true
+    -
+    - 0
+    -
+  - - 5
+    - fas
+    -
+    - '2025-07-26 12:25:45.778448'
+    - '2025-07-26 12:25:47.840058'
+    - 23
+    - false
+    - true
+    -
+    - 0
+    -
+  - - 6
+    - jsafl
+    -
+    - '2025-07-26 12:26:25.197920'
+    - '2025-07-26 12:26:27.880635'
+    - 23
+    - false
+    - true
+    -
+    - 0
+    -
+  - - 7
+    - sfj
+    -
+    - '2025-07-26 12:27:36.217043'
+    - '2025-07-26 12:27:36.503740'
+    - 34
+    - false
+    - true
+    -
+    - 0
+    -
+  - - 8
+    - sf
+    -
+    - '2025-10-22 11:09:20.110590'
+    - '2025-10-22 11:09:20.143791'
+    - 34
+    - false
+    - false
+    -
+    - 0
+    -
+  - - 9
+    - asf
+    -
+    - '2025-10-24 07:31:24.721052'
+    - '2025-10-24 07:31:26.270390'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    -
+  - - 10
+    - afsl
+    -
+    - '2025-10-24 07:50:14.144487'
+    - '2025-10-24 07:50:14.463039'
+    -
+    - false
+    - false
+    -
+    - 0
+    -
+  - - 11
+    - lkl
+    -
+    - '2025-10-24 14:01:00.885743'
+    - '2025-10-24 14:01:02.510361'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    -
+  - - 12
+    - sfsd
+    -
+    - '2025-10-24 14:52:53.415549'
+    - '2025-10-24 14:52:53.804160'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    -
+  - - 13
+    - sandeep dhakal
+    -
+    - '2025-10-25 05:21:17.710676'
+    - '2025-10-25 05:21:20.216463'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - '{"Size":["S","M","L"]}'
+  - - 14
+    - fsa
+    -
+    - '2025-10-25 05:23:43.245007'
+    - '2025-10-25 05:23:43.556850'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - '{"Size":["S","M","L"]}'
+  - - 15
+    - random
+    -
+    - '2025-10-25 05:36:31.734928'
+    - '2025-10-25 05:36:33.583837'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - '{"Size":["S","M","L"],"Color":["Red","Blue"]}'
+  - - 16
+    - Sandeep Dhakal
+    -
+    - '2025-10-25 05:44:15.947880'
+    - '2025-10-25 05:44:16.634968'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - '{"Size":["S","M","L"]}'
+  - - 17
+    - ews
+    -
+    - '2025-10-25 05:54:18.131175'
+    - '2025-10-25 08:02:00.030273'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - '{"Size":["S","M","L"]}'
+  - - 18
+    - sfsdfsdfsdfs
+    -
+    - '2025-10-25 08:07:43.538982'
+    - '2025-10-25 08:07:44.244457'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - "{}"
+  - - 19
+    - sdf
+    -
+    - '2025-10-25 11:00:38.738939'
+    - '2025-10-25 11:00:38.809224'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - "{}"
+  - - 20
+    - sdf
+    -
+    - '2025-10-25 11:35:23.709671'
+    - '2025-10-25 11:35:25.175268'
+    -
+    - false
+    - false
+    - 3
+    - 0
+    - "{}"
+  - - 21
+    - afas
+    -
+    - '2025-10-25 15:46:03.033604'
+    - '2025-10-25 15:46:04.958043'
+    -
+    - false
+    - false
+    - 3
+    - 0
+    - "{}"
+  - - 22
+    - jjljl
+    -
+    - '2025-10-27 07:25:38.599158'
+    - '2025-10-27 07:25:38.599158'
+    -
+    - false
+    - false
+    - 4
+    - 0
+    - "{}"
+  - - 23
+    - hnnjk
+    -
+    - '2025-10-27 08:29:06.788105'
+    - '2025-10-27 08:29:09.042998'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 24
+    - JNKJ
+    -
+    - '2025-10-27 11:40:09.612935'
+    - '2025-10-27 11:40:09.892595'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 25
+    - jljkjljlj
+    -
+    - '2025-10-30 05:47:30.944239'
+    - '2025-10-30 17:08:04.446538'
+    -
+    - false
+    - false
+    - 3
+    - 0
+    - "{}"
+  - - 26
+    - jil
+    -
+    - '2025-10-30 17:09:41.397723'
+    - '2025-10-30 17:09:42.052610'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 27
+    - 'ilhjohuh dsrg d gsgds sgd gsd '
+    -
+    - '2025-10-30 18:19:31.909431'
+    - '2025-10-31 08:38:42.236505'
+    -
+    - false
+    - false
+    - 3
+    - 0
+    - "{}"
+  - - 28
+    - jijoijo
+    -
+    - '2025-10-30 18:28:20.909095'
+    - '2025-10-30 18:28:20.914593'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - "{}"
+  - - 29
+    - nlnlj
+    -
+    - '2025-10-31 09:17:25.966857'
+    - '2025-10-31 09:17:26.011312'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 30
+    - ijoij
+    -
+    - '2025-10-31 09:20:46.396892'
+    - '2025-10-31 09:20:46.433323'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 31
+    - sf
+    -
+    - '2025-10-31 09:24:41.513206'
+    - '2025-10-31 09:24:41.543091'
+    -
+    - false
+    - false
+    - 3
+    - 0
+    - "{}"
+  - - 32
+    - sfsdfsdf s f vvvvvvvvvvvvvvvvv
+    -
+    - '2025-10-31 09:38:29.865963'
+    - '2025-10-31 09:38:29.889466'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 33
+    - Nike Shoes
+    -
+    - '2025-10-31 15:28:59.348953'
+    - '2025-10-31 15:28:59.489887'
+    -
+    - false
+    - false
+    - 4
+    - 0
+    - "{}"
+  - - 34
+    - sfa
+    -
+    - '2025-10-31 16:55:58.338246'
+    - '2025-10-31 16:55:58.373077'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - "{}"
+  - - 35
+    - jij
+    -
+    - '2025-10-31 16:58:39.023286'
+    - '2025-10-31 16:58:39.051616'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 36
+    - sfas
+    -
+    - '2025-10-31 17:09:19.666322'
+    - '2025-10-31 17:09:19.683709'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 37
+    - drgs
+    -
+    - '2025-10-31 17:40:11.976721'
+    - '2025-10-31 17:40:11.990201'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 38
+    - juoi
+    -
+    - '2025-10-31 17:48:31.514265'
+    - '2025-10-31 17:48:31.534219'
+    -
+    - false
+    - false
+    - 3
+    - 0
+    - "{}"
+  - - 39
+    - fksjjfa
+    -
+    - '2025-11-02 06:52:10.982674'
+    - '2025-11-02 06:52:11.230760'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 40
+    - sfd;af
+    -
+    - '2025-11-02 08:24:09.468690'
+    - '2025-11-02 08:24:09.614649'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 41
+    - ad
+    -
+    - '2025-11-02 08:28:06.430864'
+    - '2025-11-02 08:28:06.453088'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - "{}"
+  - - 42
+    - sfaafs
+    -
+    - '2025-11-02 08:35:57.362983'
+    - '2025-11-02 08:35:57.420153'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 43
+    - sfaafs
+    -
+    - '2025-11-02 08:42:15.007287'
+    - '2025-11-02 08:42:15.020733'
+    -
+    - false
+    - false
+    - 5
+    - 0
+    - "{}"
+  - - 44
+    - jljml
+    -
+    - '2025-11-02 09:05:24.218008'
+    - '2025-11-02 09:05:24.378803'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 45
+    - jljml
+    -
+    - '2025-11-02 09:09:37.400907'
+    - '2025-11-02 09:09:37.426689'
+    -
+    - false
+    - false
+    - 4
+    - 0
+    - "{}"
+  - - 46
+    - sdfs
+    -
+    - '2025-11-02 09:22:34.591395'
+    - '2025-11-02 09:22:34.604627'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 47
+    - wfsdfsdfa
+    -
+    - '2025-11-02 10:27:41.577656'
+    - '2025-11-02 10:27:41.587812'
+    -
+    - false
+    - false
+    - 6
+    - 0
+    - "{}"
+  - - 48
+    - sdsfds fsdfsdfsd fsd
+    -
+    - '2025-11-02 10:31:12.648554'
+    - '2025-11-02 10:31:12.661354'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - "{}"
+  - - 49
+    - sdsfds fsdfsdfsd fsd
+    -
+    - '2025-11-02 10:33:46.780783'
+    - '2025-11-02 10:33:46.787891'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - "{}"
+  - - 50
+    - huhk
+    -
+    - '2025-11-02 10:44:17.082000'
+    - '2025-11-02 10:44:17.094812'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 51
+    - hu h
+    -
+    - '2025-11-02 10:45:28.868758'
+    - '2025-11-02 10:45:28.878836'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 52
+    - jhoj
+    -
+    - '2025-11-02 10:48:34.420894'
+    - '2025-11-02 10:48:34.426796'
+    -
+    - false
+    - false
+    -
+    - 0
+    - "{}"
+  - - 53
+    - jl
+    -
+    - '2025-11-02 10:49:20.467133'
+    - '2025-11-02 10:49:20.475495'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - "{}"
+  - - 54
+    - jhnuhuhuohuohouhohoh
+    -
+    - '2025-11-02 10:57:31.961769'
+    - '2025-11-02 10:57:31.975468'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 55
+    - juh uh
+    -
+    - '2025-11-02 11:27:45.493359'
+    - '2025-11-02 11:27:47.783222'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 56
+    - sfa
+    -
+    - '2025-11-02 11:35:46.215524'
+    - '2025-11-02 11:35:46.469479'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 57
+    - ijojo
+    -
+    - '2025-11-02 12:16:53.250742'
+    - '2025-11-02 12:16:54.397540'
+    -
+    - false
+    - false
+    -
+    - 0
+    - "{}"
+  - - 58
+    - fsd
+    -
+    - '2025-11-02 13:08:38.667634'
+    - '2025-11-02 13:08:39.459685'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - "{}"
+  - - 59
+    - ijuoi
+    -
+    - '2025-11-02 13:35:06.351306'
+    - '2025-11-02 13:35:07.748201'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 60
+    - ijuoi
+    -
+    - '2025-11-02 19:33:50.775388'
+    - '2025-11-02 19:33:53.692912'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 61
+    - sdfsdfs
+    -
+    - '2025-11-02 19:36:31.528341'
+    - '2025-11-03 14:48:57.095347'
+    -
+    - false
+    - false
+    - 3
+    - 0
+    - "{}"
+  - - 62
+    - ijoi
+    -
+    - '2025-11-02 20:00:31.338176'
+    - '2025-11-03 14:48:11.810845'
+    -
+    - false
+    - false
+    - 4
+    - 0
+    - "{}"
+  - - 63
+    - sfs
+    -
+    - '2025-11-02 20:01:16.483140'
+    - '2025-11-03 14:47:28.952738'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - "{}"
+  - - 64
+    - dskjljsd
+    -
+    - '2025-11-07 08:15:16.313287'
+    - '2025-11-07 08:15:19.402314'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 65
+    - testing
+    -
+    - '2025-11-08 04:49:57.741125'
+    - '2025-12-04 02:52:43.966758'
+    -
+    - false
+    - false
+    - 2
+    - 0
+    - "{}"
+  - - 66
+    - sfgsdfsdfsdf
+    -
+    - '2025-12-14 10:26:43.167835'
+    - '2025-12-14 10:37:49.821270'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - "{}"
+  - - 67
+    - Basic T-Shirt
+    -
+    - '2025-12-15 08:43:25.184865'
+    - '2025-12-15 08:43:25.292893'
+    -
+    - false
+    - false
+    - 1
+    - 0
+    - "{}"
+  - - 68
+    - Classic Jeans
+    -
+    - '2025-12-15 08:43:25.633862'
+    - '2025-12-15 08:43:25.655468'
+    -
+    - false
+    - false
+    - 11
+    - 0
+    - "{}"
+  - - 2000
+    - Relaxed Fit Cotton T-Shirt
+    -
+    - '2025-12-15 11:52:19.916943'
+    - '2025-12-15 11:52:19.969688'
+    -
+    - true
+    - false
+    - 12
+    - 148
+    - "{}"
+  - - 2001
+    - Slim Fit Denim Jeans
+    -
+    - '2025-12-15 11:52:19.989361'
+    - '2025-12-15 11:52:19.997284'
+    -
+    - true
+    - false
+    - 13
+    - 60
+    - "{}"
+  - - 2002
+    - Oversized Hoodie
+    -
+    - '2025-12-15 11:52:20.066606'
+    - '2025-12-15 11:52:20.080738'
+    -
+    - true
+    - false
+    - 14
+    - 150
+    - "{}"
+  - - 2003
+    - Floral Summer Dress
+    -
+    - '2025-12-15 11:52:20.108224'
+    - '2025-12-15 11:52:20.123703'
+    -
+    - true
+    - false
+    - 15
+    - 86
+    - "{}"
+  - - 2004
+    - Cargo Pants
+    -
+    - '2025-12-15 11:52:20.148578'
+    - '2025-12-15 11:52:20.156641'
+    -
+    - true
+    - false
+    - 13
+    - 52
+    - "{}"
+  - - 2005
+    - Knit Sweater
+    -
+    - '2025-12-15 11:52:20.178230'
+    - '2025-12-15 11:52:20.190293'
+    -
+    - true
+    - true
+    - 12
+    - 103
+    - "{}"
+  - - 2006
+    - Leather Jacket
+    -
+    - '2025-12-15 11:52:20.210219'
+    - '2025-12-15 11:52:20.217679'
+    -
+    - true
+    - false
+    - 14
+    - 138
+    - "{}"
+  - - 2007
+    - Striped Polo Shirt
+    -
+    - '2025-12-15 11:52:20.237019'
+    - '2025-12-15 11:52:20.242124'
+    -
+    - true
+    - true
+    - 12
+    - 118
+    - "{}"
+  - - 2008
+    - High-Waisted Leggings
+    -
+    - '2025-12-15 11:52:20.300842'
+    - '2025-12-15 11:52:20.309941'
+    -
+    - true
+    - false
+    - 13
+    - 55
+    - "{}"
+  - - 2009
+    - Linen Button-Up Shirt
+    -
+    - '2025-12-15 11:52:20.329435'
+    - '2025-12-15 11:52:20.335101'
+    -
+    - true
+    - true
+    - 12
+    - 99
+    - "{}"
+  - - 2010
+    - Winter Puffer Jacket
+    -
+    - '2025-12-15 11:52:20.350898'
+    - '2025-12-15 11:52:20.356151'
+    -
+    - true
+    - false
+    - 14
+    - 143
+    - "{}"
+  - - 2011
+    - Maxi Skirt
+    -
+    - '2025-12-15 11:52:20.383341'
+    - '2025-12-15 11:52:20.389825'
+    -
+    - true
+    - true
+    - 13
+    - 98
+    - "{}"
+  - - 2012
+    - Graphic Print T-Shirt
+    -
+    - '2025-12-15 11:52:20.405912'
+    - '2025-12-15 11:52:20.411455'
+    -
+    - true
+    - true
+    - 12
+    - 80
+    - "{}"
+  - - 2013
+    - Chino Shorts
+    -
+    - '2025-12-15 11:52:20.424863'
+    - '2025-12-15 11:52:20.430759'
+    -
+    - true
+    - false
+    - 13
+    - 67
+    - "{}"
+  - - 2014
+    - Wool Blend Coat
+    -
+    - '2025-12-15 11:52:20.460018'
+    - '2025-12-15 11:52:20.467480'
+    -
+    - true
+    - true
+    - 14
+    - 54
+    - "{}"
+
+---
+user_interactions:
+  columns:
+  - id
+  - user_id
+  - product_id
+  - interaction_type
+  - score
+  - created_at
+  records: 
+  - - 1
+    - 3
+    - 68
+    - view
+    - 1.0
+    - '2025-12-15 09:46:12.047936'
+  - - 2
+    - 3
+    - 68
+    - view
+    - 1.0
+    - '2025-12-15 09:46:12.871376'
+  - - 3
+    - 3
+    - 68
+    - view
+    - 1.0
+    - '2025-12-15 09:52:33.520898'
+  - - 4
+    - 3
+    - 68
+    - add_to_cart
+    - 2.0
+    - '2025-12-15 09:52:36.393728'
+  - - 5
+    - 3
+    - 68
+    - view
+    - 1.0
+    - '2025-12-15 10:04:08.150056'
+  - - 6
+    - 3
+    - 67
+    - view
+    - 1.0
+    - '2025-12-15 10:04:08.845598'
+  - - 7
+    - 3
+    - 67
+    - view
+    - 1.0
+    - '2025-12-15 10:04:10.370466'
+  - - 8
+    - 3
+    - 67
+    - view
+    - 1.0
+    - '2025-12-15 10:04:10.810924'
+  - - 9
+    - 3
+    - 67
+    - add_to_cart
+    - 2.0
+    - '2025-12-15 10:04:12.726452'
+  - - 10
+    - 3
+    - 67
+    - purchase
+    - 3.0
+    - '2025-12-15 10:08:07.685817'
+  - - 11
+    - 3
+    - 67
+    - view
+    - 1.0
+    - '2025-12-15 10:12:46.003827'
+  - - 12
+    - 3
+    - 67
+    - view
+    - 1.0
+    - '2025-12-15 10:13:19.222186'
+  - - 13
+    - 7
+    - 67
+    - view
+    - 1.0
+    - '2025-12-15 12:04:33.540869'
+  - - 14
+    - 7
+    - 67
+    - add_to_cart
+    - 2.0
+    - '2025-12-15 12:04:40.268149'
+  - - 15
+    - 7
+    - 67
+    - purchase
+    - 3.0
+    - '2025-12-15 12:05:14.816884'
+  - - 16
+    - 7
+    - 68
+    - view
+    - 1.0
+    - '2025-12-15 12:05:20.911840'
+  - - 17
+    - 7
+    - 67
+    - view
+    - 1.0
+    - '2025-12-15 12:05:21.207321'
+  - - 18
+    - 7
+    - 67
+    - view
+    - 1.0
+    - '2025-12-15 12:05:21.769070'
+  - - 21
+    - 3
+    - 67
+    - view
+    - 1.0
+    - '2025-12-15 13:08:25.317644'
+  - - 22
+    - 3
+    - 67
+    - view
+    - 1.0
+    - '2025-12-15 13:08:30.375753'
+  - - 23
+    - 3
+    - 67
+    - view
+    - 1.0
+    - '2025-12-15 13:13:28.766203'
+  - - 24
+    - 3
+    - 67
+    - view
+    - 1.0
+    - '2025-12-15 13:14:00.776184'
+  - - 25
+    - 3
+    - 68
+    - view
+    - 1.0
+    - '2025-12-15 13:17:12.435222'
+  - - 26
+    - 3
+    - 67
+    - view
+    - 1.0
+    - '2025-12-15 13:17:12.999924'
+  - - 27
+    - 3
+    - 68
+    - view
+    - 1.0
+    - '2025-12-15 13:25:01.306467'
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - created_at
+  - updated_at
+  - role
+  - first_name
+  - last_name
+  - phone_number
+  - date_of_birth
+  - address_line1
+  - address_line2
+  - city
+  - state
+  - postal_code
+  - country
+  - current_sign_in_at
+  - deleted
+  - sign_in_count
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - customer_group
+  - stripe_customer_id
+  records: 
+  - - 1
+    - ramesh@gmail.com
+    - "$2a$12$.jf7wkxbwQGhmBQuDCYeP.2M0k81zOUmsnubQtKhkL4hLkhJ7rMdu"
+    -
+    -
+    -
+    - '2025-07-26 06:02:19.143162'
+    - '2025-07-30 04:37:39.488244'
+    - 0
+    - Ramesh
+    - Regmisss
+    - '32342323432'
+    - '2025-07-16'
+    - sfs
+    - sssssssssssss
+    - Kahtmandu
+    - 2324ls
+    - '23'
+    - '32432'
+    - '2025-07-30 03:22:10.600288'
+    - false
+    - 6
+    - '2025-07-30 03:05:05.981829'
+    - 127.0.0.1
+    - 127.0.0.1
+    - Low Value
+    -
+  - - 3
+    - admin@example.com
+    - "$2a$12$nHeMzI1qtPeZih18cNpV2uFA0.np.vNRynxhmq9NmhLlgBYZ8iVFa"
+    -
+    -
+    -
+    - '2025-08-26 04:42:50.689059'
+    - '2025-12-14 17:27:17.915073'
+    - 1
+    - admin
+    - example
+    - '9765432134'
+    - '2025-10-23'
+    -
+    -
+    -
+    -
+    -
+    -
+    - '2025-10-05 07:46:28.604240'
+    - false
+    - 21
+    - '2025-10-03 02:58:37.379469'
+    - 127.0.0.1
+    - 127.0.0.1
+    - VIP
+    -
+  - - 5
+    - thisisdhakal@gmail.com
+    - "$2a$12$WNxgYPZmOL4Skn0Z4CDH3e1MAMH8KjHxcWxnMrzaJIaBWoshmZFDa"
+    -
+    -
+    -
+    - '2025-12-06 04:55:57.372008'
+    - '2025-12-06 20:12:09.134568'
+    - 0
+    - sandeep
+    - dhakal
+    - '9749345773'
+    - '2025-12-10'
+    - Tarkeshwork,Kathmandu
+    -
+    - Kathmandu
+    - abcd
+    - '12345'
+    - Nepal
+    -
+    - false
+    - 0
+    -
+    -
+    -
+    - Low Value
+    -
+  - - 6
+    - gunarajkhatri123@gmail.com
+    - "$2a$12$cXwWKOumCBEsWSx3B1pkwe1Va6JBvOsDxbuaT8E1zrrXOy6QzsKkq"
+    - 9c8212cf751dd40d9fc0f99b66d89324ab98fba23e2e983b18859b2c64c84ba3
+    - '2025-12-07 02:11:44.764623'
+    -
+    - '2025-12-07 02:11:13.924068'
+    - '2025-12-07 02:11:44.766106'
+    - 0
+    - Gunaraj
+    - Khatri
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    - false
+    - 0
+    -
+    -
+    -
+    - Low Value
+    -
+  - - 7
+    - a@gmail.com
+    - "$2a$12$wEX60OSTkJERcM8PDutAJ.vSR.RvHj8scIZ/8.W2CyT8V8To64q1e"
+    -
+    -
+    -
+    - '2025-12-15 12:04:24.871172'
+    - '2025-12-15 12:04:24.871172'
+    - 0
+    - Admin
+    - Man
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    - false
+    - 0
+    -
+    -
+    -
+    - Loyal
+    -
+  - - 8
+    - ramhari@gmail.com
+    - "$2a$12$KLBAl1CFuxBDslGUb44kJOAbL35DNlCe/85SfUhgFpXNF8OLaucX."
+    -
+    -
+    -
+    - '2025-12-15 12:18:35.796373'
+    - '2025-12-15 12:18:35.796373'
+    - 0
+    - RAm
+    - hari
+    - '9876542227'
+    - '2025-12-09'
+    -
+    -
+    - Kathmandu
+    - 2324ls
+    - '23'
+    - Nepal
+    -
+    - false
+    - 0
+    -
+    -
+    -
+    - Low Value
+    -
+
+---
+variant_option_values:
+  columns:
+  - id
+  - variant_id
+  - option_value_id
+  - created_at
+  - updated_at
+  records: 
+  - - 102
+    - 93
+    - 90
+    - '2025-12-15 08:43:25.449391'
+    - '2025-12-15 08:43:25.449391'
+  - - 103
+    - 93
+    - 87
+    - '2025-12-15 08:43:25.458335'
+    - '2025-12-15 08:43:25.458335'
+  - - 104
+    - 94
+    - 90
+    - '2025-12-15 08:43:25.481223'
+    - '2025-12-15 08:43:25.481223'
+  - - 105
+    - 94
+    - 88
+    - '2025-12-15 08:43:25.488180'
+    - '2025-12-15 08:43:25.488180'
+  - - 106
+    - 95
+    - 90
+    - '2025-12-15 08:43:25.506965'
+    - '2025-12-15 08:43:25.506965'
+  - - 107
+    - 95
+    - 89
+    - '2025-12-15 08:43:25.514305'
+    - '2025-12-15 08:43:25.514305'
+  - - 108
+    - 96
+    - 91
+    - '2025-12-15 08:43:25.546742'
+    - '2025-12-15 08:43:25.546742'
+  - - 109
+    - 96
+    - 87
+    - '2025-12-15 08:43:25.552220'
+    - '2025-12-15 08:43:25.552220'
+  - - 110
+    - 97
+    - 91
+    - '2025-12-15 08:43:25.593323'
+    - '2025-12-15 08:43:25.593323'
+  - - 111
+    - 97
+    - 88
+    - '2025-12-15 08:43:25.598345'
+    - '2025-12-15 08:43:25.598345'
+  - - 112
+    - 98
+    - 91
+    - '2025-12-15 08:43:25.616009'
+    - '2025-12-15 08:43:25.616009'
+  - - 113
+    - 98
+    - 89
+    - '2025-12-15 08:43:25.620985'
+    - '2025-12-15 08:43:25.620985'
+
+---
+variants:
+  columns:
+  - id
+  - product_id
+  - sku
+  - price
+  - stock
+  - created_at
+  - updated_at
+  - compare_at_price
+  records: 
+  - - 93
+    - 67
+    - SKU67BS
+    - 19.99
+    - 19
+    - '2025-12-15 08:43:25.422047'
+    - '2025-12-15 08:43:25.422047'
+    -
+  - - 94
+    - 67
+    - SKU67BM
+    - 19.99
+    - 32
+    - '2025-12-15 08:43:25.474844'
+    - '2025-12-15 08:43:25.474844'
+    -
+  - - 95
+    - 67
+    - SKU67BL
+    - 19.99
+    - 29
+    - '2025-12-15 08:43:25.500874'
+    - '2025-12-15 12:05:14.774193'
+    -
+  - - 96
+    - 67
+    - SKU67WS
+    - 19.99
+    - 18
+    - '2025-12-15 08:43:25.539076'
+    - '2025-12-15 08:43:25.539076'
+    -
+  - - 97
+    - 67
+    - SKU67WM
+    - 19.99
+    - 24
+    - '2025-12-15 08:43:25.562461'
+    - '2025-12-15 08:43:25.562461'
+    -
+  - - 98
+    - 67
+    - SKU67WL
+    - 19.99
+    - 23
+    - '2025-12-15 08:43:25.609860'
+    - '2025-12-15 08:43:25.609860'
+    -
+  - - 99
+    - 68
+    - SKU68B30
+    - 49.99
+    - 11
+    - '2025-12-15 08:43:25.698150'
+    - '2025-12-15 09:56:28.414864'
+    -
+  - - 100
+    - 68
+    - SKU68B32
+    - 49.99
+    - 28
+    - '2025-12-15 08:43:25.707572'
+    - '2025-12-15 08:43:25.707572'
+    -
+  - - 101
+    - 68
+    - SKU68B34
+    - 49.99
+    - 46
+    - '2025-12-15 08:43:25.718866'
+    - '2025-12-15 08:43:25.718866'
+    -

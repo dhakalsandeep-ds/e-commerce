@@ -1,0 +1,118 @@
+<%# app/views/storefront/pages/about_us.html.erb %>
+
+<main class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Page Header -->
+    <div class="pb-5 border-b border-gray-200">
+      <h1 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">About Us</h1>
+    </div>
+
+    <!-- Company Story Section -->
+    <section class="mt-10">
+      <div class="bg-white shadow sm:rounded-lg overflow-hidden">
+        <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+          <h2 class="text-lg leading-6 font-medium text-gray-900">Our Story</h2>
+        </div>
+        <div class="px-4 py-5 sm:px-6">
+          <div class="prose prose-lg max-w-none text-gray-700">
+            <p class="text-lg">
+              Founded in <strong>2020 in Kathmandu, Nepal</strong>, our brand was born from a deep appreciation for Nepali craftsmanship and a desire to bring sustainable, high-quality fashion to everyday life.
+            </p>
+            <p>
+              Inspired by the rich textile heritage of the Himalayas—from handwoven dhaka fabrics to natural dyes—we set out to create modern clothing that honors tradition while embracing contemporary style.
+            </p>
+            <p>
+              Today, we work directly with local artisans, tailors, and eco-conscious suppliers across Nepal to ensure every piece is made with care, integrity, and respect for both people and the planet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Values Section -->
+    <section class="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2">
+      <!-- Mission -->
+      <div class="bg-white shadow sm:rounded-lg overflow-hidden">
+        <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+          <h2 class="text-lg leading-6 font-medium text-gray-900">Our Mission</h2>
+        </div>
+        <div class="px-4 py-5 sm:px-6">
+          <div class="prose prose-lg max-w-none text-gray-700">
+            <p>
+              To celebrate and elevate <strong>Nepali artistry</strong> through timeless, sustainable fashion that empowers local communities and respects our environment.
+            </p>
+            <p class="mt-4">
+              We believe fashion can be a force for good—supporting fair livelihoods in Nepal while offering customers pieces that are beautiful, durable, and meaningful.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values -->
+      <div class="bg-white shadow sm:rounded-lg overflow-hidden">
+        <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+          <h2 class="text-lg leading-6 font-medium text-gray-900">Our Values</h2>
+        </div>
+        <div class="px-4 py-5 sm:px-6">
+          <ul class="prose prose-lg max-w-none list-disc pl-5 space-y-3 text-gray-700">
+            <li>
+              <strong>Local Craftsmanship:</strong> We collaborate with Nepali artisans and small workshops to preserve traditional skills.
+            </li>
+            <li>
+              <strong>Sustainability:</strong> We prioritize natural fibers, low-waste production, and minimal plastic packaging.
+            </li>
+            <li>
+              <strong>Ethical Practice:</strong> Fair wages, safe conditions, and transparent partnerships are at our core.
+            </li>
+            <li>
+              <strong>Quality & Longevity:</strong> We design garments meant to be worn for years, not seasons.
+            </li>
+            <li>
+              <strong>Community:</strong> We support local initiatives and believe in growing together with Nepal.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section (Photo-Free) -->
+    <section class="mt-10">
+      <div class="bg-white shadow sm:rounded-lg overflow-hidden">
+        <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+          <h2 class="text-lg leading-6 font-medium text-gray-900">Our Team</h2>
+        </div>
+        <div class="px-4 py-5 sm:px-6">
+          <div class="prose prose-lg max-w-none text-gray-700">
+            <p>
+              We are a dedicated team based in Kathmandu, Nepal—comprising designers, production coordinators, customer care specialists, and logistics experts—all passionate about ethical fashion and local empowerment.
+            </p>
+            <p class="mt-4">
+              While we don’t list individual names or photos, every member of our team plays a vital role in ensuring your experience is seamless, and our impact in Nepal is positive and lasting.
+            </p>
+            <p class="mt-4">
+              From sourcing organic cotton in the Terai to coordinating deliveries across the hills, we’re proud to be part of Nepal’s growing sustainable fashion movement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="mt-10 bg-gradient-to-r from-indigo-600 to-purple-700 rounded-xl shadow-lg overflow-hidden">
+      <div class="px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div class="text-center">
+          <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            <span class="block">Have Questions?</span>
+            <span class="block mt-2 text-indigo-200">We'd love to hear from you!</span>
+          </h2>
+          <p class="mt-4 max-w-3xl mx-auto text-lg text-indigo-100">
+            Based in Kathmandu, we’re always happy to chat about our products, materials, or mission.
+          </p>
+          <div class="mt-8">
+            <%= link_to "Contact Us", contact_path, class: "inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg" %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

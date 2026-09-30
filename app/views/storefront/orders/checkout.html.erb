@@ -1,0 +1,373 @@
+<%# app/views/storefront/orders/checkout.html.erb %>
+<main class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl mb-6">Checkout</h1>
+
+    <!-- Display errors -->
+    <% if flash[:alert] %>
+      <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-6 rounded">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm text-red-700"><%= flash[:alert] %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <!-- Checkout Form -->
+    <%= form_with url: create_stripe_session_storefront_orders_path, 
+                  method: :post, 
+                  local: true, 
+                  id: "checkout-form",
+                  data: { turbo: false } do |f| %>
+      <div class="lg:grid lg:grid-cols-12 lg:gap-x-12 xl:gap-x-16">
+        <!-- Customer & Shipping Info -->
+        <div class="lg:col-span-7">
+          <!-- Shipping Information -->
+          <div class="bg-white rounded-xl shadow-sm overflow-hidden p-6 mb-6">
+            <h2 class="text-lg font-medium text-gray-900 mb-4">Shipping Information</h2>
+            <div class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="first_name" class="block text-sm font-medium text-gray-700">
+                    First name <span class="text-red-500">*</span>
+                  </label>
+                  <input type="text" 
+                         name="first_name" 
+                         id="first_name" 
+                         required 
+                         value="<%= current_user.first_name %>"
+                         class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+                <div>
+                  <label for="last_name" class="block text-sm font-medium text-gray-700">
+                    Last name <span class="text-red-500">*</span>
+                  </label>
+                  <input type="text" 
+                         name="last_name" 
+                         id="last_name" 
+                         required 
+                         value="<%= current_user.last_name %>"
+                         class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">
+                  Email address <span class="text-red-500">*</span>
+                </label>
+                <input type="email" 
+                       name="email" 
+                       id="email" 
+                       required 
+                       value="<%= current_user.email %>"
+                       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+              </div>
+              
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700">
+                  Phone number
+                </label>
+                <input type="tel" 
+                       name="phone" 
+                       id="phone" 
+                       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+              </div>
+              
+              <div>
+                <label for="address" class="block text-sm font-medium text-gray-700">
+                  Street address <span class="text-red-500">*</span>
+                </label>
+                <input type="text" 
+                       name="address" 
+                       id="address" 
+                       required 
+                       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+              </div>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                  <label for="city" class="block text-sm font-medium text-gray-700">
+                    City <span class="text-red-500">*</span>
+                  </label>
+                  <input type="text" 
+                         name="city" 
+                         id="city" 
+                         required 
+                         class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+                <div>
+                  <label for="state" class="block text-sm font-medium text-gray-700">
+                    State / Province
+                  </label>
+                  <input type="text" 
+                         name="state" 
+                         id="state" 
+                         class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+                <div>
+                  <label for="postal_code" class="block text-sm font-medium text-gray-700">
+                    Postal code <span class="text-red-500">*</span>
+                  </label>
+                  <input type="text" 
+                         name="postal_code" 
+                         id="postal_code" 
+                         required 
+                         class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+              </div>
+              
+              <div>
+                <label for="country" class="block text-sm font-medium text-gray-700">
+                  Country <span class="text-red-500">*</span>
+                </label>
+                <select name="country" 
+                        id="country" 
+                        required 
+                        class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  <option value="">Select Country</option>
+                  <option value="NP" selected>Nepal</option>
+                  <option value="US">United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="GB">United Kingdom</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Information -->
+          <div class="bg-white rounded-xl shadow-sm overflow-hidden p-6 mb-6 border-l-4 border-indigo-500">
+            <h2 class="text-lg font-medium text-gray-900 mb-2">Payment Method</h2>
+            <div class="flex items-center mb-3">
+              <div class="bg-indigo-100 p-2 rounded-md mr-3">
+                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-medium text-gray-900">Secure Credit/Debit Card Payment</p>
+                <p class="text-sm text-gray-600">Powered by Stripe - PCI compliant</p>
+              </div>
+            </div>
+            <div class="flex space-x-3 mt-3">
+              <div class="text-xs text-gray-500">Accepted cards:</div>
+              <div class="flex space-x-1">
+                <span class="text-gray-400">💳</span>
+                <span class="text-gray-400">💳</span>
+                <span class="text-gray-400">💳</span>
+                <span class="text-gray-400">💳</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terms and Conditions -->
+          <div class="bg-white rounded-xl shadow-sm overflow-hidden p-6 mb-6">
+            <div class="flex items-start">
+              <input type="checkbox" 
+                     name="agree_to_terms" 
+                     id="agree_to_terms" 
+                     value="1" 
+                     required 
+                     class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded mt-0.5">
+              <label for="agree_to_terms" class="ml-2 block text-sm text-gray-900">
+                I agree to the 
+                <a href="/terms" class="text-indigo-600 hover:text-indigo-500 underline" target="_blank">Terms and Conditions</a> 
+                and 
+                <a href="/privacy" class="text-indigo-600 hover:text-indigo-500 underline" target="_blank">Privacy Policy</a>.
+                <span class="text-red-500">*</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="mt-10 lg:mt-0 lg:col-span-5">
+          <div class="bg-white rounded-xl shadow-sm p-6 sticky top-6">
+            <h2 class="text-lg font-medium text-gray-900 mb-6">Order Summary</h2>
+
+            <% if @cart_items&.any? %>
+              <ul role="list" class="divide-y divide-gray-200 mb-6 max-h-80 overflow-y-auto">
+                <% @cart_items.each do |item| %>
+                  <li class="flex py-4">
+                    <div class="flex-shrink-0 w-16 h-16 border border-gray-200 rounded-md overflow-hidden">
+                      <% if item[:image]&.attached? %>
+                        <%= image_tag item[:image], class: "w-full h-full object-center object-cover", alt: item[:product].name %>
+                      <% else %>
+                        <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                          <span class="text-gray-500 text-xs font-bold">
+                            <%= item[:product].name.to_s.strip.split.map(&:first).join.upcase[0..1] %>
+                          </span>
+                        </div>
+                      <% end %>
+                    </div>
+                    <div class="ml-4 flex-1 flex flex-col">
+                      <div>
+                        <div class="flex justify-between text-base font-medium text-gray-900">
+                          <h3 class="truncate"><%= item[:product].name %></h3>
+                          <p class="ml-4 whitespace-nowrap">$<%= number_with_precision(item[:subtotal], precision: 2) %></p>
+                        </div>
+                        <% if item[:option_values_text] %>
+                          <p class="mt-1 text-sm text-gray-500 truncate"><%= item[:option_values_text] %></p>
+                        <% end %>
+                      </div>
+                      <div class="flex-1 flex items-end justify-between text-sm">
+                        <p class="text-gray-500">Qty: <%= item[:quantity] %></p>
+                        <p class="text-gray-500">$<%= number_with_precision(item[:price], precision: 2) %> each</p>
+                      </div>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+
+              <!-- Order Totals -->
+              <dl class="space-y-4 border-t border-gray-200 pt-4">
+                <% 
+                  subtotal = @cart_items.sum { |item| item[:subtotal] }
+                  shipping_cost = subtotal > 50 ? 0.00 : 5.00
+                  total = subtotal + shipping_cost
+                %>
+                
+                <div class="flex items-center justify-between">
+                  <dt class="text-base font-medium text-gray-900">Subtotal</dt>
+                  <dd class="ml-4 text-base font-medium text-gray-900">
+                    $<%= number_with_precision(subtotal, precision: 2) %>
+                  </dd>
+                </div>
+                
+                <div class="flex items-center justify-between">
+                  <dt class="flex items-center text-sm text-gray-600">
+                    Shipping
+                    <% if shipping_cost == 0 %>
+                      <span class="ml-2 rounded-full bg-green-100 text-xs font-medium text-green-800 px-2 py-0.5">FREE</span>
+                    <% end %>
+                  </dt>
+                  <dd class="ml-4 text-sm font-medium text-gray-900">
+                    <% if shipping_cost == 0 %>
+                      <span class="text-green-600">FREE</span>
+                    <% else %>
+                      $<%= number_with_precision(shipping_cost, precision: 2) %>
+                    <% end %>
+                  </dd>
+                </div>
+                
+                <div class="flex items-center justify-between border-t border-gray-200 pt-4">
+                  <dt class="text-lg font-bold text-gray-900">Total</dt>
+                  <dd class="ml-4 text-lg font-bold text-gray-900">
+                    $<%= number_with_precision(total, precision: 2) %>
+                  </dd>
+                </div>
+              </dl>
+
+              <!-- Payment Security Info -->
+              <div class="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                <div class="flex items-center">
+                  <svg class="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="text-sm font-medium text-gray-700">Secure checkout</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">
+                  Your payment is encrypted and secure. We never store your card details.
+                </p>
+              </div>
+            <% else %>
+              <div class="text-center py-8">
+                <svg class="w-12 h-12 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <p class="text-gray-500">Your cart is empty.</p>
+              </div>
+            <% end %>
+
+            <!-- Submit Button -->
+            <div class="mt-6">
+              <button type="submit" 
+                      id="checkout-button"
+                      class="w-full bg-indigo-600 hover:bg-indigo-700 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out <%= @cart_items.empty? ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:bg-indigo-700' %>"
+                      <%= 'disabled' if @cart_items.empty? %>>
+                <span id="button-text">
+                  <% if @cart_items.empty? %>
+                    Cart is Empty
+                  <% else %>
+                    Proceed to Secure Payment
+                  <% end %>
+                </span>
+              </button>
+            </div>
+
+            <div class="mt-4 text-center">
+              <%= link_to "Return to Cart", storefront_cart_path, class: "text-sm font-medium text-indigo-600 hover:text-indigo-500" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const checkoutForm = document.getElementById('checkout-form');
+    const checkoutButton = document.getElementById('checkout-button');
+    const buttonText = document.getElementById('button-text');
+    
+    if (checkoutForm && checkoutButton) {
+      checkoutForm.addEventListener('submit', function(e) {
+        // Validate form
+        const requiredFields = this.querySelectorAll('[required]');
+        let isValid = true;
+        
+        requiredFields.forEach(field => {
+          if (!field.value.trim()) {
+            isValid = false;
+            field.classList.add('border-red-300');
+          } else {
+            field.classList.remove('border-red-300');
+          }
+        });
+        
+        if (!isValid) {
+          e.preventDefault();
+          return false;
+        }
+        
+        // Disable button and show loading
+        if (!checkoutButton.disabled) {
+          checkoutButton.disabled = true;
+          checkoutButton.classList.add('opacity-75');
+          
+          // Create spinner
+          const spinner = document.createElement('span');
+          spinner.className = 'spinner';
+          spinner.innerHTML = `
+            <svg class="animate-spin h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          `;
+          
+          buttonText.innerHTML = '';
+          buttonText.appendChild(spinner);
+          buttonText.appendChild(document.createTextNode(' Processing...'));
+        }
+      });
+    }
+    
+    // Add red border to invalid fields on blur
+    const requiredFields = document.querySelectorAll('[required]');
+    requiredFields.forEach(field => {
+      field.addEventListener('blur', function() {
+        if (!this.value.trim()) {
+          this.classList.add('border-red-300');
+        } else {
+          this.classList.remove('border-red-300');
+        }
+      });
+    });
+  });
+</script>

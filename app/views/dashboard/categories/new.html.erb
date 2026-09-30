@@ -1,0 +1,120 @@
+<%# app/views/dashboard/categories/new.html.erb %>
+
+  <main class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <%= link_to "← Back to Categories", dashboard_categories_path, class: "inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mb-6" %>
+
+      <div class="bg-white shadow sm:rounded-lg">
+        <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+          <h3 class="text-lg leading-6 font-medium text-gray-900">New Category</h3>
+          <p class="mt-1 max-w-2xl text-sm text-gray-500">Create a new product category.</p>
+        </div>
+        <div class="px-4 py-5 sm:px-6">
+          <%= form_with model: [:dashboard, @category], local: true, class: "space-y-6" do |form| %>
+            <% if @category.errors.any? %>
+              <div class="rounded-md bg-red-50 p-4">
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <div class="ml-3">
+                    <h3 class="text-sm font-medium text-red-800"><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h3>
+                    <div class="mt-2 text-sm text-red-700">
+                      <ul role="list" class="list-disc pl-5 space-y-1">
+                        <% @category.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+
+            <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+              <!-- Name Field -->
+              <div class="sm:col-span-6">
+                <%= form.label :name, class: "block text-sm font-medium text-gray-700" %>
+                <%= form.text_field :name, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+              </div>
+
+              <!-- Description Field -->
+              <div class="sm:col-span-6">
+                <%= form.label :description, class: "block text-sm font-medium text-gray-700" %>
+                <%= form.text_area :description, rows: 4, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+              </div>
+
+              <!-- Image Upload Field -->
+     <div class="sm:col-span-6">
+  <%= form.label :image, class: "block text-sm font-medium text-gray-700" %>
+
+  <!-- Upload Box -->
+  <div class="relative w-full h-48 border-2 border-dashed border-gray-300 rounded-md flex items-center justify-center cursor-pointer group hover:border-indigo-400 transition" onclick="document.getElementById('image-upload').click()">
+    
+    <!-- Preview or Placeholder -->
+    <img id="image-preview"  class="absolute  inset-0 w-full h-full object-contain rounded-md hidden z-0"  alt="Preview" />
+
+    <div class="z-10 flex flex-col items-center justify-center text-center pointer-events-none">
+      <svg class="h-10 w-10 text-gray-400 group-hover:text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4a1 1 0 011-1h8a1 1 0 011 1v12M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+      </svg>
+      <p class="text-sm text-gray-500">Click to upload or drag an image</p>
+      <p class="text-xs text-gray-400">PNG, JPG, up to 10MB</p>
+    </div>
+
+   <div class="absolute inset-0 bg-white bg-opacity-60 hidden group-hover:flex items-center justify-center z-20 rounded-md">
+  <p class="text-gray-700 text-sm font-medium">Change Image</p>
+</div>
+
+  </div>
+
+  <!-- Hidden Input -->
+  <%= form.file_field :image, class: "hidden", id: "image-upload" %>
+</div>
+
+
+
+  
+
+              <!-- Featured Checkbox -->
+              <div class="sm:col-span-6 flex items-center">
+                <%= form.check_box :featured, class: "h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" %>
+                <%= form.label :featured, "Featured", class: "ml-2 block text-sm text-gray-700" %>
+                <p class="ml-2 text-sm text-gray-500">Mark this category to appear on the landing page.</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-end">
+              <%= link_to "Cancel", dashboard_categories_path, class: "bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+              <%= form.submit "Create Category", class: "ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </main>
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const input = document.getElementById('image-upload');
+    const preview = document.getElementById('image-preview');
+
+    input.addEventListener('change', function (event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+          preview.classList.remove('hidden');
+        };
+        reader.readAsDataURL(file);
+      } else {
+        preview.src = '';
+        preview.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+

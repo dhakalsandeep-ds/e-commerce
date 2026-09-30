@@ -1,0 +1,197 @@
+<!-- FILTER FORM (GET) -->
+<%= form_with url: dashboard_products_path, method: :get, local: true do |f| %>
+  <div class="max-w-7xl mx-auto p-4">
+    <!-- Search, Category, Per Page & Actions -->
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 bg-white p-4 rounded-lg shadow-sm">
+      
+      <!-- Left: Search + Category + Per Page -->
+      <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto flex-wrap">
+        <!-- Search -->
+        <div class="relative w-full sm:w-60">
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+          </div>
+          <%= text_field_tag :query, params[:query], placeholder: "Search products...", class: "w-full ps-10 p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-sm" %>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="w-full sm:w-40">
+          <%= select_tag :category_id,
+                         options_from_collection_for_select(@categories, :id, :name, selected: params[:category_id]),
+                         prompt: "All Categories",
+                         class: "block w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" %>
+        </div>
+
+        <!-- Per Page -->
+        <div class="w-full sm:w-24 text-sm">
+          <%= select_tag :per_page,
+                         options_for_select([5, 10, 25, 50, 100], selected: @products.limit_value),
+                         id: "per_page",
+                         class: "block w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" %>
+        </div>
+      </div>
+
+      <!-- New Product Button -->
+      <%= link_to "New Product", new_dashboard_product_path,
+                  class: "inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors" %>
+    </div>
+
+    <!-- Hidden fields to preserve sort/direction -->
+    <%= hidden_field_tag :sort, params[:sort] %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+  </div>
+<% end %>
+
+<!-- BULK ACTION FORM (POST) -->
+<%= form_with url: bulk_action_dashboard_products_path, method: :post, local: true do |f| %>
+  <div class="max-w-7xl mx-auto p-4">
+    
+   
+
+    <!-- Product Table -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="p-4 border-b border-gray-200">
+        <p class="text-sm text-gray-600"><%= page_entries_info @products %></p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left text-gray-500">
+          <thead class="text-xs uppercase bg-gray-200 text-gray-600">
+            <tr>
+              <th scope="col" class="p-4">
+                <div class="flex items-center">
+                  <%= check_box_tag "select_all", nil, false, id: "select_all", class: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" %>
+                  <label for="select_all" class="sr-only">Select all</label>
+                </div>
+              </th>
+              <th scope="col" class="px-6 py-3"><%= sort_link("Name", "name", params[:sort], params[:direction]) %></th>
+              <th scope="col" class="px-6 py-3"><%= sort_link("Price", "price", params[:sort], params[:direction]) %></th>
+              <th scope="col" class="px-6 py-3"><%= sort_link("Category", "category", params[:sort], params[:direction]) %></th>
+              <th scope="col" class="px-6 py-3">Image</th>
+              <th scope="col" class="px-6 py-3">Thumbnails</th>
+              <th scope="col" class="px-6 py-3"><%= sort_link("Created", "created_at", params[:sort], params[:direction]) %></th>
+              <th scope="col" class="px-6 py-3">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @products.each do |product| %>
+              <tr class="group border-b bg-white">
+                <td class="w-4 p-4 group-hover:bg-gray-50">
+                  <div class="flex items-center">
+                    <%= check_box_tag "product_ids[]", product.id, false, id: "product_#{product.id}", class: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" %>
+                    <label for="product_<%= product.id %>" class="sr-only">Select <%= product.name %></label>
+                  </div>
+                </td>
+                <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap group-hover:bg-gray-50">
+                  <% if product.image.attached? %>
+                    <%= image_tag product.image.variant(resize_to_limit: [40, 40]), class: "w-10 h-10 rounded object-cover" %>
+                  <% else %>
+                    <div class="w-10 h-10 rounded bg-gray-200 flex items-center justify-center text-xs text-gray-500">No Image</div>
+                  <% end %>
+                  <div class="ps-3">
+                    <div class="font-semibold text-gray-800"><%= product.name %></div>
+                    <div class="text-xs text-gray-500">ID: <%= product.id %></div>
+                  </div>
+                </th>
+                <td class="px-6 py-4 group-hover:bg-gray-50">
+                  <% if product.variants.any? %>
+                    <% min_price = product.variants.minimum(:price) %>
+                    <% max_price = product.variants.maximum(:price) %>
+                    <% if min_price == max_price %>
+                      <%= number_to_currency(min_price) %>
+                    <% else %>
+                      <%= number_to_currency(min_price) %> - <%= number_to_currency(max_price) %>
+                    <% end %>
+                  <% else %>
+                    <span class="text-red-500">No price</span>
+                  <% end %>
+                </td>
+                <td class="px-6 py-4 group-hover:bg-gray-50">
+                  <%= product.category&.name || "—".html_safe %>
+                </td>
+                <td class="px-6 py-4 group-hover:bg-gray-50">
+                  <% if product.image.attached? %>
+                    <%= image_tag product.image.variant(resize_to_limit: [40, 40]), class: "w-10 h-10 rounded object-cover" %>
+                  <% else %>
+                    <span class="text-gray-400 text-sm">None</span>
+                  <% end %>
+                </td>
+                <td class="px-6 py-4 group-hover:bg-gray-50">
+                  <% if product.thumbnails.attached? %>
+                    <div class="flex -space-x-2">
+                      <% product.thumbnails.limit(3).each do |thumb| %>
+                        <%= image_tag thumb.variant(resize_to_limit: [30, 30]), class: "w-6 h-6 rounded-full border-2 border-white" %>
+                      <% end %>
+                    </div>
+                  <% else %>
+                    <span class="text-gray-400 text-sm">None</span>
+                  <% end %>
+                </td>
+                <td class="px-6 py-4 group-hover:bg-gray-50">
+                  <div class="flex items-center text-sm">
+                    <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div>
+                    <%= product.created_at.strftime("%b %d, %Y") %>
+                  </div>
+                </td>
+                <td class="px-6 py-4 space-x-2 group-hover:bg-gray-50">
+                  <%= link_to "Details", dashboard_product_path(product), class: "text-blue-600 hover:underline text-sm" %>
+                  <%= link_to "Edit", edit_dashboard_product_path(product), class: "text-green-600 hover:underline text-sm" %>
+                  <%= link_to "Delete", dashboard_product_path(product),
+                               data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                               class: "text-red-600 hover:underline text-sm" %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="p-4 border-t border-gray-200">
+        <%= paginate @products %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<!-- JavaScript -->
+<script type="module">
+  document.addEventListener('turbo:load', function () {
+    const selectAll = document.getElementById('select_all');
+    const checkboxes = document.querySelectorAll("input[name='product_ids[]']");
+
+    if (selectAll) {
+      selectAll.addEventListener('change', () => {
+        checkboxes.forEach(cb => cb.checked = selectAll.checked);
+      });
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        const checked = Array.from(checkboxes).filter(c => c.checked);
+        if (selectAll) {
+          selectAll.checked = checked.length === checkboxes.length;
+          selectAll.indeterminate = checked.length > 0 && checked.length < checkboxes.length;
+        }
+      });
+    });
+
+    // Auto-submit filter form
+    const filterForm = document.querySelector('form[method="get"]');
+    if (filterForm) {
+      const perPage = filterForm.querySelector('#per_page');
+      const search = filterForm.querySelector('input[name="query"]');
+      const category = filterForm.querySelector('select[name="category_id"]');
+
+      perPage?.addEventListener('change', () => filterForm.submit());
+      category?.addEventListener('change', () => filterForm.submit());
+
+      let searchTimer;
+      search?.addEventListener('input', () => {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(() => filterForm.submit(), 300);
+      });
+    }
+  });
+</script>

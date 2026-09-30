@@ -1,0 +1,214 @@
+
+  <!-- Breadcrumbs -->
+  <nav class="flex p-4 text-sm text-gray-600" aria-label="Breadcrumb">
+    <%= link_to "Collections", dashboard_collections_path %>
+    <span class="mx-2">/</span>
+    <span class="text-gray-500">New Collection</span>
+  </nav>
+
+  <!-- Main Form -->
+  <%= form_with model: @collection, url: dashboard_collections_path, local: true do |f| %>
+    <div class="max-w-4xl mx-auto p-6">
+      <!-- Title -->
+      <div class="mb-6">
+        <%= f.label :title, "Title", class: "block text-sm font-medium text-gray-700 mb-1" %>
+        <%= f.text_field :title, class: "w-full p-2 border border-gray-300 rounded-md", placeholder: "e.g., On Sale" %>
+      </div>
+
+      <!-- Handle -->
+      <div class="mb-6">
+        <%= f.label :handle, "URL Handle", class: "block text-sm font-medium text-gray-700 mb-1" %>
+        <%= f.text_field :handle, class: "w-full p-2 border border-gray-300 rounded-md" %>
+        <p class="mt-1 text-sm text-gray-500">
+          The URL will be: <code>/shop/collections/<span id="handle-preview">on-sale</span></code>
+        </p>
+      </div>
+
+      <!-- Rules -->
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold mb-3">Conditions</h3>
+        <p class="text-sm text-gray-600 mb-4">
+          Products will be included when they match <strong>all</strong> of the following conditions.
+        </p>
+
+        <!-- Container for Rules -->
+        <div id="rules-container">
+          <% if @collection.rules&.any? %>
+            <% @collection.rules.each do |rule| %>
+              <%= render "rule_fields", f: f, rule: rule %>
+            <% end %>
+          <% else %>
+            <%= render "rule_fields", f: f, rule: {} %>
+          <% end %>
+        </div>
+
+        <!-- Add Rule Button -->
+        <button type="button" onclick="addRule()" class="mt-2 text-blue-600 hover:text-blue-800 text-sm font-medium">
+          + Add condition
+        </button>
+      </div>
+
+      <!-- Preview Matched Count -->
+      <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+        <h3 class="text-lg font-semibold mb-2">Preview</h3>
+        <p id="product-count-preview" class="text-sm text-gray-600">
+          Enter rules to see how many products match.
+        </p>
+      </div>
+
+      <!-- Submit -->
+      <div class="flex gap-3 pt-6">
+        <%= f.submit "Create Collection", class: "px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700" %>
+        <%= link_to "Cancel", dashboard_collections_path, class: "px-4 py-2 text-gray-600 hover:text-gray-800" %>
+      </div>
+    </div>
+    <script type="text/javascript">
+  // Available predicates by field
+  const predicates = {
+    name: [
+      { value: "is", label: "is" },
+      { value: "contains", label: "contains" }
+    ],
+    price: [
+      { value: "is", label: "is" },
+      { value: "less_than", label: "less than" },
+      { value: "greater_than", label: "greater than" }
+    ],
+    category_id: [
+      { value: "is", label: "is" }
+    ]
+  };
+
+  function updatePredicateOptions(fieldSelect) {
+    const container = fieldSelect.closest('div');
+    const predicateSelect = container.nextElementSibling.querySelector('select');
+    const field = fieldSelect.value;
+    const currentValue = predicateSelect.value;
+
+    // Clear options
+    predicateSelect.innerHTML = '';
+
+    // Add new options
+    const options = predicates[field] || [];
+    options.forEach(opt => {
+      const option = document.createElement('option');
+      option.value = opt.value;
+      option.textContent = opt.label;
+      if (opt.value === currentValue) option.selected = true;
+      predicateSelect.appendChild(option);
+    });
+  }
+
+  function addRule() {
+    const container = document.getElementById('rules-container');
+    const ruleHTML = `
+      <div class="flex gap-3 mb-3 items-end">
+        <div class="flex-1">
+          <label class="block text-xs font-medium text-gray-600">Field</label>
+          <select name="collection[rules][][field]" class="w-full p-2 border border-gray-300 rounded text-sm" onchange="updatePredicateOptions(this)">
+            <option value="name">Name</option>
+            <option value="price">Price</option>
+            <option value="category_id">Category</option>
+          </select>
+        </div>
+        <div class="flex-1">
+          <label class="block text-xs font-medium text-gray-600">Condition</label>
+          <select name="collection[rules][][predicate]" class="w-full p-2 border border-gray-300 rounded text-sm">
+            <option value="is">is</option>
+            <option value="contains">contains</option>
+          </select>
+        </div>
+        <div class="flex-1">
+          <label class="block text-xs font-medium text-gray-600">Value</label>
+          <input type="text" name="collection[rules][][value]" class="w-full p-2 border border-gray-300 rounded text-sm" />
+        </div>
+        <div>
+          <button type="button" onclick="removeRule(this)" class="text-red-600 hover:text-red-800">✕</button>
+        </div>
+      </div>
+    `;
+    container.insertAdjacentHTML('beforeend', ruleHTML);
+  }
+
+  function removeRule(button) {
+    button.closest('div').remove();
+    updatePreviewCount(); // Update preview when removed
+  }
+
+  // Auto-update handle preview
+  document.addEventListener('turbo:load', function () {
+    const titleInput = document.querySelector("input[name='collection[title]']");
+    const handleInput = document.querySelector("input[name='collection[handle]']");
+    const handlePreview = document.getElementById('handle-preview');
+
+    function updateHandle() {
+      let value = titleInput.value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      value = value.replace(/^-+|-+$/g, '');
+      handleInput.value = value;
+      handlePreview.textContent = value;
+    }
+
+    if (titleInput) {
+      titleInput.addEventListener('input', updateHandle);
+      if (titleInput.value) updateHandle();
+    }
+  });
+
+  // Update preview count when rules change
+  function updatePreviewCount() {
+  const rules = [];
+  document.querySelectorAll('#rules-container .flex').forEach(row => {
+    const field = row.querySelector('[name$="[field]"]').value;
+    const predicate = row.querySelector('[name$="[predicate]"]').value;
+    const value = row.querySelector('[name$="[value]"]').value;
+
+    if (field && predicate && value) {
+      rules.push({ field, predicate, value });
+    }
+  });
+
+  fetch('<%= j preview_dashboard_collections_path %>', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+    },
+    body: JSON.stringify({ rules: rules })
+  })
+  .then(response => response.json())
+  .then(data => {
+    const count = data.count || 0;
+    document.getElementById('product-count-preview').innerHTML =
+      `<strong>${count}</strong> product${count !== 1 ? 's' : ''} will be included.`;
+  })
+  .catch(err => {
+    console.error('Preview error:', err);
+    document.getElementById('product-count-preview').textContent = "Error checking match.";
+  });
+}
+
+  // Attach listeners
+  function attachRuleListeners() {
+    document.querySelectorAll('#rules-container input, #rules-container select').forEach(el => {
+      el.removeEventListener('input', updatePreviewCount);
+      el.removeEventListener('change', updatePreviewCount);
+      el.addEventListener('input', updatePreviewCount);
+      el.addEventListener('change', updatePreviewCount);
+    });
+  }
+
+  // Observe new rules
+  const rulesContainer = document.getElementById('rules-container');
+  const observer = new MutationObserver(() => {
+    setTimeout(attachRuleListeners, 100);
+    updatePreviewCount();
+  });
+  observer.observe(rulesContainer, { childList: true, subtree: true });
+
+  // Initial setup
+  document.addEventListener('turbo:load', function () {
+    attachRuleListeners();
+    updatePreviewCount();
+  });
+</script>
+  <% end %>

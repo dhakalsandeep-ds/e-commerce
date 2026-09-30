@@ -1,0 +1,161 @@
+<%# app/views/dashboard/reports/index.html.erb %>
+
+  <main class="bg-gray-50 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto space-y-10">
+
+      <!-- Header -->
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+        <div>
+          <h1 class="text-3xl font-extrabold text-gray-900">📊 Reports</h1>
+          <p class="mt-1 text-gray-600">Track your store performance and insights.</p>
+        </div>
+        <div class="mt-4 md:mt-0 flex gap-3">
+          <%= link_to "Export CSV", "#", class: "inline-flex items-center px-4 py-2 rounded-md shadow text-sm font-medium text-indigo-600 bg-white border border-indigo-300 hover:bg-indigo-50" %>
+          <%= link_to "Download PDF", "#", class: "inline-flex items-center px-4 py-2 rounded-md shadow text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700" %>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="bg-white shadow rounded-xl p-6">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">Filters</h2>
+        <%= form_with url: dashboard_reports_path, method: :get, local: true, class: "grid grid-cols-1 sm:grid-cols-12 gap-4 items-end" do |form| %>
+          <div class="sm:col-span-3">
+            <%= form.label :start_date, "Start Date", class: "block text-sm font-medium text-gray-700" %>
+            <%= form.date_field :start_date, value: @start_date, class: "mt-1 w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+          </div>
+          <div class="sm:col-span-3">
+            <%= form.label :end_date, "End Date", class: "block text-sm font-medium text-gray-700" %>
+            <%= form.date_field :end_date, value: @end_date, class: "mt-1 w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+          </div>
+          <div class="sm:col-span-3">
+            <%= form.label :category_id, "Category", class: "block text-sm font-medium text-gray-700" %>
+            <%= form.select :category_id, options_for_select(Category.all.map { |c| [c.name, c.id] }, params[:category_id]), { include_blank: "All" }, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+          </div>
+          <div class="sm:col-span-2">
+            <%= form.submit "Apply", class: "w-full py-2 px-4 rounded-md text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 shadow" %>
+          </div>
+          <% if params[:start_date].present? || params[:end_date].present? || params[:category_id].present? %>
+            <div class="sm:col-span-1">
+              <%= link_to "Reset", dashboard_reports_path, class: "text-sm font-medium text-gray-600 hover:text-indigo-600" %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <!-- Stats Cards (inline HTML instead of render) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white shadow rounded-lg p-6 border-l-4 border-indigo-500">
+          <div class="flex items-center">
+            <div class="text-3xl mr-3">💰</div>
+            <div>
+              <p class="text-sm font-medium text-gray-500">Total Sales</p>
+              <p class="text-xl font-bold text-gray-900"><%= number_to_currency(@total_sales || 0.0) %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white shadow rounded-lg p-6 border-l-4 border-green-500">
+          <div class="flex items-center">
+            <div class="text-3xl mr-3">📦</div>
+            <div>
+              <p class="text-sm font-medium text-gray-500">Total Orders</p>
+              <p class="text-xl font-bold text-gray-900"><%= @total_orders || 0 %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white shadow rounded-lg p-6 border-l-4 border-yellow-500">
+          <div class="flex items-center">
+            <div class="text-3xl mr-3">📈</div>
+            <div>
+              <p class="text-sm font-medium text-gray-500">Avg Order Value</p>
+              <p class="text-xl font-bold text-gray-900"><%= number_to_currency(@avg_order_value || 0.0) %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white shadow rounded-lg p-6 border-l-4 border-blue-500">
+          <div class="flex items-center">
+            <div class="text-3xl mr-3">👤</div>
+            <div>
+              <p class="text-sm font-medium text-gray-500">New Customers</p>
+              <p class="text-xl font-bold text-gray-900"><%= @new_customers || 0 %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- (Charts, Top Selling Products, Recent Orders remain unchanged) -->
+      <!-- Charts -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white shadow rounded-xl p-6">
+          <h2 class="text-lg font-semibold text-gray-900 mb-3">📉 Sales Trend</h2>
+          <% if @sales_trend_data.present? %>
+            <%= line_chart @sales_trend_data, library: { backgroundColor: "transparent" } %>
+          <% else %>
+            <p class="text-gray-500 text-sm">No sales data yet.</p>
+          <% end %>
+        </div>
+        <div class="bg-white shadow rounded-xl p-6">
+          <h2 class="text-lg font-semibold text-gray-900 mb-3">📊 Order Status</h2>
+          <% if @order_status_data.present? %>
+            <%= pie_chart @order_status_data, library: { backgroundColor: "transparent" } %>
+          <% else %>
+            <p class="text-gray-500 text-sm">No order status data yet.</p>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- Top Selling Products -->
+      <div class="bg-white shadow rounded-xl p-6">
+        <div class="flex justify-between items-center mb-5">
+          <h2 class="text-lg font-semibold text-gray-900">🏆 Top Selling Products</h2>
+          <%= link_to "View All", dashboard_products_path, class: "text-sm font-medium text-indigo-600 hover:text-indigo-500" %>
+        </div>
+        <% if @top_selling_products.present? %>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <% @top_selling_products.each do |product| %>
+              <div class="border rounded-lg overflow-hidden hover:shadow-md transition bg-gray-50">
+                <%= image_tag(product.image.attached? ? product.image : "https://placehold.co/400x400?text=#{product.name}", class: "w-full h-40 object-cover") %>
+                <div class="p-4">
+                  <p class="font-medium text-gray-900 truncate"><%= product.name %></p>
+                  <p class="text-sm text-gray-500"><%= product.category&.name || "Uncategorized" %></p>
+                  <p class="text-sm font-semibold text-indigo-600 mt-1">$<%= sprintf('%.2f', product.price) %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <p class="text-sm text-gray-500">No top-selling products in this range.</p>
+        <% end %>
+      </div>
+
+      <!-- Recent Orders -->
+      <div class="bg-white shadow rounded-xl p-6">
+        <div class="flex justify-between items-center mb-5">
+          <h2 class="text-lg font-semibold text-gray-900">🕒 Recent Orders</h2>
+          <%= link_to "View All Orders", dashboard_orders_path, class: "text-sm font-medium text-indigo-600 hover:text-indigo-500" %>
+        </div>
+        <% if @recent_orders.present? %>
+          <ul role="list" class="divide-y divide-gray-200">
+            <% @recent_orders.each do |order| %>
+              <li class="py-4 flex justify-between items-center hover:bg-gray-50 px-2 rounded-md transition">
+                <div>
+                  <p class="text-sm font-medium text-indigo-600">Order #<%= order.id %></p>
+                  <p class="text-xs text-gray-500"><%= order.user&.email || "Guest User" %> • <%= order.created_at.strftime("%b %d, %Y") %></p>
+                </div>
+                <div class="text-right">
+                  <p class="text-sm font-semibold text-gray-900"><%= number_to_currency(order.total_price) %></p>
+                  <p class="text-xs text-gray-500"><%= pluralize(order.order_items.sum(:quantity), "item") %></p>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p class="text-sm text-gray-500">No recent orders.</p>
+        <% end %>
+      </div>
+
+    </div>
+  </main>
+

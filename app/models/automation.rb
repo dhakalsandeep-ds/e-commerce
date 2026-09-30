@@ -1,0 +1,2 @@
+class Automation < ApplicationRecord
+end

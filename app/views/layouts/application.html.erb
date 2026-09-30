@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Brand Store" %></title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <title>  <%= yield :head %> </title>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "trix", "data-turbo-track": "reload" %>
+
+    <%= javascript_importmap_tags %>
+  </head>
+
+
+  <body class="bg-white text-gray-900">
+
+    <!-- Navigation -->
+    <%= render "layouts/storefront_partial/nav" %>
+
+
+    <!-- Flash Messages -->
+    <% if notice.present? %>
+      <div class="relative z-40 mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
+        <div class="rounded-lg border border-green-100 bg-green-50 px-4 py-3 text-sm text-green-800">
+          <%= notice %>
+        </div>
+      </div>
+    <% end %>
+
+
+    <% if alert.present? %>
+      <div class="relative z-40 mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
+        <div class="rounded-lg border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-800">
+          <%= alert %>
+        </div>
+      </div>
+    <% end %>
+
+
+    <!-- Main Content -->
+    <main class="min-h-screen bg-white">
+      <%= yield %>
+    </main>
+
+
+    <!-- Footer -->
+    <%= render "layouts/storefront_partial/footer" %>
+
+  </body>
+</html>

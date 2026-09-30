@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Brand Store" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "trix", "data-turbo-track": "reload" %>
+
+   
+
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="bg-gray-100">
+    <div class="antialiased bg-gray-50 min-h-screen flex">
+
+      <!-- Sidebar + Mobile Overlay -->
+      <div data-controller="mobile-sidebar">
+        <!-- Sidebar Overlay for mobile -->
+        <div
+          class="fixed inset-0 bg-black/50 z-30 hidden md:hidden"
+          data-mobile-sidebar-target="overlay"
+          data-action="click->mobile-sidebar#close"
+        ></div>
+
+        <!-- Sidebar -->
+        <%= render "layouts/admin_partial/sidebar" %>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="flex-1 flex flex-col ">
+        <!-- Top Navigation -->
+        <%= render "layouts/admin_partial/top_navigation" %>
+
+        <!-- Main Content -->
+        <main class="flex-1 pt-0"> <!-- 👈 No padding-top here -->
+           <%= render "layouts/admin_partial/main" %>
+        </main>
+      </div>
+
+    </div>
+  </body>
+</html>

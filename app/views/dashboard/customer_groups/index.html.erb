@@ -1,0 +1,40 @@
+<div class="overflow-x-auto bg-white shadow rounded-lg p-4">
+  <table class="min-w-full divide-y divide-gray-200">
+    <thead>
+      <tr class="bg-gray-50">
+        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
+        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
+        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Email</th>
+        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Total Spent</th>
+        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Orders</th>
+        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Segment</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200">
+      <% @users.each do |user| %>
+        <tr class="hover:bg-gray-50">
+          <td class="px-4 py-2 text-sm"><%= user.id %></td>
+          <td class="px-4 py-2 text-sm"><%= user.email.split("@").first %></td>
+          <td class="px-4 py-2 text-sm"><%= user.email %></td>
+          <td class="px-4 py-2 text-sm">
+            <%= number_to_currency(user.orders.joins(:order_items).sum('order_items.price * order_items.quantity')) %>
+          </td>
+          <td class="px-4 py-2 text-sm"><%= user.orders.count %></td>
+          <td class="px-4 py-2 text-sm">
+            <% segment = user.customer_group || "Unknown" %>
+            <span class="px-2 py-1 rounded-full text-xs font-semibold
+              <%= case segment
+                  when "VIP" then "bg-yellow-100 text-yellow-800"
+                  when "Loyal" then "bg-green-100 text-green-800"
+                  when "New" then "bg-blue-100 text-blue-800"
+                  when "At-Risk" then "bg-red-100 text-red-800"
+                  else "bg-gray-100 text-gray-800"
+              end %>">
+              <%= segment %>
+            </span>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

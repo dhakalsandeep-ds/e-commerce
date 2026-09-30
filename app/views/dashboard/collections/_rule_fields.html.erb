@@ -1,0 +1,45 @@
+<!-- app/views/dashboard/collections/_rule_fields.html.erb -->
+<div class="flex gap-3 mb-3 items-end">
+  <!-- Field -->
+  <div class="flex-1">
+    <%= f.label :field, "Field", class: "block text-xs font-medium text-gray-600" %>
+    <%= f.select :field,
+        options_for_select([
+          ["Name", "name"],
+          ["Price", "price"],
+          ["Category", "category_id"]
+        ], rule["field"]),
+        { include_blank: false },
+        {
+          name: "collection[rules][][field]",
+          class: "w-full p-2 border border-gray-300 rounded text-sm",
+          onchange: "updatePredicateOptions(this)"
+        } %>
+  </div>
+
+  <!-- Predicate -->
+  <div class="flex-1">
+    <%= f.label :predicate, "Condition", class: "block text-xs font-medium text-gray-600" %>
+    <%= f.select :predicate,
+        options_for_predicate(rule["field"], rule["predicate"]),
+        { include_blank: false },
+        {
+          name: "collection[rules][][predicate]",
+          class: "w-full p-2 border border-gray-300 rounded text-sm"
+        } %>
+  </div>
+
+  <!-- Value -->
+  <div class="flex-1">
+    <%= f.label :value, "Value", class: "block text-xs font-medium text-gray-600" %>
+    <%= f.text_field :value,
+        value: rule["value"],
+        name: "collection[rules][][value]",
+        class: "w-full p-2 border border-gray-300 rounded text-sm" %>
+  </div>
+
+  <!-- Remove Button -->
+  <div>
+    <button type="button" onclick="removeRule(this)" class="text-red-600 hover:text-red-800">✕</button>
+  </div>
+</div>

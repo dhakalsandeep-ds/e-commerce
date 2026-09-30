@@ -1,0 +1,71 @@
+<%# app/views/dashboard/categories/index.html.erb %>
+
+  <main class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="pb-5 border-b border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between">
+        <h1 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">Manage Categories</h1>
+        <div class="mt-3 md:mt-0">
+          <%= link_to "New Category", new_dashboard_category_path, class: "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+        </div>
+      </div>
+
+      <% if @categories.any? %>
+        <div class="mt-6 bg-white shadow overflow-hidden sm:rounded-md">
+          <ul role="list" class="divide-y divide-gray-200">
+            <% @categories.each do |category| %>
+              <li>
+                <div class="px-4 py-4 sm:px-6">
+                  <div class="flex items-center justify-between">
+                    <p class="text-sm font-medium text-indigo-600 truncate"><%= category.name %></p>
+                    <div class="ml-2 flex-shrink-0 flex space-x-2">
+                    
+                      <%= link_to "Edit", edit_dashboard_category_path(category), class: "text-sm font-medium text-indigo-600 hover:text-indigo-500" %>
+                      <% unless category.products.any? %>
+                      <!-- In index.html.erb -->
+<%= button_to "Delete", dashboard_category_path(category), 
+    method: :delete,
+    form: { 
+      class: "inline",
+      data: { turbo_confirm: "Are you sure?" }
+    },
+    class: "text-sm font-medium text-red-600 hover:text-red-500 bg-transparent border-none p-0 cursor-pointer" %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="mt-2 sm:flex sm:justify-between">
+                    <div class="sm:flex">
+                      <p class="flex items-center text-sm text-gray-500">
+                        <%= category.description&.truncate(100) || 'No description' %>
+                      </p>
+                    </div>
+                    <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                      <p>
+                        <%= pluralize(category.products.count, 'Product') %>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+         <!-- Add pagination controls here if needed -->
+         <!--
+         <div class="mt-6">
+           <%= paginate @categories %>
+         </div>
+         -->
+      <% else %>
+         <div class="text-center mt-6">
+           <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+           </svg>
+           <h3 class="mt-2 text-sm font-medium text-gray-900">No categories found</h3>
+           <p class="mt-1 text-sm text-gray-500">Get started by creating a new category.</p>
+           <div class="mt-6">
+             <%= link_to "New Category", new_dashboard_category_path, class: "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+           </div>
+         </div>
+      <% end %>
+    </div>
+  </main>

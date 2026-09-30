@@ -1,0 +1,69 @@
+<!-- app/views/storefront/categories/show.html.erb -->
+
+<main class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <div class="mb-8 text-center">
+      <h1 class="text-3xl font-bold text-gray-900">
+        <%= @category.name %>
+      </h1>
+      <p class="text-gray-600 mt-2">
+        <%= pluralize(@products.total_count, "item") %> available
+      </p>
+    </div>
+
+    <!-- Product Grid -->
+    <% if @products.any? %>
+      <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5">
+        <% @products.each do |product| %>
+          <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all overflow-hidden border border-gray-100 group">
+            <a href="<%= product_path(product) %>" class="block">
+              <div class="h-60 w-full bg-gray-200 relative">
+                <% if product.image.attached? %>
+                  <%= image_tag product.image, class: "h-60 w-full object-cover", alt: product.name %>
+                <% end %>
+                <% if product.created_at >= 3.days.ago %>
+                  <span class="absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-bold bg-red-500 text-white">New</span>
+                <% end %>
+              </div>
+              <div class="p-4">
+                <h3 class="text-sm font-semibold text-gray-900 line-clamp-2"><%= product.name %></h3>
+                <p class="text-sm text-gray-500 mt-1"><%= product&.category&.name %></p>
+
+                <!-- Variant-Based Pricing -->
+                <% min_price = product.min_variant_price %>
+                <% if min_price.present? %>
+                  <p class="text-base font-bold mt-2">$<%= number_with_precision(min_price, precision: 2) %></p>
+                <% else %>
+                  <p class="text-gray-500 italic mt-2">Price on request</p>
+                <% end %>
+              </div>
+            </a>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- Pagination -->
+      <% if @products.total_pages > 1 %>
+        <div class="mt-10 flex justify-center">
+          <%= paginate @products %>
+        </div>
+      <% end %>
+
+    <% else %>
+      <!-- No Products -->
+      <div class="bg-white rounded-2xl p-12 text-center border border-gray-200">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-5">
+          <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">No items in this category</h3>
+        <p class="text-gray-600 mb-6">Check back soon or browse all products.</p>
+        <%= link_to "Browse All Products", products_path, class: "px-5 py-2.5 bg-blue-600 text-white rounded-md hover:bg-blue-700" %>
+      </div>
+    <% end %>
+
+  </div>
+</main>

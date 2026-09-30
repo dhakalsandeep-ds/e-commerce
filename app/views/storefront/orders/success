@@ -1,0 +1,451 @@
+<div class="max-w-5xl mx-auto px-4 py-10">
+
+  <!-- Success Header -->
+  <div class="mb-8 rounded-lg border border-green-200 bg-green-50 p-6">
+    <div class="flex items-start gap-4">
+      <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-700">
+        ✓
+      </div>
+
+      <div>
+        <h1 class="text-2xl font-bold text-green-800">
+          Payment Successful
+        </h1>
+
+        <p class="mt-1 text-green-700">
+          Thank you for your purchase. Your order has been confirmed.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Header -->
+  <div class="mb-6 rounded-lg border bg-white p-6 shadow-sm">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <p class="text-sm text-gray-500">
+          Order Number
+        </p>
+
+        <h2 class="text-xl font-bold text-gray-900">
+          #<%= @order.id %>
+        </h2>
+      </div>
+
+      <div class="text-left sm:text-right">
+        <p class="text-sm text-gray-500">
+          Order Date
+        </p>
+
+        <p class="font-medium text-gray-900">
+          <%= @order.created_at.strftime("%B %d, %Y") %>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-5 flex flex-wrap gap-3">
+      <span class="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
+        <%= @order.status.titleize %>
+      </span>
+
+      <span class="rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800">
+        Payment <%= @order.payment_status.titleize %>
+      </span>
+    </div>
+  </div>
+
+  <div class="grid gap-6 lg:grid-cols-3">
+
+    <!-- Order Items -->
+    <div class="lg:col-span-2">
+      <div class="rounded-lg border bg-white shadow-sm">
+
+        <div class="border-b px-6 py-4">
+          <h2 class="text-lg font-semibold text-gray-900">
+            Order Items
+          </h2>
+        </div>
+
+        <div class="divide-y">
+          <% @order.order_items.each do |order_item| %>
+
+            <div class="flex gap-4 p-6">
+
+              <!-- Product Image -->
+              <div class="h-24 w-20 shrink-0 overflow-hidden rounded-md bg-gray-100">
+
+                <% if order_item.product&.image&.attached? %>
+
+                  <%= image_tag order_item.product.image,
+                        class: "h-full w-full object-cover",
+                        alt: order_item.product.name %>
+
+                <% else %>
+
+                  <div class="flex h-full w-full items-center justify-center text-xl font-semibold text-gray-400">
+                    <%= order_item.product&.name.to_s.first(2).upcase %>
+                  </div>
+
+                <% end %>
+
+              </div>
+
+              <!-- Product Information -->
+              <div class="min-w-0 flex-1">
+
+                <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+
+                  <div>
+                    <h3 class="font-semibold text-gray-900">
+                      <%= order_item.product&.name || "Product" %>
+                    </h3>
+
+                    <% if order_item.variant.present? %>
+
+                      <% option_values = order_item.variant.option_values.map(&:name) %>
+
+                      <% if option_values.any? %>
+
+                        <p class="mt-1 text-sm text-gray-500">
+                          <%= option_values.join(", ") %>
+                        </p>
+
+                      <% elsif order_item.variant.sku.present? %>
+
+                        <p class="mt-1 text-sm text-gray-500">
+                          SKU: <%= order_item.variant.sku %>
+                        </p>
+
+                      <% end %>
+
+                    <% end %>
+                  </div>
+
+                  <p class="font-semibold text-gray-900">
+                    <%= number_to_currency(
+                          order_item.price.to_f * order_item.quantity.to_i
+                        ) %>
+                  </p>
+
+                </div>
+
+                <div class="mt-3 flex flex-wrap gap-4 text-sm text-gray-500">
+
+                  <span>
+                    Quantity:
+                    <strong class="font-medium text-gray-700">
+                      <%= order_item.quantity %>
+                    </strong>
+                  </span>
+
+                  <span>
+                    Price:
+                    <strong class="font-medium text-gray-700">
+                      <%= number_to_currency(order_item.price.to_f) %>
+                    </strong>
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="lg:col-span-1">
+
+      <div class="rounded-lg border bg-white p-6 shadow-sm">
+
+        <h2 class="text-lg font-semibold text-gray-900">
+          Order Summary
+        </h2>
+
+        <div class="mt-5 space-y-3">
+
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-600">
+              Subtotal
+            </span>
+
+            <span class="font-medium text-gray-900">
+              <%= number_to_currency(@order.subtotal) %>
+            </span>
+          </div>
+
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-600">
+              Shipping
+            </span>
+
+            <span class="font-medium text-gray-900">
+              <% if @order.shipping_cost.to_f.zero? %>
+                Free
+              <% else %>
+                <%= number_to_currency(@order.shipping_cost) %>
+              <% end %>
+            </span>
+          </div>
+
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-600">
+              Tax
+            </span>
+
+            <span class="font-medium text-gray-900">
+              <%= number_to_currency(@order.tax) %>
+            </span>
+          </div>
+
+          <div class="border-t pt-4">
+            <div class="flex justify-between">
+
+              <span class="text-base font-semibold text-gray-900">
+                Total
+              </span>
+
+              <span class="text-xl font-bold text-gray-900">
+                <%= number_to_currency(@order.total_price) %>
+              </span>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Payment Information -->
+      <div class="mt-6 rounded-lg border bg-white p-6 shadow-sm">
+
+        <h2 class="text-lg font-semibold text-gray-900">
+          Payment Information
+        </h2>
+
+        <div class="mt-4 space-y-3 text-sm">
+
+          <div class="flex justify-between gap-4">
+            <span class="text-gray-500">
+              Payment Method
+            </span>
+
+            <span class="font-medium text-gray-900">
+              <%= @order.payment_method.to_s.titleize %>
+            </span>
+          </div>
+
+          <% if @order.stripe_payment_intent_id.present? %>
+
+            <div>
+              <p class="text-gray-500">
+                Payment ID
+              </p>
+
+              <p class="mt-1 break-all font-mono text-xs text-gray-700">
+                <%= @order.stripe_payment_intent_id %>
+              </p>
+            </div>
+
+          <% end %>
+
+          <% if @order.paid_at.present? %>
+
+            <div class="flex justify-between gap-4">
+              <span class="text-gray-500">
+                Paid At
+              </span>
+
+              <span class="font-medium text-gray-900">
+                <%= @order.paid_at.strftime("%B %d, %Y %I:%M %p") %>
+              </span>
+            </div>
+
+          <% end %>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Shipping Information -->
+  <div class="mt-6 rounded-lg border bg-white p-6 shadow-sm">
+
+    <h2 class="text-lg font-semibold text-gray-900">
+      Shipping Information
+    </h2>
+
+    <div class="mt-4 grid gap-6 sm:grid-cols-2">
+
+      <div>
+        <p class="text-sm text-gray-500">
+          Name
+        </p>
+
+        <p class="mt-1 font-medium text-gray-900">
+          <%= [@order.first_name, @order.last_name].compact.join(" ") %>
+        </p>
+      </div>
+
+      <div>
+        <p class="text-sm text-gray-500">
+          Email
+        </p>
+
+        <p class="mt-1 break-all font-medium text-gray-900">
+          <%= @order.email %>
+        </p>
+      </div>
+
+      <div>
+        <p class="text-sm text-gray-500">
+          Address
+        </p>
+
+        <p class="mt-1 font-medium text-gray-900">
+          <%= @order.address.presence || "N/A" %>
+        </p>
+      </div>
+
+      <div>
+        <p class="text-sm text-gray-500">
+          City
+        </p>
+
+        <p class="mt-1 font-medium text-gray-900">
+          <%= @order.city.presence || "N/A" %>
+        </p>
+      </div>
+
+      <div>
+        <p class="text-sm text-gray-500">
+          State
+        </p>
+
+        <p class="mt-1 font-medium text-gray-900">
+          <%= @order.state.presence || "N/A" %>
+        </p>
+      </div>
+
+      <div>
+        <p class="text-sm text-gray-500">
+          Postal Code
+        </p>
+
+        <p class="mt-1 font-medium text-gray-900">
+          <%= @order.postal_code.presence || "N/A" %>
+        </p>
+      </div>
+
+      <div>
+        <p class="text-sm text-gray-500">
+          Country
+        </p>
+
+        <p class="mt-1 font-medium text-gray-900">
+          <%= @order.country.presence || "N/A" %>
+        </p>
+      </div>
+
+      <% if @order.phone.present? %>
+
+        <div>
+          <p class="text-sm text-gray-500">
+            Phone
+          </p>
+
+          <p class="mt-1 font-medium text-gray-900">
+            <%= @order.phone %>
+          </p>
+        </div>
+
+      <% end %>
+
+    </div>
+
+  </div>
+
+  <!-- Actions -->
+  <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+
+    <%= link_to "Continue Shopping",
+          products_path,
+          class: "rounded-md bg-gray-900 px-6 py-3 text-center font-medium text-white hover:bg-gray-800" %>
+
+    <button type="button"
+            onclick="window.print()"
+            class="print:hidden rounded-md border border-gray-300 bg-white px-6 py-3 font-medium text-gray-700 hover:bg-gray-50">
+      Print Receipt
+    </button>
+
+  </div>
+
+  <!-- Help -->
+  <div class="mt-8 text-center text-sm text-gray-500">
+    <p>
+      Need help with your order?
+
+      <%= link_to "Contact Us",
+            contact_path,
+            class: "font-medium text-gray-900 underline hover:no-underline" %>
+    </p>
+  </div>
+
+</div>
+
+<style>
+  @media print {
+    @page {
+      size: A4;
+      margin: 15mm;
+    }
+
+    /*
+     * Hide the application's normal header/navigation/footer
+     * only while printing.
+     */
+    header,
+    nav,
+    footer {
+      display: none !important;
+    }
+
+    /*
+     * Hide the Print Receipt button.
+     */
+    .print\:hidden {
+      display: none !important;
+    }
+
+    /*
+     * Do not change the normal screen layout.
+     */
+    html,
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: white !important;
+    }
+
+    /*
+     * Keep the existing receipt width/layout.
+     */
+    .max-w-5xl {
+      max-width: 64rem !important;
+    }
+
+    /*
+     * Remove screen shadows when printed.
+     */
+    .shadow-sm {
+      box-shadow: none !important;
+    }
+  }
+</style>

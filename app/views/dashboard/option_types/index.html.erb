@@ -1,0 +1,45 @@
+<div data-controller="option-panel">
+  <!-- Header -->
+  <div class="max-w-4xl mx-auto mb-6">
+    <div class="flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-800">Product Options</h1>
+      <button 
+        data-action="click->option-panel#open"
+        class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+        New Option Type
+      </button>
+    </div>
+  </div>
+
+  <!-- Option Types List -->
+  <div id="option-types-list" class="max-w-4xl mx-auto space-y-5">
+    <% if @option_types.empty? %>
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-12 text-center">
+        <p class="text-gray-500">No option types yet.</p>
+      </div>
+    <% else %>
+      <%= render partial: "option_type", collection: @option_types, as: :ot %>
+    <% end %>
+  </div>
+
+  <!-- Slide-in Panel (always in DOM, just hidden) -->
+  <div 
+    data-option-panel-target="panel"
+    class="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-white border-l border-gray-200 shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="h-full flex flex-col">
+      <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
+        <h2 class="text-lg font-semibold text-gray-800">New Option Type</h2>
+        <button 
+          data-action="click->option-panel#close"
+          class="text-gray-500 hover:text-gray-800 w-6 h-6 flex items-center justify-center rounded-full hover:bg-gray-100">
+          &times;
+        </button>
+      </div>
+      <div class="flex-1 overflow-y-auto p-6">
+        <div id="new_option_type_form">
+          <%= render "dashboard/option_types/form", option_type: @option_type %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

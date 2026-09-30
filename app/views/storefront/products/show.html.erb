@@ -1,0 +1,243 @@
+<%# Shopify-style Product Detail Page with Stimulus JS %>
+<main class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- PRODUCT SECTION -->
+    <div class="bg-white rounded-xl shadow-sm overflow-hidden" data-controller="product">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
+
+        <!-- PRODUCT GALLERY -->
+        <div class="space-y-4">
+          <div class="aspect-square w-full overflow-hidden rounded-lg bg-gray-100">
+            <% default_image_url =
+              @product.image.attached? ?
+              rails_blob_url(@product.image) :
+              "https://placehold.co/600x600?text=#{URI.encode_www_form_component(@product.name.truncate(15))}"
+            %>
+
+            <%= image_tag default_image_url,
+                id: "main-product-image",
+                data: { default_src: default_image_url },
+                class: "h-full w-full object-cover object-center transition-opacity duration-300",
+                alt: @product.name %>
+          </div>
+
+          <!-- THUMBNAILS -->
+          <div class="flex gap-3" data-product-target="thumbnails">
+            <% seen_urls = Set.new([default_image_url]) %>
+
+            <!-- Default Image -->
+            <div class="flex flex-col items-center">
+              <%= image_tag default_image_url,
+                    class: "h-20 w-20 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-gray-300",
+                    data: { action: "click->product#switchImage" } %>
+              <span class="mt-1 text-[10px] text-gray-500">Default</span>
+            </div>
+
+            <!-- Additional Thumbnails -->
+            <% if @product.thumbnails.attached? %>
+              <% @product.thumbnails.each do |thumb| %>
+                <% url = rails_blob_url(thumb) %>
+                <% next if seen_urls.include?(url) %>
+                <% seen_urls.add(url) %>
+                <div class="flex flex-col items-center">
+                  <%= image_tag thumb,
+                        class: "h-20 w-20 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-gray-300",
+                        data: { action: "click->product#switchImage" } %>
+                  <span class="mt-1 text-[10px] text-gray-500">Gallery</span>
+                </div>
+              <% end %>
+            <% end %>
+
+            <!-- VARIANT THUMBNAILS -->
+            <% @product.variants.each do |variant| %>
+              <% next unless variant.image.attached? %>
+              <% url = rails_blob_url(variant.image) %>
+              <% next if seen_urls.include?(url) %>
+              <% seen_urls.add(url) %>
+
+              <div class="flex flex-col items-center">
+                <%= image_tag variant.image,
+                      class: "h-20 w-20 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-blue-500",
+                      data: { action: "click->product#switchVariant",
+                              variant_id: variant.id } %>
+                <span class="mt-1 text-[10px] text-gray-500">Variant</span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <!-- PRODUCT INFO -->
+        <div>
+          <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            <%= @product.name %>
+          </h1>
+
+          <!-- PRICE -->
+          <div class="mt-4">
+            <p id="product-price" class="text-3xl font-bold text-gray-900">
+              $ <%= number_with_precision(@product.variants.minimum(:price) || 0, precision: 2) %>
+            </p> 
+          </div>
+
+          <!-- VARIANTS JSON DATA -->
+          <script id="variants-data" type="application/json">
+            <%= raw @product.variants.includes(:option_values).map { |v|
+              {
+                id: v.id,
+                price: v.price,
+                stock: v.stock.to_i,
+                image_url: v.image.attached? ? rails_blob_url(v.image) : nil,
+                option_value_ids: v.option_values.pluck(:id)
+              }
+            }.to_json %>
+          </script>
+
+          <!-- OPTION SELECTORS -->
+          <% if @option_types.present? %>
+            <% @option_types.sort_by(&:id).each do |option_type| %>
+              <div class="mt-6">
+                <h3 class="text-sm font-medium text-gray-900"><%= option_type.name %></h3>
+                <div class="mt-2 flex flex-wrap gap-2">
+                  <% option_values =
+                      option_type.option_values
+                        .select { |ov| ov.variants.any? { |v| v.product_id == @product.id } }
+                        .uniq
+                        .sort_by(&:name)
+                  %>
+
+                  <% option_values.each_with_index do |opt_val, i| %>
+                    <button type="button"
+                      class="px-4 py-2 text-sm border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none transition
+                             <%= 'bg-blue-100 border-blue-500' if i == 0 %>"
+                      data-product-target="variantSelector"
+                      data-option-type="<%= option_type.id %>"
+                      data-option-value="<%= opt_val.id %>"
+                      data-selected="<%= i == 0 %>">
+                      <%= opt_val.name %>
+                    </button>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+
+          <!-- INVENTORY -->
+          <div class="mt-4">
+            <p id="inventory-status" class="text-sm text-gray-500"></p>
+          </div>
+
+          <!-- QUANTITY -->
+          <div class="mt-6">
+            <h3 class="text-sm font-medium text-gray-900">Quantity</h3>
+
+            <div class="mt-1 flex items-center">
+              <button type="button"
+                class="w-10 h-10 rounded-l-md bg-gray-200 text-gray-600 hover:bg-gray-300"
+                data-action="click->product#adjustQuantity"
+                data-delta="-1">−</button>
+
+              <input type="number"
+                id="quantity-input"
+                value="1"
+                min="1"
+                max="99"
+                class="w-16 h-10 text-center border-y border-gray-300 focus:ring-gray-500"
+                data-product-target="quantityInput">
+
+              <button type="button"
+                class="w-10 h-10 rounded-r-md bg-gray-200 text-gray-600 hover:bg-gray-300"
+                data-action="click->product#adjustQuantity"
+                data-delta="1">+</button>
+            </div>
+          </div>
+
+          <!-- ACTION BUTTONS -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+  <!-- ADD TO CART (Primary Action) -->
+  <%= form_with url: cart_items_path, method: :post, local: true,
+      html: { class: "w-full" } do |f| %>
+    
+    <%= f.hidden_field :product_id, value: @product.id %>
+    <%= f.hidden_field :variant_id, id: "selected-variant-id" %>
+    <%= f.hidden_field :quantity, id: "form-quantity", value: 1 %>
+    
+    <%= f.submit "Add to cart",
+        id: "add-to-cart-button",
+        class: "flex w-full items-center justify-center rounded-xl bg-gray-900 px-6 py-3.5 text-base font-semibold text-white shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-900" %>
+  <% end %>
+
+  <!-- BUY NOW (Secondary Action) -->
+ 
+</div>
+        </div>
+      </div>
+
+      <!-- PRODUCT DETAILS -->
+      <div class="border-t border-gray-200 px-6 py-8">
+        <h2 class="text-lg font-medium text-gray-900 mb-4">Product Details</h2>
+
+        <% if @product.description.present? %>
+          <article class="trix-content prose prose-sm max-w-none">
+            <%= @product.description %>
+          </article>
+        <% else %>
+          <p class="text-sm text-gray-500">No additional details available.</p>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+<!-- FREQUENTLY BOUGHT TOGETHER -->
+<% if @recommendations.any? %>
+  <div class="mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-xl font-bold text-gray-900 mb-6">Frequently Bought Together</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <% @recommendations.each do |rec| %>
+          <div class="border border-gray-200 rounded-xl p-4 bg-white hover:shadow-md transition-shadow group">
+            <% if rec.recommended_product.image.attached? %>
+              <div class="aspect-square w-full overflow-hidden rounded-lg mb-3 bg-gray-100">
+                <%= image_tag rec.recommended_product.image, 
+                    class: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500", 
+                    alt: rec.recommended_product.name %>
+              </div>
+            <% else %>
+              <div class="aspect-square w-full overflow-hidden rounded-lg mb-3 bg-gray-100 flex items-center justify-center">
+                <span class="text-gray-400 text-sm text-center px-2">
+                  <%= rec.recommended_product.name.truncate(20) %>
+                </span>
+              </div>
+            <% end %>
+            
+            <h3 class="font-medium text-gray-900 mb-2"><%= rec.recommended_product.name %></h3>
+               <!-- Confidence indicator -->
+            <div class="flex items-center mb-3">
+              <span class="text-xs font-medium text-green-600 bg-green-100 px-2 py-1 rounded">
+                <%= number_to_percentage(rec.confidence * 100, precision: 0) %> confident
+              </span>
+            </div>
+          
+            
+          
+            <p class="text-lg font-bold text-gray-900 mb-4">
+              $ <%= number_with_precision(rec.recommended_product.variants.minimum(:price) || 0, precision: 2) %>
+            </p>
+
+           
+            <div class="mt-auto pt-2">
+              <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <%= link_to "View details →", 
+                    product_path(rec.recommended_product), 
+                    class: "inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+  

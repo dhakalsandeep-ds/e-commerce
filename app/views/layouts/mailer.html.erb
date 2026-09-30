@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <style>
+      /* Basic styles for all Devise emails */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      .email-container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+      }
+      .email-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .email-header img {
+        max-width: 150px;
+        height: auto;
+      }
+      .email-footer {
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+        margin-top: 30px;
+      }
+      .btn {
+        background-color: #0b79d0;
+        color: white !important;
+        padding: 12px 25px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <!-- Logo/Header -->
+      <div class="email-header">
+        <%= image_tag 'logo.png', alt: 'Your Company' %>
+      </div>
+
+      <!-- Email content -->
+      <%= yield %>
+
+      <!-- Footer -->
+      <div class="email-footer">
+        &copy; <%= Time.current.year %> Your Company. All rights reserved.
+      </div>
+    </div>
+  </body>
+</html>

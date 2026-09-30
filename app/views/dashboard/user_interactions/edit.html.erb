@@ -1,0 +1,11 @@
+<main class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto">
+    <%= link_to "← Back to Interactions", dashboard_user_interactions_path, 
+        class: "inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 mb-6" %>
+
+    <div class="bg-white shadow sm:rounded-lg p-6">
+      <h2 class="text-lg font-medium text-gray-900 mb-4">Edit User Interaction</h2>
+      <%= render 'form' %>
+    </div>
+  </div>
+</main>

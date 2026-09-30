@@ -1,0 +1,62 @@
+<% 
+  price_min = params[:min_price].presence&.to_f 
+  price_max = params[:max_price].presence&.to_f 
+  category_active = params[:category_id].present?
+  price_active = price_min.present? || price_max.present?
+%>
+
+<!-- Category -->
+<div class="mb-6">
+  <h3 class="text-sm font-semibold text-gray-900 mb-3">Category</h3>
+  <div class="space-y-1.5">
+    <%= link_to "All", 
+        products_path(params.permit(:min_price, :max_price, :sort).merge(category_id: nil)),
+        class: "block px-3 py-2 rounded-lg text-sm #{params[:category_id].blank? ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-700 hover:bg-gray-100'}" %>
+    <% @categories.each do |category| %>
+      <%= link_to category.name, 
+          products_path(params.permit(:min_price, :max_price, :sort).merge(category_id: category.id)),
+          class: "block px-3 py-2 rounded-lg text-sm #{params[:category_id].to_s == category.id.to_s ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-700 hover:bg-gray-100'}" %>
+    <% end %>
+  </div>
+</div>
+
+<!-- Price -->
+<div class="mb-6">
+  <h3 class="text-sm font-semibold text-gray-900 mb-3">Price</h3>
+  <%= form_with url: products_path, method: :get, local: true, class: "space-y-3" do |f| %>
+    <% if params[:category_id].present? %>
+      <%= hidden_field_tag :category_id, params[:category_id] %>
+    <% end %>
+
+    <div class="grid grid-cols-2 gap-3">
+      <%= f.number_field :min_price, 
+          value: price_min || "", 
+          min: 0, 
+          step: 0.01, 
+          placeholder: "Min",
+          class: "w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" %>
+      <%= f.number_field :max_price, 
+          value: price_max || "", 
+          min: 0, 
+          step: 0.01, 
+          placeholder: "Max",
+          class: "w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" %>
+    </div>
+
+    <div class="flex gap-2">
+      <%= f.submit "Apply", class: "flex-1 bg-blue-600 text-white text-sm font-medium py-2 rounded-lg hover:bg-blue-700" %>
+      <% if price_active %>
+        <%= link_to "Clear", 
+            products_path(params.permit(:category_id, :sort)), 
+            class: "flex-1 bg-gray-100 text-gray-700 text-sm font-medium py-2 rounded-lg hover:bg-gray-200 text-center" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<!-- Clear All -->
+<% if category_active || price_active %>
+  <div class="pt-4 border-t border-gray-200">
+    <%= link_to "Clear all filters", products_path, class: "block w-full py-2 text-center text-sm text-blue-600 font-medium hover:text-blue-800" %>
+  </div>
+<% end %>

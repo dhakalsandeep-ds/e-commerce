@@ -1,0 +1,2 @@
+module Dashboard::OptionTypesHelper
+end

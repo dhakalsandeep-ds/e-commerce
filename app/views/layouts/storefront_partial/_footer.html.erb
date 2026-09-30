@@ -1,0 +1,78 @@
+<footer class="mt-20 bg-white print:hidden">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+
+      <div class="sm:col-span-2">
+        <%= link_to root_path, class: "inline-block" do %>
+          <%= image_tag "logoss.svg",
+                class: "h-8 w-auto",
+                alt: "Clotherya" %>
+        <% end %>
+
+        <p class="mt-5 max-w-md text-sm leading-6 text-gray-500">
+          Discover unique clothing, accessories, and handmade goods
+          from independent creators worldwide.
+        </p>
+      </div>
+
+
+      <div>
+        <h3 class="text-sm font-semibold text-gray-900">
+          Store
+        </h3>
+
+        <ul class="mt-5 space-y-3">
+          <li>
+            <%= link_to "Shop",
+                  products_path,
+                  class: "text-sm text-gray-500 hover:text-gray-900" %>
+          </li>
+
+          <li>
+            <%= link_to "About",
+                  about_path,
+                  class: "text-sm text-gray-500 hover:text-gray-900" %>
+          </li>
+        </ul>
+      </div>
+
+
+      <div>
+        <h3 class="text-sm font-semibold text-gray-900">
+          Get in touch
+        </h3>
+
+        <ul class="mt-5 space-y-3">
+          <li>
+            <%= link_to "Contact Us",
+                  contact_path,
+                  class: "text-sm text-gray-500 hover:text-gray-900" %>
+          </li>
+
+          <li>
+            <%= link_to "GitHub",
+                  "https://github.com/dhakalsandeep-ds/",
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  class: "text-sm text-gray-500 hover:text-gray-900" %>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div class="flex justify-center py-6">
+      <p class="text-xs text-gray-400">
+        Built by
+        <%= link_to "Sandeep Dhakal",
+              "https://github.com/dhakalsandeep-ds/",
+              target: "_blank",
+              rel: "noopener noreferrer",
+              class: "font-medium text-gray-600 hover:text-gray-900" %>
+      </p>
+    </div>
+
+  </div>
+</footer>

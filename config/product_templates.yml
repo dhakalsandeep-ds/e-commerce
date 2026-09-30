@@ -1,0 +1,18 @@
+# config/product_templates.yml
+football_jersey: |
+  <h3>Material</h3>
+  <p>100% recycled polyester with Dri-FIT technology.</p>
+
+  <h3>Fit</h3>
+  <p>Standard fit for a relaxed, comfortable feel.</p>
+
+  <h3>Care Instructions</h3>
+  <p>Machine wash cold. Do not bleach.</p>
+
+running_shoes: |
+  <h3>Features</h3>
+  <ul>
+    <li>Responsive cushioning</li>
+    <li> breathable mesh upper</li>
+    <li> Durable rubber outsole</li>
+  </ul>

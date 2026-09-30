@@ -1,0 +1,288 @@
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <!-- Page Header -->
+  <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl mb-6">
+    Your Shopping Cart
+  </h1>
+
+  <!-- Flash Messages -->
+  <% if flash[:alert].present? %>
+    <div class="mb-6 rounded-lg border border-red-200 bg-red-50 p-4">
+      <div class="flex items-start">
+
+        <div>
+          <h3 class="font-medium text-red-800">
+            Payment not completed
+          </h3>
+
+          <p class="mt-1 text-sm text-red-700">
+            <%= flash[:alert] %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if flash[:notice].present? %>
+    <div class="mb-6 rounded-lg border border-green-200 bg-green-50 p-4">
+      <div class="flex items-start">
+        <svg
+          class="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
+
+        <div>
+          <h3 class="font-medium text-green-800">
+            Success
+          </h3>
+
+          <p class="mt-1 text-sm text-green-700">
+            <%= flash[:notice] %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @cart.cart_items.empty? %>
+
+    <!-- Empty Cart -->
+    <div class="rounded-lg border border-gray-200 bg-white p-8 text-center shadow-sm sm:p-12">
+
+      <h2 class="mt-5 text-xl font-semibold text-gray-900">
+        Your cart is empty
+      </h2>
+
+      <p class="mt-2 text-sm text-gray-500">
+        Add some products to your cart to get started.
+      </p>
+
+      <div class="mt-6">
+        <%= link_to "Continue Shopping",
+              products_path,
+              class: "inline-flex items-center rounded-md bg-gray-900 px-5 py-3 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2" %>
+      </div>
+    </div>
+
+  <% else %>
+
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+
+      <!-- Cart Items -->
+      <div class="lg:col-span-2">
+        <div class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+
+          <div class="border-b border-gray-200 px-6 py-4">
+            <h2 class="text-lg font-semibold text-gray-900">
+              Cart Items
+            </h2>
+          </div>
+
+          <div class="divide-y divide-gray-200">
+            <% @cart.cart_items.each do |item| %>
+
+              <div class="p-6">
+                <div class="flex flex-col gap-5 sm:flex-row">
+
+                  <!-- Product Image -->
+                  <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md bg-gray-100">
+                    <% if item.image.present? %>
+                      <%= image_tag item.image,
+                            class: "h-full w-full object-cover",
+                            alt: item.product.name %>
+                    <% else %>
+                      <div class="flex h-full w-full items-center justify-center">
+                        <svg
+                          class="h-8 w-8 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M4 16l4-4a3 3 0 014 0l4 4m-2-2l2-2a3 3 0 014 0l2 2M5 20h14a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v14a1 1 0 001 1z"
+                          />
+                        </svg>
+                      </div>
+                    <% end %>
+                  </div>
+
+                  <!-- Product Details -->
+                  <div class="min-w-0 flex-1">
+
+                    <div class="flex flex-col justify-between gap-4 sm:flex-row">
+
+                      <div>
+                        <h3 class="text-base font-semibold text-gray-900">
+                          <%= link_to item.product.name,
+                                product_path(item.product),
+                                class: "hover:text-gray-600" %>
+                        </h3>
+
+                        <% if item.option_values_text.present? %>
+                          <p class="mt-1 text-sm text-gray-500">
+                            <%= item.option_values_text %>
+                          </p>
+                        <% end %>
+
+                        <p class="mt-2 text-sm text-gray-600">
+                          $<%= number_with_precision(item.price, precision: 2) %>
+                          each
+                        </p>
+                      </div>
+
+                      <div class="text-left sm:text-right">
+                        <p class="text-base font-semibold text-gray-900">
+                          $<%= number_with_precision(item.subtotal, precision: 2) %>
+                        </p>
+                      </div>
+
+                    </div>
+
+                    <!-- Quantity Controls -->
+                    <div class="mt-4 flex flex-wrap items-center justify-between gap-4">
+
+                      <%= form_with url: cart_item_path(item),
+                                    method: :patch,
+                                    local: true,
+                                    class: "flex items-center gap-2" do |form| %>
+
+                        <%= form.label :quantity,
+                                      "Qty",
+                                      class: "text-sm font-medium text-gray-700" %>
+
+                        <%= form.number_field :quantity,
+                                              value: item.quantity,
+                                              min: 1,
+                                              class: "w-20 rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-500" %>
+
+                        <%= form.submit "Update",
+                              class: "rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2" %>
+
+                      <% end %>
+
+                      <%= button_to "Remove",
+                            cart_item_path(item),
+                            method: :delete,
+                            class: "text-sm font-medium text-red-600 hover:text-red-700",
+                            form: {
+                              data: {
+                                turbo_confirm: "Remove this item from your cart?"
+                              }
+                            } %>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            <% end %>
+          </div>
+
+          <!-- Cart Actions -->
+          <div class="border-t border-gray-200 bg-gray-50 px-6 py-4">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+
+              <%= link_to "Continue Shopping",
+                    products_path,
+                    class: "text-sm font-medium text-gray-700 hover:text-gray-900" %>
+
+              <%= button_to "Empty Cart",
+                    cart_path,
+                    method: :delete,
+                    class: "text-sm font-medium text-red-600 hover:text-red-700",
+                    form: {
+                      data: {
+                        turbo_confirm: "Are you sure you want to empty your cart?"
+                      }
+                    } %>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="lg:col-span-1">
+        <div class="sticky top-6 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+
+          <h2 class="text-lg font-semibold text-gray-900">
+            Order Summary
+          </h2>
+
+          <div class="mt-6 space-y-4">
+
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-gray-600">
+                Subtotal
+              </span>
+
+              <span class="font-medium text-gray-900">
+                $<%= number_with_precision(
+                      @cart.cart_items.sum(&:subtotal),
+                      precision: 2
+                    ) %>
+              </span>
+            </div>
+
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-gray-600">
+                Shipping
+              </span>
+
+              <span class="font-medium text-gray-900">
+                Calculated at checkout
+              </span>
+            </div>
+
+          </div>
+
+          <div class="my-6 border-t border-gray-200"></div>
+
+          <div class="flex items-center justify-between">
+            <span class="text-base font-semibold text-gray-900">
+              Total
+            </span>
+
+            <span class="text-xl font-bold text-gray-900">
+              $<%= number_with_precision(
+                    @cart.cart_items.sum(&:subtotal),
+                    precision: 2
+                  ) %>
+            </span>
+          </div>
+
+          <!-- Stripe Checkout -->
+          <div class="mt-6">
+            <%= button_to "Checkout with Stripe",
+                  orders_path,
+                  method: :post,
+                  form: { "data-turbo" => "false" },
+                  class: "w-full rounded-md bg-gray-900 px-4 py-3 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2" %>
+          </div>
+
+          <p class="mt-4 text-center text-xs text-gray-500">
+            You will be redirected to Stripe to securely complete your payment.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+  <% end %>
+</div>

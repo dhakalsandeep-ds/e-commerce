@@ -1,0 +1,11 @@
+<%= paginator.render do %>
+  <nav aria-label="Page navigation example" class="flex justify-center mt-4">
+    <ul class="inline-flex -space-x-px text-sm">
+      <%= prev_page_tag unless current_page.first? %>
+      <% each_page.select(&:inside_window?).each do |page| %>
+        <%= page_tag page %>
+      <% end %>
+      <%= next_page_tag unless current_page.last? %>
+    </ul>
+  </nav>
+<% end %>

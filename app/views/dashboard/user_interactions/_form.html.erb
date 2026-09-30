@@ -1,0 +1,57 @@
+<%= form_with model: [:dashboard, @user_interaction], local: true do |f| %>
+  <% if @user_interaction.errors.any? %>
+    <div class="mb-4 p-4 bg-red-100 text-red-700 rounded">
+      <ul>
+        <% @user_interaction.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <div>
+      <%= f.label :user_id, "User", class: "block text-sm font-medium text-gray-700" %>
+      <%= f.select :user_id, 
+          options_from_collection_for_select(@users, :id, :email),
+          { prompt: "Select a user" },
+          class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+    </div>
+
+    <div>
+      <%= f.label :product_id, "Product", class: "block text-sm font-medium text-gray-700" %>
+      <%= f.select :product_id, 
+          options_from_collection_for_select(@products, :id, :name),
+          { prompt: "Select a product" },
+          class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+    </div>
+
+    <div>
+      <%= f.label :interaction_type, class: "block text-sm font-medium text-gray-700" %>
+      <%= f.select :interaction_type, 
+          options_for_select([
+            ["View", "view"],
+            ["Add to Cart", "add_to_cart"],
+            ["Purchase", "purchase"]
+          ], f.object.interaction_type),
+          {},
+          class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+    </div>
+
+    <div>
+      <%= f.label :score, class: "block text-sm font-medium text-gray-700" %>
+      <%= f.number_field :score, 
+          step: "0.1", 
+          min: "0.1", 
+          max: "5.0",
+          value: f.object.score || 1.0,
+          class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" %>
+    </div>
+  </div>
+
+  <div class="mt-6 flex gap-3">
+    <%= f.submit class: "px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700" %>
+    <%= link_to "Cancel", dashboard_user_interactions_path, class: "px-4 py-2 bg-gray-200 text-gray-700 rounded-md" %>
+  </div>
+<% end %>
+

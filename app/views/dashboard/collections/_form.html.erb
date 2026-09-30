@@ -1,0 +1,52 @@
+<%= form_with model: @collection, url: dashboard_collection_path, local: true do |f| %>
+  <div class="max-w-3xl mx-auto p-6">
+    <div class="mb-4">
+      <%= f.label :title, "Title", class: "block text-sm font-medium" %>
+      <%= f.text_field :title, class: "w-full p-2 border rounded" %>
+    </div>
+
+    <h3 class="text-lg font-semibold mb-4">Rules</h3>
+    <div id="rules-container">
+      <% (@collection.rules || []).each do |rule| %>
+        <%= render "rule_fields", f: f, rule: rule %>
+      <% end %>
+    </div>
+
+    <button type="button" onclick="addRule()" class="text-blue-600 text-sm">+ Add Rule</button>
+
+    <div class="mt-6">
+      <%= f.submit "Save Collection", class: "px-4 py-2 bg-blue-600 text-white rounded" %>
+    </div>
+  </div>
+<% end %>
+
+<script>
+  function addRule() {
+    const container = document.getElementById("rules-container");
+    const ruleHTML = `
+      <div class="flex gap-2 mb-2">
+        <select name="collection[rules][][field]" class="p-2 border rounded" required>
+          <option value="name">Name</option>
+          <option value="price">Price</option>
+          <option value="category_id">Category</option>
+        </select>
+        <select name="collection[rules][][predicate]" class="p-2 border rounded" required>
+          <option value="is">is</option>
+          <option value="contains">contains</option>
+          <option value="less_than">less than</option>
+          <option value="greater_than">greater than</option>
+        </select>
+        <input type="text" name="collection[rules][][value]" placeholder="Value" class="p-2 border rounded flex-1" required />
+        <button type="button" onclick="this.closest('div').remove()" class="text-red-600">✕</button>
+      </div>
+    `;
+    container.insertAdjacentHTML('beforeend', ruleHTML);
+  }
+
+  // Add one empty rule on load
+  document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelectorAll('#rules-container > div').length === 0) {
+      addRule();
+    }
+  });
+</script>

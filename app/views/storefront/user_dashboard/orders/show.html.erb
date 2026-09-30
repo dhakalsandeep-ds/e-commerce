@@ -1,0 +1,116 @@
+<%# User Dashboard - Order Detail Page %>
+<main class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto">
+    <%= link_to "← Back to Orders", user_dashboard_orders_path, 
+        class: "inline-flex items-center px-4 py-2 mb-6 text-sm font-medium text-gray-700 hover:text-gray-900" %>
+
+    <div class="print-area bg-white shadow rounded-lg overflow-hidden">
+      <!-- Header -->
+      <div class="px-6 py-5 border-b border-gray-200">
+        <h1 class="text-2xl font-bold text-gray-900">Order #<%= @order.id %></h1>
+        <p class="text-gray-500 mt-1">Placed on <%= @order.created_at.strftime("%B %d, %Y") %></p>
+      </div>
+
+      <!-- Summary -->
+      <div class="px-6 py-5 border-b border-gray-200">
+        <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div>
+            <dt class="text-sm text-gray-500">Total</dt>
+            <dd class="mt-1 text-lg font-semibold">
+              <% total = @order.order_items.sum { |i| i.price.to_f * i.quantity.to_i } %>
+              $<%= number_with_precision(total, precision: 2) %>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-sm text-gray-500">Status</dt>
+            <dd class="mt-1 font-medium">
+              <span class="px-2 py-1 rounded-full text-xs 
+                <%= @order.status == 'delivered' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800' %>">
+                <%= @order.status&.humanize || 'Pending' %>
+              </span>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-sm text-gray-500">Items</dt>
+            <dd class="mt-1"><%= @order.order_items.count %> item(s)</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Shipping Address -->
+      <div class="px-6 py-5 border-b border-gray-200">
+        <h2 class="text-lg font-medium text-gray-900 mb-3">Shipping Address</h2>
+        <address class="not-italic text-gray-600">
+          <%= @order.first_name %> <%= @order.last_name %><br>
+          <%= @order.address %><br>
+          <%= @order.city %>, <%= @order.state %> <%= @order.postal_code %><br>
+          <%= @order.country %>
+        </address>
+      </div>
+
+      <!-- Items -->
+      <div class="px-6 py-5">
+        <h2 class="text-lg font-medium text-gray-900 mb-4">Order Items</h2>
+        <ul class="space-y-4">
+          <% @order.order_items.includes(:product, :variant).each do |item| %>
+            <li class="flex items-start">
+              <div class="w-16 h-16 rounded border bg-gray-100 flex-shrink-0">
+                <% if item.product.image.attached? %>
+                  <%= image_tag item.product.image, class: "w-full h-full object-cover" %>
+                <% else %>
+                  <div class="w-full h-full flex items-center justify-center text-xs text-gray-500">No Image</div>
+                <% end %>
+              </div>
+              <div class="ml-4 flex-1">
+                <h3 class="font-medium"><%= item.product.name %></h3>
+                <p class="text-sm text-gray-500 mt-1">
+                  <% if item.variant %>
+                    <%= item.variant.option_values.pluck(:name).join(', ') %>
+                  <% else %>
+                    —
+                  <% end %>
+                </p>
+                <p class="text-sm mt-2">
+                  <%= item.quantity %> × $<%= number_with_precision(item.price, precision: 2) %>
+                </p>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="mt-6 text-center">
+      <button 
+        onclick="window.print()" 
+        class="px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 print:hidden">
+        Print Receipt
+      </button>
+    </div>
+  </div>
+</main>
+
+<!-- Print Styles -->
+<style>
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    .print-area,
+    .print-area * {
+      visibility: visible;
+    }
+    .print-area {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      font-size: 12pt;
+    }
+    .no-print {
+      display: none !important;
+    }
+  }
+</style>

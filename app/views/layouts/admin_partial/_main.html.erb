@@ -1,0 +1,27 @@
+ <main class="flex-1 p-4 md:ml-64 ">
+    <!-- Page Header -->
+    <div class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+    <div class="mb-6">
+      
+
+    <% if flash.any? %>
+  <% flash.each do |type, message| %>
+    <div class="mb-4 rounded-lg p-4 shadow-md <%= flash_bg_class(type) %>">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <%= flash_icon(type) %>
+        </div>
+        <div class="ml-3">
+          <p class="text-sm font-medium <%= flash_text_class(type) %>"><%= message %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+
+   
+    
+    <%= yield %>
+    </div>
+  </main>

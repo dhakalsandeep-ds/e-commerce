@@ -1,0 +1,128 @@
+<main class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <%= link_to "← Back to Customers", dashboard_users_path, class: "inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mb-6" %>
+
+    <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+      <!-- User Header -->
+      <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+          <div>
+            <h3 class="text-lg leading-6 font-medium text-gray-900"><%= [@user.first_name, @user.last_name].join(' ').presence || 'N/A' %></h3>
+            <p class="mt-1 max-w-2xl text-sm text-gray-500"><%= @user.email %></p>
+          </div>
+          <div class="mt-4 flex space-x-3 md:mt-0">
+            <%= link_to "Edit", edit_dashboard_user_path(@user), class: "inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+            <%= link_to "Delete",
+                dashboard_user_path(@user),
+                data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this customer? This action cannot be undone.' },
+                class: "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" %>
+          </div>
+        </div>
+      </div>
+
+      <!-- User Details Grid -->
+      <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+        <dl class="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="sm:col-span-1">
+            <dt class="text-sm font-medium text-gray-500">Full Name</dt>
+            <dd class="mt-1 text-sm text-gray-900"><%= [@user.first_name, @user.last_name].join(' ').presence || 'N/A' %></dd>
+          </div>
+          <div class="sm:col-span-1">
+            <dt class="text-sm font-medium text-gray-500">Email</dt>
+            <dd class="mt-1 text-sm text-gray-900"><%= @user.email %></dd>
+          </div>
+          <div class="sm:col-span-1">
+            <dt class="text-sm font-medium text-gray-500">Phone Number</dt>
+            <dd class="mt-1 text-sm text-gray-900"><%= @user.phone_number.presence || 'N/A' %></dd>
+          </div>
+          <div class="sm:col-span-1">
+            <dt class="text-sm font-medium text-gray-500">Date of Birth</dt>
+            <dd class="mt-1 text-sm text-gray-900"><%= @user.date_of_birth&.strftime("%B %d, %Y") || 'N/A' %></dd>
+          </div>
+          <div class="sm:col-span-2">
+            <dt class="text-sm font-medium text-gray-500">Address</dt>
+            <dd class="mt-1 text-sm text-gray-900"><%= @user.address_line1.presence || 'N/A' %></dd>
+          </div>
+          <div class="sm:col-span-1">
+            <dt class="text-sm font-medium text-gray-500">Registration Date</dt>
+            <dd class="mt-1 text-sm text-gray-900"><%= @user.created_at.strftime("%B %d, %Y") %></dd>
+          </div>
+          <div class="sm:col-span-1">
+            <dt class="text-sm font-medium text-gray-500">Last Login</dt>
+            <dd class="mt-1 text-sm text-gray-900"><%= @user.current_sign_in_at&.strftime("%B %d, %Y %H:%M") || 'Never' %></dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Order History Section (unchanged) -->
+      <div class="px-4 py-5 sm:px-6">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg leading-6 font-medium text-gray-900">Order History</h3>
+          <%= link_to "View All Orders", dashboard_orders_path(user_id: @user.id), class: "text-sm font-medium text-indigo-600 hover:text-indigo-500" if @user.orders.any? %>
+        </div>
+
+        <% if @user.orders.any? %>
+          <div class="mt-4 bg-white shadow overflow-hidden sm:rounded-md">
+            <ul role="list" class="divide-y divide-gray-200">
+              <% @user.orders.order(created_at: :desc).limit(5).each do |order| %>
+                <li>
+                  <%= link_to dashboard_order_path(order), class: "block hover:bg-gray-50" do %>
+                    <div class="px-4 py-4 sm:px-6">
+                      <div class="flex items-center justify-between">
+                        <p class="text-sm font-medium text-indigo-600 truncate">Order #<%= order.id %></p>
+                        <div class="ml-2 flex-shrink-0 flex">
+                          <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-<%= order_status_color(order.status) %>-100 text-<%= order_status_color(order.status) %>-800">
+                            <%= order.status&.humanize || 'Unknown Status' %>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="mt-2 sm:flex sm:justify-between">
+                        <div class="sm:flex">
+                          <p class="flex items-center text-sm text-gray-500">
+                            <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                            </svg>
+                            <%= order.first_name %> <%= order.last_name %>
+                          </p>
+                          <p class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                            <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                            </svg>
+                            <%= order.city %>, <%= order.state %>
+                          </p>
+                        </div>
+                        <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                          <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                          </svg>
+                          <p>Ordered on <time datetime="<%= order.created_at.strftime("%Y-%m-%d") %>"><%= order.created_at.strftime("%B %d, %Y") %></time></p>
+                        </div>
+                      </div>
+                      <div class="mt-2 flex justify-between items-center">
+                        <p class="text-sm text-gray-900">Total: <span class="font-medium">$<%= sprintf('%.2f', order.total_price || 0.0) %></span></p>
+                        <p class="text-sm text-gray-500"><%= pluralize(order.order_items.sum(:quantity), 'item') %></p>
+                      </div>
+                    </div>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <% if @user.orders.count > 5 %>
+            <div class="mt-4 text-center">
+              <%= link_to "See all #{@user.orders.count} orders", dashboard_orders_path(user_id: @user.id), class: "text-sm font-medium text-indigo-600 hover:text-indigo-500" %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="text-center mt-6">
+            <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 100-2H9z"></path>
+            </svg>
+            <h3 class="mt-2 text-sm font-medium text-gray-900">No orders yet</h3>
+            <p class="mt-1 text-sm text-gray-500">This customer hasn't placed any orders.</p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>

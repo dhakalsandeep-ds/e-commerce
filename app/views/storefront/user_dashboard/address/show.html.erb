@@ -1,0 +1,83 @@
+<%# app/views/storefront/user_dashboard/address/edit.html.erb %>
+
+  <main class="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <%= link_to "← Back to Dashboard", storefront_user_dashboard_path, class: "inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mb-6" %>
+
+      <div class="bg-white shadow sm:rounded-lg">
+        <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+          <h3 class="text-lg leading-6 font-medium text-gray-900">Edit Address</h3>
+          <p class="mt-1 max-w-2xl text-sm text-gray-500"><%= [@user.first_name, @user.last_name].join(' ').presence || @user.email %></p>
+        </div>
+        <div class="px-4 py-5 sm:px-6">
+          <%= form_with model: [:storefront, :user_dashboard, @user], local: true, class: "space-y-6" do |form| %>
+            <% if @user.errors.any? %>
+              <div class="rounded-md bg-red-50 p-4">
+                <div class="flex">
+                  <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <div class="ml-3">
+                    <h3 class="text-sm font-medium text-red-800"><%= pluralize(@user.errors.count, "error") %> prohibited this address from being saved:</h3>
+                    <div class="mt-2 text-sm text-red-700">
+                      <ul role="list" class="list-disc pl-5 space-y-1">
+                        <% @user.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+
+            <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+              <!-- Address Line 1 Field -->
+              <div class="sm:col-span-6">
+                <%= form.label :address_line_1, "Address Line 1", class: "block text-sm font-medium text-gray-700" %>
+                <%= form.text_field :address_line_1, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+              </div>
+
+              <!-- Address Line 2 Field -->
+              <div class="sm:col-span-6">
+                <%= form.label :address_line_2, "Address Line 2", class: "block text-sm font-medium text-gray-700" %>
+                <%= form.text_field :address_line_2, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+              </div>
+
+              <!-- City Field -->
+              <div class="sm:col-span-2">
+                <%= form.label :city, class: "block text-sm font-medium text-gray-700" %>
+                <%= form.text_field :city, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+              </div>
+
+              <!-- State Field -->
+              <div class="sm:col-span-2">
+                <%= form.label :state, class: "block text-sm font-medium text-gray-700" %>
+                <%= form.text_field :state, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+              </div>
+
+              <!-- Postal Code Field -->
+              <div class="sm:col-span-2">
+                <%= form.label :postal_code, class: "block text-sm font-medium text-gray-700" %>
+                <%= form.text_field :postal_code, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+              </div>
+
+              <!-- Country Field -->
+              <div class="sm:col-span-3">
+                <%= form.label :country, class: "block text-sm font-medium text-gray-700" %>
+                <%= form.text_field :country, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" %>
+              </div>
+
+            </div>
+
+            <div class="flex items-center justify-end">
+              <%= link_to "Cancel", storefront_user_dashboard_address_path, class: "bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+              <%= form.submit "Update Address", class: "ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </main>

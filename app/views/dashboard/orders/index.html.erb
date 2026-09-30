@@ -1,0 +1,161 @@
+<%# app/views/dashboard/orders/index.html.erb %>
+
+<div class="max-w-7xl mx-auto">
+  <!-- Header -->
+  <div class="pb-5 border-b border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between">
+    <h1 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">All Orders</h1>
+  </div>
+
+  <!-- Filters and Sorting -->
+  <div class="mt-6 bg-white shadow rounded-lg p-4 sm:p-6">
+    <%= form_with url: dashboard_orders_path, method: :get, local: true, class: "grid grid-cols-1 gap-y-4 sm:grid-cols-12 sm:gap-x-4 md:items-end" do |form| %>
+      
+      <!-- Status Filter -->
+      <div class="sm:col-span-4 md:col-span-3">
+        <%= form.label :status, "Status", class: "block text-sm font-medium text-gray-700" %>
+        <%= form.select :status,
+            options_for_select([['All Statuses', '']] + Order.statuses.keys.map { |s| [s.humanize, s] }, params[:status]),
+            {},
+            { class: "mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" }
+        %>
+      </div>
+
+      <!-- Sort By -->
+      <div class="sm:col-span-4 md:col-span-3">
+        <%= form.label :sort, "Sort By", class: "block text-sm font-medium text-gray-700" %>
+        <%= form.select :sort,
+            options_for_select([
+              ['Newest First', 'date_desc'],
+              ['Oldest First', 'date_asc'],
+              ['ID: High to Low', 'id_desc'],
+              ['ID: Low to High', 'id_asc']
+            ], params[:sort]),
+            {},
+            { class: "mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" }
+        %>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="sm:col-span-2 md:col-span-2">
+        <%= form.submit "Apply Filters", class: "w-full inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+      </div>
+
+      <!-- Reset Link (Optional) -->
+      <% if params[:status].present? || params[:sort].present? %>
+        <div class="sm:col-span-2 md:col-span-2 flex items-center">
+          <%= link_to "Reset", dashboard_orders_path, class: "text-sm font-medium text-gray-700 hover:text-indigo-600" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <!-- Orders List -->
+  <% if @orders.any? %>
+    <div class="mt-6 bg-white shadow overflow-hidden sm:rounded-md">
+      <ul role="list" class="divide-y divide-gray-200">
+        <% @orders.each do |order| %>
+          <li class="relative">
+            <!-- Order Summary (links to show page) -->
+            <%= link_to dashboard_order_path(order), class: "block px-4 py-4 sm:px-6 hover:bg-gray-50 transition-colors" do %>
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                <!-- Order ID and Customer -->
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center">
+                    <p class="text-sm font-semibold text-indigo-600 truncate">#<%= order.id %></p>
+                    <span class="mx-2 text-gray-300">•</span>
+                    <p class="text-sm text-gray-500 truncate"><%= order.user&.email || 'Guest User' %></p>
+                  </div>
+                  <p class="mt-1 text-xs text-gray-500 truncate">
+                    <%= [order.first_name, order.last_name].join(' ').presence || 'N/A' %>
+                  </p>
+                </div>
+
+                <!-- Status Badge -->
+                <div class="mt-2 md:mt-0 md:ml-4 flex-shrink-0">
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-<%= order_status_color(order.status) %>-100 text-<%= order_status_color(order.status) %>-800">
+                    <%= order.status&.humanize || 'Unknown Status' %>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Additional Details -->
+              <div class="mt-3 grid grid-cols-1 md:grid-cols-12 gap-2 text-sm">
+                <!-- Location -->
+                <div class="md:col-span-3 flex items-center text-gray-500">
+                  <svg class="flex-shrink-0 mr-1.5 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="truncate"><%= order.city %>, <%= order.state %></span>
+                </div>
+
+                <!-- Date -->
+                <div class="md:col-span-3 flex items-center text-gray-500">
+                  <svg class="flex-shrink-0 mr-1.5 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                  </svg>
+                  <time datetime="<%= order.created_at.strftime("%Y-%m-%d") %>"><%= order.created_at.strftime("%b %d, %Y") %></time>
+                </div>
+
+                <!-- Items Count -->
+                <div class="md:col-span-2 flex items-center text-gray-500">
+                  <svg class="flex-shrink-0 mr-1.5 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                  </svg>
+                  <span><%= pluralize(order.order_items.sum(:quantity), 'item') %></span>
+                </div>
+
+                <!-- Total -->
+                <div class="md:col-span-3 flex items-center justify-between md:justify-end text-gray-900 font-medium">
+                  <span class="md:hidden">Total: </span>
+                  <span>$<%= sprintf('%.2f', order.total_price || 0.0) %></span>
+                </div>
+
+                <!-- Arrow Icon (desktop) -->
+                <div class="hidden md:block md:col-span-1 flex items-center justify-end text-gray-400">
+                  <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+            <% end %>
+
+            <!-- DELETE BUTTON (outside the link!) -->
+            <div class="px-4 pb-3 sm:px-6 flex justify-end">
+              <%= button_to "Delete",
+              dashboard_order_path(order),
+              method: :delete,
+              form: { data: { turbo_confirm: "Are you sure you want to delete order ##{order.id}?" } },
+              class: "text-sm text-red-600 hover:text-red-800 font-medium" %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <!-- Pagination -->
+    <div class="mt-6 flex justify-center">
+      <%= paginate @orders %>
+    </div>
+
+  <% else %>
+    <!-- Empty State -->
+    <div class="text-center mt-12">
+      <svg class="mx-auto h-16 w-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+      </svg>
+      <h3 class="mt-4 text-lg font-medium text-gray-900">No orders found</h3>
+      <p class="mt-2 text-sm text-gray-500 max-w-prose mx-auto">
+        <% if params[:status].present? || params[:sort].present? %>
+          No orders match your current filters. Try adjusting your search or filter to find what you're looking for.
+        <% else %>
+          There are currently no orders in the system.
+        <% end %>
+      </p>
+      <% if params[:status].present? || params[:sort].present? %>
+        <div class="mt-6">
+          <%= link_to "Reset Filters", dashboard_orders_path, class: "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

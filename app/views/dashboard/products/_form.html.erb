@@ -1,0 +1,96 @@
+<!-- app/views/dashboard/products/_form.html.erb -->
+<div class="max-w-4xl mx-auto p-6" data-controller="variants">
+  <h1 class="text-2xl font-bold mb-6"><%= @product.persisted? ? "Edit Product" : "Create New Product" %></h1>
+
+  <%= form_with model: @product, url: (@product.persisted? ? dashboard_product_path(@product) : dashboard_products_path), local: true, html: { class: "space-y-6" } do |f| %>
+    <!-- Basic Fields -->
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <%= f.label :name, class: "block text-sm font-medium text-gray-700" %>
+          <%= f.text_field :name, class: "mt-1 block w-full rounded-md border-gray-300" %>
+        </div>
+        <div>
+          <%= f.label :category_id, "Category", class: "block text-sm font-medium text-gray-700" %>
+          <%= f.collection_select :category_id, Category.all, :id, :name, { include_blank: "None" }, { class: "mt-1 block w-full rounded-md border-gray-300" } %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Option Type Selector -->
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+      <h2 class="text-lg font-semibold text-gray-800 mb-3">Options</h2>
+      <p class="text-sm text-gray-600 mb-4">Add options like size or color to create variants.</p>
+      
+      <!-- Selected Option Types Display -->
+      <div id="selected-options" class="flex flex-wrap gap-2 mb-4">
+        <!-- Will be populated by JS -->
+      </div>
+
+      <!-- Option Type Selector Dropdown -->
+      <div class="mb-4">
+        <select id="option-type-selector" class="block w-full rounded-md border-gray-300 shadow-sm">
+          <option value="">Select an option type...</option>
+          <% @option_types.each do |ot| %>
+            <option value="<%= ot.id %>" data-option-type="<%= ot.to_json %>">
+              <%= ot.name %> (<%= ot.option_values.count %> values)
+            </option>
+          <% end %>
+        </select>
+      </div>
+
+      <!-- Add Option Button -->
+      <button type="button" 
+              id="add-option-btn"
+              class="px-3 py-1 bg-indigo-600 text-white rounded text-sm"
+              data-action="click->variants#addOption">
+        Add Option
+      </button>
+    </div>
+
+    <!-- Variants Section -->
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold text-gray-800">Variants</h2>
+        <button type="button" 
+                class="px-3 py-1 bg-gray-600 text-white rounded text-sm"
+                data-action="click->variants#generateAll">
+          Generate All Combinations
+        </button>
+      </div>
+      
+      <div id="variants-container" class="space-y-4">
+        <!-- Will be populated by JS -->
+        <% if @product.variants.empty? %>
+          <p class="text-gray-500">No variants yet. Add options and click "Generate All Combinations".</p>
+        <% end %>
+      </div>
+
+      <!-- Manual Add Variant Button -->
+      <button type="button" 
+              class="mt-4 px-3 py-1 bg-green-600 text-white rounded text-sm"
+              data-action="click->variants#addManualVariant">
+        + Add Variant Manually
+      </button>
+    </div>
+
+    <!-- Hidden Fields for Nested Attributes -->
+    <div id="variants-fields" style="display:none;">
+      <!-- Will be populated by JS -->
+      <% @product.variants.each_with_index do |variant, index| %>
+        <%= f.fields_for :variants, variant, child_index: index do |vf| %>
+          <%= vf.hidden_field :id %>
+          <%= vf.hidden_field :_destroy %>
+          <% variant.option_values.each do |ov| %>
+            <%= vf.hidden_field :option_value_ids, multiple: true, value: ov.id %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <!-- Submit -->
+    <div class="pt-4">
+      <%= f.submit @product.persisted? ? "Update Product" : "Create Product", class: "px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700" %>
+    </div>
+  <% end %>
+</div>

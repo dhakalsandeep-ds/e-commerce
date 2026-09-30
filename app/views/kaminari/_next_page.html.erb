@@ -1,0 +1,6 @@
+<% if current_page.last? %>
+  <span class="px-3 py-1 text-gray-400 cursor-not-allowed">Next</span>
+<% else %>
+  <%= link_to raw("Next"), url,
+      class: "px-3 py-1 text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-blue-700 rounded-r-md" %>
+<% end %>

@@ -1,0 +1,12 @@
+<%# app/views/dashboard/option_types/create.turbo_stream.erb %>
+
+<%= turbo_stream.prepend "option-types-list", partial: "dashboard/option_types/option_type", locals: { ot: @option_type } %>
+
+<%= turbo_stream.replace "new_option_type_form" do %>
+  <%= render "dashboard/option_types/form", option_type: OptionType.new %>
+<% end %>
+
+<%# Signal to close the panel via a temporary DOM element %>
+<%= turbo_stream.append "body" do %>
+  <div id="close-option-panel-signal" data-close-panel></div>
+<% end %>
