@@ -1,34 +1,6 @@
 Rails.application.routes.draw do
   get "search/show"
-  # resource :session
-  # resources :passwords, param: :token
-  # namespace :dashboard do
-  #   get "campaigns/index"
-  #   get "campaigns/show"
-  #   get "campaigns/new"
-  #   get "campaigns/create"
-  #   get "campaigns/edit"
-  #   get "campaigns/update"
-  #   get "campaigns/destroy"
-  #   get "automations/index"
-  #   get "automations/show"
-  #   get "automations/new"
-  #   get "automations/create"
-  #   get "automations/edit"
-  #   get "automations/update"
-  #   get "automations/destroy"
-  #   get "discounts/index"
-  #   get "discounts/show"
-  #   get "discounts/new"
-  #   get "discounts/create"
-  #   get "discounts/edit"
-  #   get "discounts/update"
-  #   get "discounts/destroy"
-  # end
-  # =========================
-  # App routes
-  # =========================
-
+  
     get "/search", to: "search#show", as: :search
 
 
